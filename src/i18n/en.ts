@@ -1,0 +1,22 @@
+export const en = {
+  home: 'Home', levels: 'Levels', game: 'Game', results: 'Results', settings: 'Settings', daily: 'Daily Challenge',
+  welcome: 'A small game, ready to become yours.', play: 'Play', continue: 'Continue',
+  level: 'Level %{number}', completed: 'Completed', available: 'Available', best: 'Best score: %{score}',
+  progress: '%{count} of %{total} levels completed', placeholder: 'Game placeholder',
+  placeholderHelp: 'No game mechanics yet. Use the button below to test saving a completion and opening Results.',
+  completeDemo: 'Complete placeholder (0 points)', saving: 'Saving…', score: 'Score: %{score}',
+  replay: 'Replay', next: 'Next level', backHome: 'Back to Home', noResult: 'No saved result to show.',
+  invalidGame: 'This level or challenge is unavailable.', dailyHelp: 'A level selected each day at 00:00 UTC. Play offline; the device clock determines the date.',
+  dailyDate: 'UTC date: %{date}', dailyDone: 'Today’s challenge is completed.', playDaily: 'Play daily challenge',
+  sound: 'Sound', haptics: 'Haptics', language: 'Language', system: 'System language',
+  soundHelp: 'Sound preference is saved. Audio assets will be added with a game.',
+  reset: 'Reset progress', resetTitle: 'Reset all progress?', resetBody: 'Level results and daily completions will be erased. Your settings will stay.',
+  cancel: 'Cancel', privacy: 'Privacy', privacyBody: 'This starter has no analytics collection, advertising SDK, tracking, or account. Progress and preferences stay on this device. Removing the app may erase them.',
+  loading: 'Loading your progress…', retry: 'Retry', storageRead: 'Your save could not be loaded. Retry before playing to protect existing progress.',
+  storageWrite: 'Changes could not be saved. Retry before closing the app.', recovered: 'An unreadable save was reset to defaults.',
+  futureVersion: 'This save belongs to a newer app version. Update the app to use it; the original save has been preserved.',
+  saveFailed: 'Could not save', saveFailedBody: 'Your result is still in memory. Retry to save it.',
+  notFound: 'Screen not found', notFoundHelp: 'Return Home to continue.',
+} as const;
+export type TranslationKey = keyof typeof en;
+export type Translations = { [Key in TranslationKey]: string };

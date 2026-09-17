@@ -1,0 +1,21 @@
+import type { Translations } from './en';
+export const es: Translations = {
+  home: 'Inicio', levels: 'Niveles', game: 'Juego', results: 'Resultados', settings: 'Ajustes', daily: 'Desafío diario',
+  welcome: 'Un pequeño juego, listo para ser tuyo.', play: 'Jugar', continue: 'Continuar',
+  level: 'Nivel %{number}', completed: 'Completado', available: 'Disponible', best: 'Mejor puntuación: %{score}',
+  progress: '%{count} de %{total} niveles completados', placeholder: 'Espacio del juego',
+  placeholderHelp: 'Todavía no hay mecánicas. Usa el botón para probar el guardado y la pantalla de resultados.',
+  completeDemo: 'Completar la demo (0 puntos)', saving: 'Guardando…', score: 'Puntuación: %{score}',
+  replay: 'Repetir', next: 'Siguiente nivel', backHome: 'Volver al inicio', noResult: 'No hay resultados guardados para mostrar.',
+  invalidGame: 'Este nivel o desafío no está disponible.', dailyHelp: 'Un nivel seleccionado cada día a las 00:00 UTC. Funciona sin conexión; la fecha depende del reloj del dispositivo.',
+  dailyDate: 'Fecha UTC: %{date}', dailyDone: 'El desafío de hoy está completado.', playDaily: 'Jugar al desafío diario',
+  sound: 'Sonido', haptics: 'Vibración', language: 'Idioma', system: 'Idioma del sistema',
+  soundHelp: 'La preferencia de sonido se guarda. Los sonidos se añadirán con un juego.',
+  reset: 'Restablecer progreso', resetTitle: '¿Borrar todo el progreso?', resetBody: 'Se borrarán los resultados y los desafíos completados. Se conservarán tus ajustes.',
+  cancel: 'Cancelar', privacy: 'Privacidad', privacyBody: 'Esta plantilla no recopila estadísticas ni incluye publicidad, seguimiento o cuentas. El progreso y los ajustes se guardan en este dispositivo. Desinstalar la aplicación puede borrarlos.',
+  loading: 'Cargando tu progreso…', retry: 'Reintentar', storageRead: 'No se pudo cargar el progreso. Reintenta antes de jugar para proteger los datos guardados.',
+  storageWrite: 'No se pudieron guardar los cambios. Reintenta antes de cerrar la aplicación.', recovered: 'Se restableció un archivo de progreso ilegible.',
+  futureVersion: 'Estos datos pertenecen a una versión más reciente. Actualiza la aplicación; se ha conservado el archivo original.',
+  saveFailed: 'No se pudo guardar', saveFailedBody: 'El resultado sigue en memoria. Reintenta para guardarlo.',
+  notFound: 'Pantalla no encontrada', notFoundHelp: 'Vuelve al inicio para continuar.',
+};

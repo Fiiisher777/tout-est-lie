@@ -1,0 +1,21 @@
+import type { Translations } from './en';
+export const fr: Translations = {
+  home: 'Accueil', levels: 'Niveaux', game: 'Jeu', results: 'Résultats', settings: 'Réglages', daily: 'Défi du jour',
+  welcome: 'Un petit jeu, prêt à devenir le vôtre.', play: 'Jouer', continue: 'Continuer',
+  level: 'Niveau %{number}', completed: 'Terminé', available: 'Disponible', best: 'Meilleur score : %{score}',
+  progress: '%{count} niveaux terminés sur %{total}', placeholder: 'Emplacement du jeu',
+  placeholderHelp: 'Aucune mécanique pour le moment. Le bouton ci-dessous permet de tester la sauvegarde et l’écran des résultats.',
+  completeDemo: 'Terminer la démo (0 point)', saving: 'Enregistrement…', score: 'Score : %{score}',
+  replay: 'Rejouer', next: 'Niveau suivant', backHome: 'Retour à l’accueil', noResult: 'Aucun résultat enregistré à afficher.',
+  invalidGame: 'Ce niveau ou ce défi est indisponible.', dailyHelp: 'Un niveau sélectionné chaque jour à 00 h 00 UTC. Disponible hors ligne ; la date dépend de l’horloge de l’appareil.',
+  dailyDate: 'Date UTC : %{date}', dailyDone: 'Le défi du jour est terminé.', playDaily: 'Jouer au défi du jour',
+  sound: 'Son', haptics: 'Vibrations', language: 'Langue', system: 'Langue du système',
+  soundHelp: 'Le choix du son est enregistré. Les sons seront ajoutés avec un jeu.',
+  reset: 'Réinitialiser la progression', resetTitle: 'Effacer toute la progression ?', resetBody: 'Les résultats et les défis terminés seront effacés. Vos réglages seront conservés.',
+  cancel: 'Annuler', privacy: 'Confidentialité', privacyBody: 'Ce modèle ne collecte aucune statistique et ne contient ni publicité, ni suivi, ni compte. La progression et les réglages restent sur cet appareil. Désinstaller l’application peut les effacer.',
+  loading: 'Chargement de votre progression…', retry: 'Réessayer', storageRead: 'Impossible de charger la sauvegarde. Réessayez avant de jouer pour protéger votre progression.',
+  storageWrite: 'Impossible d’enregistrer les changements. Réessayez avant de fermer l’application.', recovered: 'Une sauvegarde illisible a été réinitialisée.',
+  futureVersion: 'Cette sauvegarde provient d’une version plus récente. Mettez l’application à jour ; la sauvegarde originale est conservée.',
+  saveFailed: 'Enregistrement impossible', saveFailedBody: 'Votre résultat est encore en mémoire. Réessayez pour l’enregistrer.',
+  notFound: 'Écran introuvable', notFoundHelp: 'Retournez à l’accueil pour continuer.',
+};
