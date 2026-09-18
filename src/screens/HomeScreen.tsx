@@ -16,6 +16,7 @@ export function HomeScreen() {
     <Button title={t(state.completedLevels.length ? 'continue' : 'play')} disabled={!writable || !next} onPress={() => router.push({ pathname: '/game', params: { mode: 'level', levelId: next.id } })} />
     <Button secondary title={t('levels')} onPress={() => router.push('/levels')} />
     <Button secondary title={t('daily')} disabled={!hasDailyContent(locale)} onPress={() => router.push('/daily')} />
+    {__DEV__ && <Button secondary title="Draft Preview" onPress={() => router.push('/draft-preview')} />}
     <Button secondary title={t('settings')} onPress={() => router.push('/settings')} />
   </Screen>;
 }

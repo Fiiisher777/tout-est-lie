@@ -45,7 +45,7 @@ export function GameView(props: GameViewProps) {
       { text: t('cancel'), style: 'cancel' },
     ]);
   }
-  const title = props.launch.mode === 'daily' ? t('daily') : t('level', { number: findLevel(props.launch.levelId)?.number ?? 1 });
+  const title = __DEV__ && props.developmentPreview ? `DRAFT · ${props.launch.locale.toUpperCase()} · ${props.developmentPreview.position}` : props.launch.mode === 'daily' ? t('daily') : t('level', { number: findLevel(props.launch.levelId)?.number ?? 1 });
   return <SafeAreaView style={styles.safe}>
     <View style={styles.header}>
       <Pressable accessibilityRole="button" accessibilityLabel={t('back')} style={styles.iconButton} onPress={() => router.canGoBack() ? router.back() : router.replace('/')}><View style={styles.chevron} /></Pressable>

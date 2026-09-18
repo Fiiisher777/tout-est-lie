@@ -1,8 +1,8 @@
-import { loadActiveSession, matchesLaunch, saveActiveSession } from '../state/activeSession';
+import { matchesLaunch } from '../state/activeSession';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AppState } from 'react-native';
 import { useFocusEffect } from 'expo-router';
-import { findPuzzle } from './content';
+import { sessionAccess } from './sessionAccess';
 import type { GameViewProps } from './types';
 import { rewardedHint } from './engine/reward';
 import { calculateRemainingMistakes, getAvailableHints, produceCompletionResult, setPaused, startPuzzle, type State, type Transition } from './engine/engine';
@@ -14,9 +14,10 @@ import { usePlayer } from '../state/PlayerProvider';
 export const clock = () => ({ monotonicMs: performance.now(), utcMs: Date.now() });
 let sessionCounter = 0;
 function newId() { return `${Date.now()}-${++sessionCounter}-${Math.random().toString(36).slice(2, 8)}`; }
-export function usePuzzleSession({ launch, onComplete }: GameViewProps, ads: AdsService) {
+export function usePuzzleSession({ launch, onComplete, developmentPreview }: GameViewProps, ads: AdsService) {
   const { state: player } = usePlayer();
-  function fresh() { return startPuzzle(findPuzzle(launch.levelId)!, { launch, sessionId: newId(), seed: Math.floor(Math.random() * 4294967296), clock: clock() }); }
+  const { puzzle, storage } = sessionAccess(launch, developmentPreview);
+  function fresh() { return startPuzzle(puzzle, { launch, sessionId: newId(), seed: Math.floor(Math.random() * 4294967296), clock: clock() }); }
   const [loadAttempt, setLoadAttempt] = useState(0);
   const focused = useRef(true);
   const [ready, setReady] = useState(false); const readyRef = useRef(false);
@@ -27,13 +28,13 @@ export function usePuzzleSession({ launch, onComplete }: GameViewProps, ads: Ads
   const [feedback, setFeedback] = useState<'solved' | 'mistake' | null>(null);
   const mounted = useRef(false);
   const [events] = useState(() => createSessionEvents(analytics, Date.now));
-  const persist = useCallback((next: State) => { if (!focused.current) return Promise.resolve(); return saveActiveSession(next, performance.now()).then(() => { if (mounted.current) setStorageError(false); }, () => { if (mounted.current) setStorageError(true); }); }, []);
+  const persist = useCallback((next: State) => { if (!focused.current) return Promise.resolve(); return storage.save(next, performance.now()).then(() => { if (mounted.current) setStorageError(false); }, () => { if (mounted.current) setStorageError(true); }); }, [storage]);
   const update = useCallback((next: State) => { current.current = next; if (readyRef.current) void persist(next); if (mounted.current) render(next); }, [persist]);
   const pause = useCallback((reason: 'app' | 'ad' | 'navigation', value: boolean) => update(setPaused(current.current, reason, value, performance.now())), [update]);
   useEffect(() => {
     mounted.current = true;
     let cancelled = false;
-    void loadActiveSession().then(saved => {
+    void storage.load().then(saved => {
       if (cancelled) return;
       let next: State = { ...current.current, elapsedMs: 0, activeSince: performance.now() };
       if (saved && matchesLaunch(saved, launch)) { next = { ...saved, activeSince: performance.now(), pauses: [] }; events.resume(next); }
@@ -53,7 +54,7 @@ export function usePuzzleSession({ launch, onComplete }: GameViewProps, ads: Ads
     };
     // The view is keyed by launch; hydration runs once for that launch.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [events, pause, persist, loadAttempt]);
+  }, [events, pause, persist, loadAttempt, storage]);
   useFocusEffect(useCallback(() => { focused.current = true; pause('navigation', false); return () => { pause('navigation', true); focused.current = false; }; }, [pause]));
   function act(operation: (s: State) => Transition) {
     if (!readyRef.current || storageError) return;
@@ -93,9 +94,9 @@ export function usePuzzleSession({ launch, onComplete }: GameViewProps, ads: Ads
   const save = useCallback(async () => {
     const result = produceCompletionResult(current.current); if (!result || savingRef.current) return;
     savingRef.current = true; setSaving(true);
-    try { await saveActiveSession(current.current, performance.now()); await onComplete(result); } catch { /* Shell displays retryable failure. */ }
+    try { await storage.save(current.current, performance.now()); await onComplete(result); } catch { /* Shell displays retryable failure. */ }
     finally { savingRef.current = false; if (mounted.current) setSaving(false); }
-  }, [onComplete]);
+  }, [onComplete, storage]);
   const automaticSave = useRef<string | null>(null);
   useEffect(() => {
     if (state.status !== 'playing' && automaticSave.current !== state.sessionId) {
