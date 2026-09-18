@@ -1,5 +1,6 @@
 import type { Translations } from './en';
 export const es: Translations = {
+  contentUnavailable: 'Todavía no hay puzles aprobados disponibles aquí.',
   back: "Volver",
   reviewHints: "Revisar las pistas desbloqueadas",
   restartConfirm: "¿Reiniciar este puzle?",

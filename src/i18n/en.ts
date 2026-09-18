@@ -1,4 +1,5 @@
 export const en = {
+  contentUnavailable: 'No approved puzzles are available here yet.',
   back: "Back",
   reviewHints: "Review previously unlocked hints",
   restartConfirm: "Restart this puzzle?",

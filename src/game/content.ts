@@ -1,14 +1,15 @@
-import enNormal from './content/packs/en-normal.json';
-import frNormal from './content/packs/fr-normal.json';
-import esNormal from './content/packs/es-normal.json';
-import enDaily from './content/packs/en-daily.json';
-import frDaily from './content/packs/fr-daily.json';
-import esDaily from './content/packs/es-daily.json';
+import production from '../../content/production/puzzles.json';
+import released from '../../content/production/released.json';
 import type { Locale, Pack } from './content/schema';
-import { validateCatalog } from './content/validate';
-export const packs = [enNormal, frNormal, esNormal, enDaily, frDaily, esDaily] as Pack[];
-const issues = validateCatalog(packs);
-if (issues.length) throw new Error(JSON.stringify(issues));
+import { releasePacks } from './content/production/release';
+// Release builds always use the approval gate. Development fixtures are an
+// explicit separate source; preview production with EXPO_PUBLIC_PUZZLE_CONTENT=production.
+// eslint-disable-next-line @typescript-eslint/no-require-imports -- Metro removes the development-only branch from release builds.
+const loadDevelopment = () => (require('./content/development') as typeof import('./content/development')).developmentPacks;
+export const packs: Pack[] = __DEV__ && process.env.EXPO_PUBLIC_PUZZLE_CONTENT !== 'production'
+  ? loadDevelopment()
+  : releasePacks(production, released);
+export function hasDailyContent(locale: Locale) { return packs.some(p => p.locale === locale && p.purpose === 'daily' && p.puzzles.length > 0); }
 export const puzzles = packs.flatMap(p => p.puzzles);
 export function levelsFor(locale: Locale) {
   return packs.filter(p => p.locale === locale && p.purpose === 'normal').flatMap(p => p.entries.map(e => ({ id: e.levelId, number: e.number! })));

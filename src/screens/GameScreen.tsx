@@ -4,7 +4,7 @@ import { Alert, View } from 'react-native';
 import { Screen } from '../components/Screen';
 import { AppText } from '../components/AppText';
 import { Button } from '../components/Button';
-import { findPuzzle, findLevel } from '../game/content';
+import { findPuzzle, findLevel, hasDailyContent } from '../game/content';
 import { GameView } from '../game/GameView';
 import type { GameLaunch, GameResult } from '../game/types';
 import { dailyChallenge, isUtcDate } from '../daily/challenge';
@@ -18,7 +18,7 @@ export function GameScreen() {
   let launch: GameLaunch | null = null;
   if (puzzle && puzzle.locale === locale) {
     if (params.mode === 'level' && findLevel(puzzle.levelId)) launch = { mode: 'level', levelId: puzzle.levelId, locale, puzzleRevision: puzzle.revision };
-    if (params.mode === 'daily' && isUtcDate(params.date)) {
+    if (params.mode === 'daily' && hasDailyContent(locale) && isUtcDate(params.date)) {
       const daily = dailyChallenge(new Date(params.date + 'T00:00:00Z'), locale);
       if (daily.levelId === puzzle.levelId) launch = daily;
     }

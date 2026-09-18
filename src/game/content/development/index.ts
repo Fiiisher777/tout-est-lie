@@ -1,0 +1,11 @@
+import enNormal from './en-normal.json';
+import frNormal from './fr-normal.json';
+import esNormal from './es-normal.json';
+import enDaily from './en-daily.json';
+import frDaily from './fr-daily.json';
+import esDaily from './es-daily.json';
+import type { Pack } from '../schema';
+import { validateCatalog } from '../validate';
+export const developmentPacks = [enNormal, frNormal, esNormal, enDaily, frDaily, esDaily] as Pack[];
+const issues = validateCatalog(developmentPacks);
+if (issues.length) throw new Error(JSON.stringify(issues));

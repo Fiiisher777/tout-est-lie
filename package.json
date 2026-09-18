@@ -41,7 +41,14 @@
     "test": "jest --runInBand",
     "test:watch": "jest --watch",
     "bundle": "expo export --platform ios --platform android",
-    "validate:content": "jest --runInBand src/game/content/validate.test.ts"
+    "validate:content": "jest --runInBand src/game/content/validate.test.ts",
+    "puzzles:validate": "node scripts/puzzles.cjs validate",
+    "puzzles:report": "node scripts/puzzles.cjs report",
+    "puzzles:release-check": "node scripts/puzzles.cjs release-check",
+    "puzzles:approve": "node scripts/puzzles.cjs approve",
+    "puzzles:import": "node scripts/puzzles.cjs import",
+    "bundle:release": "npm run puzzles:release-check && npm run bundle",
+    "puzzles:record-release": "node scripts/puzzles.cjs record-release"
   },
   "private": true
 }

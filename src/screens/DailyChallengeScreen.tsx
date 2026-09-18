@@ -1,3 +1,4 @@
+import { hasDailyContent } from '../game/content';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { AppState } from 'react-native';
@@ -8,6 +9,10 @@ import { dailyChallenge } from '../daily/challenge';
 import { useTranslation } from '../i18n';
 import { usePlayer } from '../state/PlayerProvider';
 export function DailyChallengeScreen() {
+  const { t, locale } = useTranslation();
+  return hasDailyContent(locale) ? <AvailableDailyChallengeScreen /> : <Screen title={t('daily')}><AppText>{t('contentUnavailable')}</AppText></Screen>;
+}
+function AvailableDailyChallengeScreen() {
   const { t, locale } = useTranslation();
   const [challenge, setChallenge] = useState(() => dailyChallenge(new Date(), locale));
   const router = useRouter(); const { state, writable } = usePlayer();

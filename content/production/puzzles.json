@@ -1,0 +1,601 @@
+[
+  {
+    "schemaVersion": 1,
+    "levelId": "sample-en-001",
+    "revision": 1,
+    "locale": "en",
+    "difficulty": 1,
+    "cards": [
+      {
+        "id": "c0",
+        "text": "ROSE"
+      },
+      {
+        "id": "c1",
+        "text": "TULIP"
+      },
+      {
+        "id": "c2",
+        "text": "IRIS"
+      },
+      {
+        "id": "c3",
+        "text": "LILY"
+      },
+      {
+        "id": "c4",
+        "text": "PARIS"
+      },
+      {
+        "id": "c5",
+        "text": "LYON"
+      },
+      {
+        "id": "c6",
+        "text": "NICE"
+      },
+      {
+        "id": "c7",
+        "text": "LILLE"
+      },
+      {
+        "id": "c8",
+        "text": "PIANO"
+      },
+      {
+        "id": "c9",
+        "text": "VIOLIN"
+      },
+      {
+        "id": "c10",
+        "text": "FLUTE"
+      },
+      {
+        "id": "c11",
+        "text": "DRUM"
+      },
+      {
+        "id": "c12",
+        "text": "CIRCLE"
+      },
+      {
+        "id": "c13",
+        "text": "SQUARE"
+      },
+      {
+        "id": "c14",
+        "text": "TRIANGLE"
+      },
+      {
+        "id": "c15",
+        "text": "RECTANGLE"
+      }
+    ],
+    "groups": [
+      {
+        "id": "g0",
+        "label": "Flowers",
+        "cardIds": [
+          "c0",
+          "c1",
+          "c2",
+          "c3"
+        ],
+        "intendedReason": "Flowers",
+        "explanation": "Sample intended category: Flowers."
+      },
+      {
+        "id": "g1",
+        "label": "French cities",
+        "cardIds": [
+          "c4",
+          "c5",
+          "c6",
+          "c7"
+        ],
+        "intendedReason": "French cities",
+        "explanation": "Sample intended category: French cities."
+      },
+      {
+        "id": "g2",
+        "label": "Musical instruments",
+        "cardIds": [
+          "c8",
+          "c9",
+          "c10",
+          "c11"
+        ],
+        "intendedReason": "Musical instruments",
+        "explanation": "Sample intended category: Musical instruments."
+      },
+      {
+        "id": "g3",
+        "label": "Geometric shapes",
+        "cardIds": [
+          "c12",
+          "c13",
+          "c14",
+          "c15"
+        ],
+        "intendedReason": "Geometric shapes",
+        "explanation": "Sample intended category: Geometric shapes."
+      }
+    ],
+    "hints": [
+      {
+        "id": "pair0",
+        "kind": "pair",
+        "groupId": "g0",
+        "cardIds": [
+          "c0",
+          "c1"
+        ]
+      },
+      {
+        "id": "category0",
+        "kind": "category",
+        "groupId": "g0",
+        "text": "They bloom"
+      },
+      {
+        "id": "pair1",
+        "kind": "pair",
+        "groupId": "g1",
+        "cardIds": [
+          "c4",
+          "c5"
+        ]
+      },
+      {
+        "id": "category1",
+        "kind": "category",
+        "groupId": "g1",
+        "text": "Places in France"
+      },
+      {
+        "id": "pair2",
+        "kind": "pair",
+        "groupId": "g2",
+        "cardIds": [
+          "c8",
+          "c9"
+        ]
+      },
+      {
+        "id": "category2",
+        "kind": "category",
+        "groupId": "g2",
+        "text": "They make music"
+      },
+      {
+        "id": "pair3",
+        "kind": "pair",
+        "groupId": "g3",
+        "cardIds": [
+          "c12",
+          "c13"
+        ]
+      },
+      {
+        "id": "category3",
+        "kind": "category",
+        "groupId": "g3",
+        "text": "Think geometry"
+      }
+    ],
+    "position": 1,
+    "concept": {
+      "id": "sample-familiar-categories",
+      "relationship": "original"
+    },
+    "rationale": "SAMPLE DRAFT ONLY. Copied from a development fixture to demonstrate the pipeline; not an editorially approved production puzzle.",
+    "intendedReason": "Four familiar category memberships. Reviewer must verify the intended partition and the stated cross-locale relationship.",
+    "knownDecoys": [
+      "Names may also refer to people, places or brands. Review cross-group alternative readings."
+    ],
+    "ambiguityNotes": "Not yet reviewed. Check every item for competing category membership and verify language-specific familiarity. The equivalence classification is provisional.",
+    "status": "draft"
+  },
+  {
+    "schemaVersion": 1,
+    "levelId": "sample-fr-001",
+    "revision": 1,
+    "locale": "fr",
+    "difficulty": 1,
+    "cards": [
+      {
+        "id": "c0",
+        "text": "ROSE"
+      },
+      {
+        "id": "c1",
+        "text": "TULIPE"
+      },
+      {
+        "id": "c2",
+        "text": "IRIS"
+      },
+      {
+        "id": "c3",
+        "text": "LYS"
+      },
+      {
+        "id": "c4",
+        "text": "PARIS"
+      },
+      {
+        "id": "c5",
+        "text": "LYON"
+      },
+      {
+        "id": "c6",
+        "text": "NICE"
+      },
+      {
+        "id": "c7",
+        "text": "LILLE"
+      },
+      {
+        "id": "c8",
+        "text": "PIANO"
+      },
+      {
+        "id": "c9",
+        "text": "VIOLON"
+      },
+      {
+        "id": "c10",
+        "text": "FLÛTE"
+      },
+      {
+        "id": "c11",
+        "text": "TAMBOUR"
+      },
+      {
+        "id": "c12",
+        "text": "CERCLE"
+      },
+      {
+        "id": "c13",
+        "text": "CARRÉ"
+      },
+      {
+        "id": "c14",
+        "text": "TRIANGLE"
+      },
+      {
+        "id": "c15",
+        "text": "RECTANGLE"
+      }
+    ],
+    "groups": [
+      {
+        "id": "g0",
+        "label": "Fleurs",
+        "cardIds": [
+          "c0",
+          "c1",
+          "c2",
+          "c3"
+        ],
+        "intendedReason": "Fleurs",
+        "explanation": "Sample intended category: Fleurs."
+      },
+      {
+        "id": "g1",
+        "label": "Villes françaises",
+        "cardIds": [
+          "c4",
+          "c5",
+          "c6",
+          "c7"
+        ],
+        "intendedReason": "Villes françaises",
+        "explanation": "Sample intended category: Villes françaises."
+      },
+      {
+        "id": "g2",
+        "label": "Instruments de musique",
+        "cardIds": [
+          "c8",
+          "c9",
+          "c10",
+          "c11"
+        ],
+        "intendedReason": "Instruments de musique",
+        "explanation": "Sample intended category: Instruments de musique."
+      },
+      {
+        "id": "g3",
+        "label": "Figures géométriques",
+        "cardIds": [
+          "c12",
+          "c13",
+          "c14",
+          "c15"
+        ],
+        "intendedReason": "Figures géométriques",
+        "explanation": "Sample intended category: Figures géométriques."
+      }
+    ],
+    "hints": [
+      {
+        "id": "pair0",
+        "kind": "pair",
+        "groupId": "g0",
+        "cardIds": [
+          "c0",
+          "c1"
+        ]
+      },
+      {
+        "id": "category0",
+        "kind": "category",
+        "groupId": "g0",
+        "text": "Elles fleurissent"
+      },
+      {
+        "id": "pair1",
+        "kind": "pair",
+        "groupId": "g1",
+        "cardIds": [
+          "c4",
+          "c5"
+        ]
+      },
+      {
+        "id": "category1",
+        "kind": "category",
+        "groupId": "g1",
+        "text": "Des lieux en France"
+      },
+      {
+        "id": "pair2",
+        "kind": "pair",
+        "groupId": "g2",
+        "cardIds": [
+          "c8",
+          "c9"
+        ]
+      },
+      {
+        "id": "category2",
+        "kind": "category",
+        "groupId": "g2",
+        "text": "Ils font de la musique"
+      },
+      {
+        "id": "pair3",
+        "kind": "pair",
+        "groupId": "g3",
+        "cardIds": [
+          "c12",
+          "c13"
+        ]
+      },
+      {
+        "id": "category3",
+        "kind": "category",
+        "groupId": "g3",
+        "text": "Pensez à la géométrie"
+      }
+    ],
+    "position": 1,
+    "concept": {
+      "id": "sample-familiar-categories",
+      "relationship": "direct-equivalent",
+      "source": {
+        "puzzleId": "sample-en-001",
+        "revision": 1
+      }
+    },
+    "rationale": "SAMPLE DRAFT ONLY. Copied from a development fixture to demonstrate the pipeline; not an editorially approved production puzzle.",
+    "intendedReason": "Four familiar category memberships. Reviewer must verify the intended partition and the stated cross-locale relationship.",
+    "knownDecoys": [
+      "Names may also refer to people, places or brands. Review cross-group alternative readings."
+    ],
+    "ambiguityNotes": "Not yet reviewed. Check every item for competing category membership and verify language-specific familiarity. The equivalence classification is provisional.",
+    "status": "draft"
+  },
+  {
+    "schemaVersion": 1,
+    "levelId": "sample-es-001",
+    "revision": 1,
+    "locale": "es",
+    "difficulty": 1,
+    "cards": [
+      {
+        "id": "c0",
+        "text": "ROSA"
+      },
+      {
+        "id": "c1",
+        "text": "TULIPÁN"
+      },
+      {
+        "id": "c2",
+        "text": "IRIS"
+      },
+      {
+        "id": "c3",
+        "text": "LIRIO"
+      },
+      {
+        "id": "c4",
+        "text": "PARÍS"
+      },
+      {
+        "id": "c5",
+        "text": "LYON"
+      },
+      {
+        "id": "c6",
+        "text": "NIZA"
+      },
+      {
+        "id": "c7",
+        "text": "LILLE"
+      },
+      {
+        "id": "c8",
+        "text": "PIANO"
+      },
+      {
+        "id": "c9",
+        "text": "VIOLÍN"
+      },
+      {
+        "id": "c10",
+        "text": "FLAUTA"
+      },
+      {
+        "id": "c11",
+        "text": "TAMBOR"
+      },
+      {
+        "id": "c12",
+        "text": "CÍRCULO"
+      },
+      {
+        "id": "c13",
+        "text": "CUADRADO"
+      },
+      {
+        "id": "c14",
+        "text": "TRIÁNGULO"
+      },
+      {
+        "id": "c15",
+        "text": "RECTÁNGULO"
+      }
+    ],
+    "groups": [
+      {
+        "id": "g0",
+        "label": "Flores",
+        "cardIds": [
+          "c0",
+          "c1",
+          "c2",
+          "c3"
+        ],
+        "intendedReason": "Flores",
+        "explanation": "Sample intended category: Flores."
+      },
+      {
+        "id": "g1",
+        "label": "Ciudades francesas",
+        "cardIds": [
+          "c4",
+          "c5",
+          "c6",
+          "c7"
+        ],
+        "intendedReason": "Ciudades francesas",
+        "explanation": "Sample intended category: Ciudades francesas."
+      },
+      {
+        "id": "g2",
+        "label": "Instrumentos musicales",
+        "cardIds": [
+          "c8",
+          "c9",
+          "c10",
+          "c11"
+        ],
+        "intendedReason": "Instrumentos musicales",
+        "explanation": "Sample intended category: Instrumentos musicales."
+      },
+      {
+        "id": "g3",
+        "label": "Figuras geométricas",
+        "cardIds": [
+          "c12",
+          "c13",
+          "c14",
+          "c15"
+        ],
+        "intendedReason": "Figuras geométricas",
+        "explanation": "Sample intended category: Figuras geométricas."
+      }
+    ],
+    "hints": [
+      {
+        "id": "pair0",
+        "kind": "pair",
+        "groupId": "g0",
+        "cardIds": [
+          "c0",
+          "c1"
+        ]
+      },
+      {
+        "id": "category0",
+        "kind": "category",
+        "groupId": "g0",
+        "text": "Florecen"
+      },
+      {
+        "id": "pair1",
+        "kind": "pair",
+        "groupId": "g1",
+        "cardIds": [
+          "c4",
+          "c5"
+        ]
+      },
+      {
+        "id": "category1",
+        "kind": "category",
+        "groupId": "g1",
+        "text": "Lugares de Francia"
+      },
+      {
+        "id": "pair2",
+        "kind": "pair",
+        "groupId": "g2",
+        "cardIds": [
+          "c8",
+          "c9"
+        ]
+      },
+      {
+        "id": "category2",
+        "kind": "category",
+        "groupId": "g2",
+        "text": "Producen música"
+      },
+      {
+        "id": "pair3",
+        "kind": "pair",
+        "groupId": "g3",
+        "cardIds": [
+          "c12",
+          "c13"
+        ]
+      },
+      {
+        "id": "category3",
+        "kind": "category",
+        "groupId": "g3",
+        "text": "Piensa en geometría"
+      }
+    ],
+    "position": 1,
+    "concept": {
+      "id": "sample-familiar-categories",
+      "relationship": "adapted-equivalent",
+      "source": {
+        "puzzleId": "sample-en-001",
+        "revision": 1
+      }
+    },
+    "rationale": "SAMPLE DRAFT ONLY. Copied from a development fixture to demonstrate the pipeline; not an editorially approved production puzzle.",
+    "intendedReason": "Four familiar category memberships. Reviewer must verify the intended partition and the stated cross-locale relationship.",
+    "knownDecoys": [
+      "Names may also refer to people, places or brands. Review cross-group alternative readings."
+    ],
+    "ambiguityNotes": "Not yet reviewed. Check every item for competing category membership and verify language-specific familiarity. The equivalence classification is provisional.",
+    "status": "draft"
+  }
+]

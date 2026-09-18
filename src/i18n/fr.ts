@@ -1,5 +1,6 @@
 import type { Translations } from './en';
 export const fr: Translations = {
+  contentUnavailable: 'Aucun puzzle approuvé n’est disponible ici pour le moment.',
   back: "Retour",
   reviewHints: "Revoir les indices débloqués",
   restartConfirm: "Recommencer cette énigme ?",
