@@ -1,4 +1,4 @@
-import samples from '../../../../content/production/puzzles.json';
+import samples from './__fixtures__/samples.json';
 import { approvalContent, approvalCurrent, locales, toEnginePuzzle, type ProductionPuzzle } from './schema';
 import { approvePuzzle, releaseCheck, importDrafts, validateProduction, validateProductionPuzzle } from './validate';
 import { releasePacks, releasePuzzles } from './release';

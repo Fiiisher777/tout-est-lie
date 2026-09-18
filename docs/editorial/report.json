@@ -1,20 +1,10 @@
 {
-  "total": 3,
+  "total": 17,
   "locales": {
     "fr": {
-      "total": 1,
+      "total": 15,
       "approved": 0,
       "missingPositions": [
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
         12,
         13,
         14,
@@ -24,10 +14,6 @@
         18,
         19,
         20,
-        21,
-        22,
-        23,
-        24,
         25,
         26,
         27,
@@ -624,15 +610,15 @@
     }
   },
   "statuses": {
-    "draft": 3,
+    "draft": 17,
     "structurally_valid": 0,
     "editorial_review": 0,
     "approved": 0,
     "rejected": 0
   },
   "difficulties": {
-    "1": 3,
-    "2": 0,
+    "1": 13,
+    "2": 4,
     "3": 0,
     "4": 0,
     "5": 0
@@ -641,24 +627,17 @@
     {
       "concept": "sample-familiar-categories",
       "locales": [
-        "fr",
         "en",
         "es"
       ],
-      "missingLocales": [],
+      "missingLocales": [
+        "fr"
+      ],
       "relationships": [
         {
           "puzzleId": "sample-en-001",
           "relationship": "original",
           "source": null
-        },
-        {
-          "puzzleId": "sample-fr-001",
-          "relationship": "direct-equivalent",
-          "source": {
-            "puzzleId": "sample-en-001",
-            "revision": 1
-          }
         },
         {
           "puzzleId": "sample-es-001",
@@ -669,50 +648,265 @@
           }
         }
       ]
+    },
+    {
+      "concept": "concept-fr-maison-recre-cuisine-coiffure",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-003",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-mois-planetes-metaux",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-002",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-voiture-mer-patisserie-raquette",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-011",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-enseignes-jardin-portebonheur",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-001",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-arbre-bureau-musique-visage",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-012",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-coques-verts-glaces-gemmes",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-005",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-de-nuit-meubles-vetements-oiseaux",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-013",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-coup-de-main-meteo-livre",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-008",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-noir-commerces-ciel-contenants",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-010",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-objets-a-dents",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-014",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-rouge-poissons-tri-sols",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-015",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-animaux-caches",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-009",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-porte-devises-imprimes",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-004",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-tennis-vetement-escalier-vaisselle",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-006",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-de-mer-articulations-ferme-noyau",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-007",
+          "relationship": "original",
+          "source": null
+        }
+      ]
     }
   ],
   "structuralErrors": [],
   "releaseErrors": [
-    {
-      "path": "fr:2",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:3",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:4",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:5",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:6",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:7",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:8",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:9",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:10",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:11",
-      "message": "Missing level position"
-    },
     {
       "path": "fr:12",
       "message": "Missing level position"
@@ -747,22 +941,6 @@
     },
     {
       "path": "fr:20",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:21",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:22",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:23",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:24",
       "message": "Missing level position"
     },
     {
@@ -1866,11 +2044,67 @@
       "message": "Unapproved puzzle: explicit current editorial approval required"
     },
     {
-      "path": "sample-fr-001",
+      "path": "sample-es-001",
       "message": "Unapproved puzzle: explicit current editorial approval required"
     },
     {
-      "path": "sample-es-001",
+      "path": "puzzle-fr-003",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-002",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-011",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-001",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-012",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-005",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-013",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-008",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-010",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-014",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-015",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-009",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-004",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-006",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-007",
       "message": "Unapproved puzzle: explicit current editorial approval required"
     }
   ],

@@ -14,8 +14,10 @@ solution. A reviewer must make that judgment.
 - `docs/editorial/report.md`: readable editorial review report.
 - `docs/editorial/report.json`: machine-readable counts, coverage and all errors.
 
-The three `sample-*` records are **SAMPLE DRAFTS**, copied from fixtures to demonstrate
-the tooling. Their provisional equivalence claims still need editorial review.
+The remaining `sample-en-001` and `sample-es-001` records are **SAMPLE DRAFTS**,
+copied from fixtures to demonstrate the tooling. The conflicting French sample
+was moved intact to `content/archive/sample-fr-001.json` when the first real French
+batch was imported. Pipeline unit tests use a separate frozen sample fixture. Their provisional equivalence claims still need editorial review.
 They are not approved, not production quality claims, and not playable release content.
 Remove/replace them before producing the real catalog. Do not approve them merely
 to make a build pass.
@@ -26,7 +28,7 @@ to make a build pass.
    each category has exactly four suitable items, and consider alternate readings.
 2. **Draft.** Copy a sample record, assign a permanent `levelId` (the puzzle ID),
    `position`, `locale`, `revision: 1` and `status: "draft"`. Replace all sample words,
-   groups, clues and rationale. Do not copy `review` data. IDs stay stable across
+   groups, clues and rationale. Do not copy `review` data, including fixture-only `review.status`. IDs stay stable across
    revisions. All content is Unicode; keep accents.
 3. **Structural validation.** Run `npm run puzzles:validate` in the project folder.
    It validates the entire current production catalog. Fix each reported path.
@@ -99,6 +101,22 @@ formats are not the production approval mechanism.
   claim semantic uniqueness merely because validation passes.
 - `concept`: relationship described below.
 - `status`, optional `review`, optional `rejectionReason`: governed by the rules above.
+
+**Production status and metadata shape:** root `status` is required. Do not add
+`review.status`: it is an engine/development-fixture field, not a production field.
+Production `review` is optional for drafts; when present it must contain all four
+approval fields (`reviewedBy`, `reviewedAt`, `approvedRevision`, `approvedContent`).
+The importer removes external `review` and `rejectionReason` data and forces draft
+status. It does not translate engine-fixture metadata into production metadata.
+
+Production editorial notes belong at the root: `intendedReason`, `knownDecoys`,
+`ambiguityNotes`. A batch using an `editorial` wrapper must move these values
+unchanged to the root before import. Do not discard notes or overwrite conflicting
+root values. Production uses `concept`, not fixture `localization`. The current
+runtime validator is not an exact-key validator: unknown extra fields may survive
+import, but that does not make them part of the TypeScript production schema.
+Remove only demonstrably redundant fixture fields, and document every conversion.
+
 
 All editorial fields and group explanations are required by structural validation,
 including for a draft to pass. A draft can be stored incomplete, but it will fail
