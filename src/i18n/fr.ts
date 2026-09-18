@@ -1,5 +1,7 @@
 import type { Translations } from './en';
 export const fr: Translations = {
+  productName: 'NODI',
+  tagline: 'Tout est lié.',
   contentUnavailable: 'Aucun puzzle approuvé n’est disponible ici pour le moment.',
   back: "Retour",
   reviewHints: "Revoir les indices débloqués",

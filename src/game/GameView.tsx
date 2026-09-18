@@ -49,7 +49,7 @@ export function GameView(props: GameViewProps) {
   return <SafeAreaView style={styles.safe}>
     <View style={styles.header}>
       <Pressable accessibilityRole="button" accessibilityLabel={t('back')} style={styles.iconButton} onPress={() => router.canGoBack() ? router.back() : router.replace('/')}><View style={styles.chevron} /></Pressable>
-      <View style={styles.heading}><AppText style={styles.brand}>Tout est lié</AppText><AppText style={styles.subtitle}>{title}</AppText></View>
+      <View style={styles.heading}><AppText style={styles.brand}>{t('productName')}</AppText><AppText style={styles.subtitle}>{title}</AppText></View>
       <Pressable accessibilityRole="button" accessibilityLabel={t('settings')} style={styles.iconButton} onPress={settings}><AppText style={styles.gear}>⚙︎</AppText></Pressable>
     </View>
     {!ready ? <View style={styles.loading}><AppText style={styles.copy}>{t(storageError ? 'storageRead' : 'loading')}</AppText>{storageError && <Action title={t('retry')} onPress={retryStorage} />}</View> : <>

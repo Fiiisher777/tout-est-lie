@@ -33,7 +33,7 @@ export function GameScreen() {
     finally { busy.current = false; }
   }
   if (!launch) return <Screen><AppText>{t('invalidGame')}</AppText><Button title={t('backHome')} onPress={() => router.replace('/')} /></Screen>;
-  if (!writable) return <Screen title="Tout est lié">{null}</Screen>;
+  if (!writable) return <Screen title={t('productName')}>{null}</Screen>;
   return <View style={{ flex: 1 }}>
     <Stack.Screen options={{ headerShown: false }} />
     {writable && <GameView key={JSON.stringify(launch)} launch={launch} onComplete={complete} />}

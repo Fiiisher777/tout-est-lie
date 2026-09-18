@@ -1,5 +1,7 @@
 import type { Translations } from './en';
 export const es: Translations = {
+  productName: 'NODI',
+  tagline: 'Encuentra la conexión.',
   contentUnavailable: 'Todavía no hay puzles aprobados disponibles aquí.',
   back: "Volver",
   reviewHints: "Revisar las pistas desbloqueadas",

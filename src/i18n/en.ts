@@ -1,4 +1,6 @@
 export const en = {
+  productName: 'NODI',
+  tagline: 'Find the connection.',
   contentUnavailable: 'No approved puzzles are available here yet.',
   back: "Back",
   reviewHints: "Review previously unlocked hints",
