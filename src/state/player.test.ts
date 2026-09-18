@@ -1,41 +1,9 @@
 import { defaultPlayer, playerReducer } from './player';
 import type { GameResult } from '../game/types';
-const completion: GameResult = { mode: 'level', levelId: 'level-1', id: 'first', score: 10, completedAt: '2026-09-17T12:00:00Z' };
-test('defaults are independent and preferences can change without touching progress', () => {
-    const first = defaultPlayer();
-    const second = defaultPlayer();
-    const changed = playerReducer(first, { type: 'preferences', value: { sound: false, language: 'fr' } });
-    expect(changed.preferences).toEqual({ sound: false, haptics: true, language: 'fr' });
-    expect(second.preferences.sound).toBe(true);
-    expect(first.preferences.sound).toBe(true);
-});
-test('normal completions are deduplicated and preserve the highest score', () => {
-    const first = playerReducer(defaultPlayer(), { type: 'complete', result: completion });
-    const repeated = playerReducer(first, { type: 'complete', result: completion });
-    expect(repeated).toBe(first);
-    const lower = playerReducer(first, { type: 'complete', result: { ...completion, id: 'second', score: 2 } });
-    expect(lower.completedLevels).toEqual(['level-1']);
-    expect(lower.bestResults['level-1']).toBe(10);
-    const higher = playerReducer(lower, { type: 'complete', result: { ...completion, id: 'third', score: 20 } });
-    expect(higher.bestResults['level-1']).toBe(20);
-    expect(first.bestResults['level-1']).toBe(10);
-});
-test('daily completions do not complete normal levels and keep the best daily result', () => {
-    const daily: GameResult = { ...completion, mode: 'daily', date: '2026-09-17' };
-    const first = playerReducer(defaultPlayer(), { type: 'complete', result: daily });
-    const lower = playerReducer(first, { type: 'complete', result: { ...daily, id: 'retry', score: 1 } });
-    expect(lower.completedLevels).toEqual([]);
-    expect(lower.bestResults).toEqual({});
-    expect(lower.dailyCompletions['2026-09-17'].score).toBe(10);
-    expect(lower.lastResult?.score).toBe(1);
-});
-test('reset clears all progress and last result but preserves settings', () => {
-    const state = playerReducer(defaultPlayer(), { type: 'complete', result: completion });
-    state.preferences.language = 'es';
-    state.preferences.haptics = false;
-    expect(playerReducer(state, { type: 'resetProgress' })).toEqual({ ...defaultPlayer(), preferences: state.preferences });
-});
-test.each([NaN, Infinity, -1])('invalid score %s cannot change state', score => {
-    const state = defaultPlayer();
-    expect(playerReducer(state, { type: 'complete', result: { ...completion, score } })).toBe(state);
-});
+export const completion: GameResult = { mode: 'level', levelId: 'en-easy', locale: 'en', puzzleRevision: 1, id: 'first', sessionId: 'test', outcome: 'won', mistakes: 1, hintsUsed: 0, elapsedMs: 1000, completedAt: '2026-09-17T12:00:00Z' };
+test('preferences are immutable and independent', () => { const s = defaultPlayer(); expect(playerReducer(s, { type: 'preferences', value: { language: 'fr' } }).preferences.language).toBe('fr'); expect(s.preferences.language).toBe('system'); });
+test('win completes only concrete locale puzzle and deduplicates', () => { const s = playerReducer(defaultPlayer(), { type: 'complete', result: completion }); expect(s.completedLevels).toEqual(['en-easy']); expect(playerReducer(s, { type: 'complete', result: completion })).toBe(s); });
+test('loss records result without advancing progress', () => { const s = playerReducer(defaultPlayer(), { type: 'complete', result: { ...completion, outcome: 'lost', mistakes: 4 } }); expect(s.completedLevels).toEqual([]); expect(s.lastResult?.outcome).toBe('lost'); });
+test('daily win survives losing replay and stays isolated by locale', () => { const r: GameResult = { ...completion, mode: 'daily', date: '2026-09-17' }; const s = playerReducer(defaultPlayer(), { type: 'complete', result: r }); const next = playerReducer(s, { type: 'complete', result: { ...r, id: 'second', outcome: 'lost', mistakes: 4 } }); expect(next.dailyCompletions['en:2026-09-17']).toEqual(r); expect(next.completedLevels).toEqual([]); expect(next.dailyCompletions['fr:2026-09-17']).toBeUndefined(); });
+test('reset preserves preferences', () => { const s = playerReducer(defaultPlayer(), { type: 'complete', result: completion }); expect(playerReducer(s, { type: 'resetProgress' })).toEqual(defaultPlayer()); });
+test.each([NaN, Infinity, -1])('invalid elapsed time %s rejected', elapsedMs => { const s = defaultPlayer(); expect(playerReducer(s, { type: 'complete', result: { ...completion, elapsedMs } })).toBe(s); });

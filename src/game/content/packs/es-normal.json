@@ -1,0 +1,407 @@
+{
+  "packId": "dev-es-normal",
+  "locale": "es",
+  "purpose": "normal",
+  "entries": [
+    {
+      "levelId": "es-easy",
+      "number": 1
+    },
+    {
+      "levelId": "es-decoys",
+      "number": 2
+    }
+  ],
+  "puzzles": [
+    {
+      "schemaVersion": 1,
+      "levelId": "es-easy",
+      "revision": 1,
+      "locale": "es",
+      "difficulty": 1,
+      "cards": [
+        {
+          "id": "c0",
+          "text": "ROSA"
+        },
+        {
+          "id": "c1",
+          "text": "TULIPÁN"
+        },
+        {
+          "id": "c2",
+          "text": "IRIS"
+        },
+        {
+          "id": "c3",
+          "text": "LIRIO"
+        },
+        {
+          "id": "c4",
+          "text": "PARÍS"
+        },
+        {
+          "id": "c5",
+          "text": "LYON"
+        },
+        {
+          "id": "c6",
+          "text": "NIZA"
+        },
+        {
+          "id": "c7",
+          "text": "LILLE"
+        },
+        {
+          "id": "c8",
+          "text": "PIANO"
+        },
+        {
+          "id": "c9",
+          "text": "VIOLÍN"
+        },
+        {
+          "id": "c10",
+          "text": "FLAUTA"
+        },
+        {
+          "id": "c11",
+          "text": "TAMBOR"
+        },
+        {
+          "id": "c12",
+          "text": "CÍRCULO"
+        },
+        {
+          "id": "c13",
+          "text": "CUADRADO"
+        },
+        {
+          "id": "c14",
+          "text": "TRIÁNGULO"
+        },
+        {
+          "id": "c15",
+          "text": "RECTÁNGULO"
+        }
+      ],
+      "groups": [
+        {
+          "id": "g0",
+          "label": "Flores",
+          "cardIds": [
+            "c0",
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "intendedReason": "Flores"
+        },
+        {
+          "id": "g1",
+          "label": "Ciudades francesas",
+          "cardIds": [
+            "c4",
+            "c5",
+            "c6",
+            "c7"
+          ],
+          "intendedReason": "Ciudades francesas"
+        },
+        {
+          "id": "g2",
+          "label": "Instrumentos musicales",
+          "cardIds": [
+            "c8",
+            "c9",
+            "c10",
+            "c11"
+          ],
+          "intendedReason": "Instrumentos musicales"
+        },
+        {
+          "id": "g3",
+          "label": "Figuras geométricas",
+          "cardIds": [
+            "c12",
+            "c13",
+            "c14",
+            "c15"
+          ],
+          "intendedReason": "Figuras geométricas"
+        }
+      ],
+      "hints": [
+        {
+          "id": "pair0",
+          "kind": "pair",
+          "groupId": "g0",
+          "cardIds": [
+            "c0",
+            "c1"
+          ]
+        },
+        {
+          "id": "category0",
+          "kind": "category",
+          "groupId": "g0",
+          "text": "Florecen"
+        },
+        {
+          "id": "pair1",
+          "kind": "pair",
+          "groupId": "g1",
+          "cardIds": [
+            "c4",
+            "c5"
+          ]
+        },
+        {
+          "id": "category1",
+          "kind": "category",
+          "groupId": "g1",
+          "text": "Lugares de Francia"
+        },
+        {
+          "id": "pair2",
+          "kind": "pair",
+          "groupId": "g2",
+          "cardIds": [
+            "c8",
+            "c9"
+          ]
+        },
+        {
+          "id": "category2",
+          "kind": "category",
+          "groupId": "g2",
+          "text": "Producen música"
+        },
+        {
+          "id": "pair3",
+          "kind": "pair",
+          "groupId": "g3",
+          "cardIds": [
+            "c12",
+            "c13"
+          ]
+        },
+        {
+          "id": "category3",
+          "kind": "category",
+          "groupId": "g3",
+          "text": "Piensa en geometría"
+        }
+      ],
+      "localization": {
+        "kind": "translated-equivalent",
+        "sourceLevelId": "fr-easy",
+        "sourceRevision": 1
+      },
+      "review": {
+        "status": "draft"
+      },
+      "editorial": {
+        "intendedReason": "Synthetic development fixture; not approved for production.",
+        "knownDecoys": [],
+        "ambiguityNotes": "Independent native-language review is required."
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "levelId": "es-decoys",
+      "revision": 1,
+      "locale": "es",
+      "difficulty": 3,
+      "cards": [
+        {
+          "id": "c0",
+          "text": "ROBLE"
+        },
+        {
+          "id": "c1",
+          "text": "FRESNO"
+        },
+        {
+          "id": "c2",
+          "text": "OLMO"
+        },
+        {
+          "id": "c3",
+          "text": "PINO"
+        },
+        {
+          "id": "c4",
+          "text": "LUBINA"
+        },
+        {
+          "id": "c5",
+          "text": "LENGUADO"
+        },
+        {
+          "id": "c6",
+          "text": "CARPA"
+        },
+        {
+          "id": "c7",
+          "text": "TRUCHA"
+        },
+        {
+          "id": "c8",
+          "text": "GRULLA"
+        },
+        {
+          "id": "c9",
+          "text": "GOLONDRINA"
+        },
+        {
+          "id": "c10",
+          "text": "PETIRROJO"
+        },
+        {
+          "id": "c11",
+          "text": "PINZÓN"
+        },
+        {
+          "id": "c12",
+          "text": "TACÓN"
+        },
+        {
+          "id": "c13",
+          "text": "LENGÜETA"
+        },
+        {
+          "id": "c14",
+          "text": "CORDÓN"
+        },
+        {
+          "id": "c15",
+          "text": "EMPEINE"
+        }
+      ],
+      "groups": [
+        {
+          "id": "g0",
+          "label": "Árboles",
+          "cardIds": [
+            "c0",
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "intendedReason": "Árboles"
+        },
+        {
+          "id": "g1",
+          "label": "Peces",
+          "cardIds": [
+            "c4",
+            "c5",
+            "c6",
+            "c7"
+          ],
+          "intendedReason": "Peces"
+        },
+        {
+          "id": "g2",
+          "label": "Aves",
+          "cardIds": [
+            "c8",
+            "c9",
+            "c10",
+            "c11"
+          ],
+          "intendedReason": "Aves"
+        },
+        {
+          "id": "g3",
+          "label": "Partes de un zapato",
+          "cardIds": [
+            "c12",
+            "c13",
+            "c14",
+            "c15"
+          ],
+          "intendedReason": "Partes de un zapato"
+        }
+      ],
+      "hints": [
+        {
+          "id": "pair0",
+          "kind": "pair",
+          "groupId": "g0",
+          "cardIds": [
+            "c0",
+            "c1"
+          ]
+        },
+        {
+          "id": "category0",
+          "kind": "category",
+          "groupId": "g0",
+          "text": "Tienen raíces"
+        },
+        {
+          "id": "pair1",
+          "kind": "pair",
+          "groupId": "g1",
+          "cardIds": [
+            "c4",
+            "c5"
+          ]
+        },
+        {
+          "id": "category1",
+          "kind": "category",
+          "groupId": "g1",
+          "text": "Bajo el agua"
+        },
+        {
+          "id": "pair2",
+          "kind": "pair",
+          "groupId": "g2",
+          "cardIds": [
+            "c8",
+            "c9"
+          ]
+        },
+        {
+          "id": "category2",
+          "kind": "category",
+          "groupId": "g2",
+          "text": "Tienen plumas"
+        },
+        {
+          "id": "pair3",
+          "kind": "pair",
+          "groupId": "g3",
+          "cardIds": [
+            "c12",
+            "c13"
+          ]
+        },
+        {
+          "id": "category3",
+          "kind": "category",
+          "groupId": "g3",
+          "text": "Algo que llevas en el pie"
+        }
+      ],
+      "localization": {
+        "kind": "adapted-equivalent",
+        "sourceLevelId": "en-decoys",
+        "sourceRevision": 1
+      },
+      "review": {
+        "status": "draft"
+      },
+      "editorial": {
+        "intendedReason": "Synthetic development fixture; not approved for production.",
+        "knownDecoys": [
+          "Words may cross categories through secondary meanings; e.g. sole/heel or Mars/planet."
+        ],
+        "ambiguityNotes": "Independent native-language review is required."
+      }
+    }
+  ]
+}

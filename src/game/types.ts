@@ -1,18 +1,4 @@
-export type GameLaunch = {
-    mode: 'level';
-    levelId: string;
-} | {
-    mode: 'daily';
-    levelId: string;
-    date: string;
-};
-// Higher scores are better in the shell. Engines normalize their own scoring.
-export type GameResult = GameLaunch & {
-    id: string;
-    score: number;
-    completedAt: string;
-};
-export type GameViewProps = {
-    launch: GameLaunch;
-    onComplete: (score: number) => Promise<void>;
-};
+import type { Locale } from './content/schema';
+export type GameLaunch = { levelId: string; locale: Locale; puzzleRevision: number } & ({ mode: 'level' } | { mode: 'daily'; date: string });
+export type GameResult = GameLaunch & { id: string; sessionId: string; outcome: 'won' | 'lost'; mistakes: number; hintsUsed: number; elapsedMs: number; completedAt: string };
+export type GameViewProps = { launch: GameLaunch; onComplete: (result: GameResult) => Promise<void> };

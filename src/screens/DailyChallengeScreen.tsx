@@ -5,17 +5,17 @@ import { Screen } from '../components/Screen';
 import { AppText } from '../components/AppText';
 import { Button } from '../components/Button';
 import { dailyChallenge } from '../daily/challenge';
-import { findLevel } from '../game/content';
 import { useTranslation } from '../i18n';
 import { usePlayer } from '../state/PlayerProvider';
 export function DailyChallengeScreen() {
-  const [challenge, setChallenge] = useState(() => dailyChallenge());
-  const router = useRouter(); const { t } = useTranslation(); const { state, writable } = usePlayer();
+  const { t, locale } = useTranslation();
+  const [challenge, setChallenge] = useState(() => dailyChallenge(new Date(), locale));
+  const router = useRouter(); const { state, writable } = usePlayer();
   useFocusEffect(useCallback(() => {
     let timer: ReturnType<typeof setTimeout>;
     const refresh = () => {
       clearTimeout(timer);
-      setChallenge(dailyChallenge());
+      setChallenge(dailyChallenge(new Date(), locale));
       const now = new Date();
       const midnight = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
       timer = setTimeout(refresh, midnight - now.getTime() + 50);
@@ -23,15 +23,14 @@ export function DailyChallengeScreen() {
     refresh();
     const listener = AppState.addEventListener('change', status => { if (status === 'active') refresh(); });
     return () => { clearTimeout(timer); listener.remove(); };
-  }, []));
-  const level = findLevel(challenge.levelId);
+  }, [locale]));
   return <Screen title={t('daily')}>
     <AppText>{t('dailyHelp')}</AppText>
     <AppText>{t('dailyDate', { date: challenge.date })}</AppText>
-    <AppText variant="subtitle">{t('level', { number: level?.number ?? 1 })}</AppText>
-    {state.dailyCompletions[challenge.date] && <AppText>{t('dailyDone')}</AppText>}
+    <AppText variant="muted">{t('developmentPack')}</AppText>
+    {state.dailyCompletions[`${locale}:${challenge.date}`] && <AppText>{t('dailyDone')}</AppText>}
     <Button title={t('playDaily')} disabled={!writable} onPress={() => {
-      const current = dailyChallenge();
+      const current = dailyChallenge(new Date(), locale);
       setChallenge(current);
       router.push({ pathname: '/game', params: current });
     }} />

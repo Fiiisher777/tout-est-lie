@@ -1,0 +1,204 @@
+{
+  "packId": "dev-en-daily",
+  "locale": "en",
+  "purpose": "daily",
+  "entries": [
+    {
+      "levelId": "en-daily"
+    }
+  ],
+  "puzzles": [
+    {
+      "schemaVersion": 1,
+      "levelId": "en-daily",
+      "revision": 1,
+      "locale": "en",
+      "difficulty": 1,
+      "cards": [
+        {
+          "id": "c0",
+          "text": "CIRCLE"
+        },
+        {
+          "id": "c1",
+          "text": "SQUARE"
+        },
+        {
+          "id": "c2",
+          "text": "TRIANGLE"
+        },
+        {
+          "id": "c3",
+          "text": "RECTANGLE"
+        },
+        {
+          "id": "c4",
+          "text": "PIANO"
+        },
+        {
+          "id": "c5",
+          "text": "VIOLIN"
+        },
+        {
+          "id": "c6",
+          "text": "FLUTE"
+        },
+        {
+          "id": "c7",
+          "text": "DRUM"
+        },
+        {
+          "id": "c8",
+          "text": "PARIS"
+        },
+        {
+          "id": "c9",
+          "text": "LYON"
+        },
+        {
+          "id": "c10",
+          "text": "NICE"
+        },
+        {
+          "id": "c11",
+          "text": "LILLE"
+        },
+        {
+          "id": "c12",
+          "text": "ROSE"
+        },
+        {
+          "id": "c13",
+          "text": "TULIP"
+        },
+        {
+          "id": "c14",
+          "text": "IRIS"
+        },
+        {
+          "id": "c15",
+          "text": "LILY"
+        }
+      ],
+      "groups": [
+        {
+          "id": "g0",
+          "label": "Geometric shapes",
+          "cardIds": [
+            "c0",
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "intendedReason": "Geometric shapes"
+        },
+        {
+          "id": "g1",
+          "label": "Musical instruments",
+          "cardIds": [
+            "c4",
+            "c5",
+            "c6",
+            "c7"
+          ],
+          "intendedReason": "Musical instruments"
+        },
+        {
+          "id": "g2",
+          "label": "French cities",
+          "cardIds": [
+            "c8",
+            "c9",
+            "c10",
+            "c11"
+          ],
+          "intendedReason": "French cities"
+        },
+        {
+          "id": "g3",
+          "label": "Flowers",
+          "cardIds": [
+            "c12",
+            "c13",
+            "c14",
+            "c15"
+          ],
+          "intendedReason": "Flowers"
+        }
+      ],
+      "hints": [
+        {
+          "id": "pair0",
+          "kind": "pair",
+          "groupId": "g0",
+          "cardIds": [
+            "c0",
+            "c1"
+          ]
+        },
+        {
+          "id": "category0",
+          "kind": "category",
+          "groupId": "g0",
+          "text": "Think geometry"
+        },
+        {
+          "id": "pair1",
+          "kind": "pair",
+          "groupId": "g1",
+          "cardIds": [
+            "c4",
+            "c5"
+          ]
+        },
+        {
+          "id": "category1",
+          "kind": "category",
+          "groupId": "g1",
+          "text": "They make music"
+        },
+        {
+          "id": "pair2",
+          "kind": "pair",
+          "groupId": "g2",
+          "cardIds": [
+            "c8",
+            "c9"
+          ]
+        },
+        {
+          "id": "category2",
+          "kind": "category",
+          "groupId": "g2",
+          "text": "Places in France"
+        },
+        {
+          "id": "pair3",
+          "kind": "pair",
+          "groupId": "g3",
+          "cardIds": [
+            "c12",
+            "c13"
+          ]
+        },
+        {
+          "id": "category3",
+          "kind": "category",
+          "groupId": "g3",
+          "text": "They bloom"
+        }
+      ],
+      "localization": {
+        "kind": "original"
+      },
+      "review": {
+        "status": "draft"
+      },
+      "editorial": {
+        "intendedReason": "Synthetic development fixture; not approved for production.",
+        "knownDecoys": [],
+        "ambiguityNotes": "Independent native-language review is required."
+      }
+    }
+  ]
+}

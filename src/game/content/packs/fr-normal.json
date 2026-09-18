@@ -1,0 +1,403 @@
+{
+  "packId": "dev-fr-normal",
+  "locale": "fr",
+  "purpose": "normal",
+  "entries": [
+    {
+      "levelId": "fr-easy",
+      "number": 1
+    },
+    {
+      "levelId": "fr-replacement",
+      "number": 2
+    }
+  ],
+  "puzzles": [
+    {
+      "schemaVersion": 1,
+      "levelId": "fr-easy",
+      "revision": 1,
+      "locale": "fr",
+      "difficulty": 1,
+      "cards": [
+        {
+          "id": "c0",
+          "text": "ROSE"
+        },
+        {
+          "id": "c1",
+          "text": "TULIPE"
+        },
+        {
+          "id": "c2",
+          "text": "IRIS"
+        },
+        {
+          "id": "c3",
+          "text": "LYS"
+        },
+        {
+          "id": "c4",
+          "text": "PARIS"
+        },
+        {
+          "id": "c5",
+          "text": "LYON"
+        },
+        {
+          "id": "c6",
+          "text": "NICE"
+        },
+        {
+          "id": "c7",
+          "text": "LILLE"
+        },
+        {
+          "id": "c8",
+          "text": "PIANO"
+        },
+        {
+          "id": "c9",
+          "text": "VIOLON"
+        },
+        {
+          "id": "c10",
+          "text": "FLÛTE"
+        },
+        {
+          "id": "c11",
+          "text": "TAMBOUR"
+        },
+        {
+          "id": "c12",
+          "text": "CERCLE"
+        },
+        {
+          "id": "c13",
+          "text": "CARRÉ"
+        },
+        {
+          "id": "c14",
+          "text": "TRIANGLE"
+        },
+        {
+          "id": "c15",
+          "text": "RECTANGLE"
+        }
+      ],
+      "groups": [
+        {
+          "id": "g0",
+          "label": "Fleurs",
+          "cardIds": [
+            "c0",
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "intendedReason": "Fleurs"
+        },
+        {
+          "id": "g1",
+          "label": "Villes françaises",
+          "cardIds": [
+            "c4",
+            "c5",
+            "c6",
+            "c7"
+          ],
+          "intendedReason": "Villes françaises"
+        },
+        {
+          "id": "g2",
+          "label": "Instruments de musique",
+          "cardIds": [
+            "c8",
+            "c9",
+            "c10",
+            "c11"
+          ],
+          "intendedReason": "Instruments de musique"
+        },
+        {
+          "id": "g3",
+          "label": "Figures géométriques",
+          "cardIds": [
+            "c12",
+            "c13",
+            "c14",
+            "c15"
+          ],
+          "intendedReason": "Figures géométriques"
+        }
+      ],
+      "hints": [
+        {
+          "id": "pair0",
+          "kind": "pair",
+          "groupId": "g0",
+          "cardIds": [
+            "c0",
+            "c1"
+          ]
+        },
+        {
+          "id": "category0",
+          "kind": "category",
+          "groupId": "g0",
+          "text": "Elles fleurissent"
+        },
+        {
+          "id": "pair1",
+          "kind": "pair",
+          "groupId": "g1",
+          "cardIds": [
+            "c4",
+            "c5"
+          ]
+        },
+        {
+          "id": "category1",
+          "kind": "category",
+          "groupId": "g1",
+          "text": "Des lieux en France"
+        },
+        {
+          "id": "pair2",
+          "kind": "pair",
+          "groupId": "g2",
+          "cardIds": [
+            "c8",
+            "c9"
+          ]
+        },
+        {
+          "id": "category2",
+          "kind": "category",
+          "groupId": "g2",
+          "text": "Ils font de la musique"
+        },
+        {
+          "id": "pair3",
+          "kind": "pair",
+          "groupId": "g3",
+          "cardIds": [
+            "c12",
+            "c13"
+          ]
+        },
+        {
+          "id": "category3",
+          "kind": "category",
+          "groupId": "g3",
+          "text": "Pensez à la géométrie"
+        }
+      ],
+      "localization": {
+        "kind": "original"
+      },
+      "review": {
+        "status": "draft"
+      },
+      "editorial": {
+        "intendedReason": "Synthetic development fixture; not approved for production.",
+        "knownDecoys": [],
+        "ambiguityNotes": "Independent native-language review is required."
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "levelId": "fr-replacement",
+      "revision": 1,
+      "locale": "fr",
+      "difficulty": 3,
+      "cards": [
+        {
+          "id": "c0",
+          "text": "JANVIER"
+        },
+        {
+          "id": "c1",
+          "text": "FÉVRIER"
+        },
+        {
+          "id": "c2",
+          "text": "MARS"
+        },
+        {
+          "id": "c3",
+          "text": "AVRIL"
+        },
+        {
+          "id": "c4",
+          "text": "MERCURE"
+        },
+        {
+          "id": "c5",
+          "text": "VÉNUS"
+        },
+        {
+          "id": "c6",
+          "text": "JUPITER"
+        },
+        {
+          "id": "c7",
+          "text": "SATURNE"
+        },
+        {
+          "id": "c8",
+          "text": "FER"
+        },
+        {
+          "id": "c9",
+          "text": "CUIVRE"
+        },
+        {
+          "id": "c10",
+          "text": "OR"
+        },
+        {
+          "id": "c11",
+          "text": "ARGENT"
+        },
+        {
+          "id": "c12",
+          "text": "CHÊNE"
+        },
+        {
+          "id": "c13",
+          "text": "HÊTRE"
+        },
+        {
+          "id": "c14",
+          "text": "BOULEAU"
+        },
+        {
+          "id": "c15",
+          "text": "SAPIN"
+        }
+      ],
+      "groups": [
+        {
+          "id": "g0",
+          "label": "Mois de l’année",
+          "cardIds": [
+            "c0",
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "intendedReason": "Mois de l’année"
+        },
+        {
+          "id": "g1",
+          "label": "Planètes",
+          "cardIds": [
+            "c4",
+            "c5",
+            "c6",
+            "c7"
+          ],
+          "intendedReason": "Planètes"
+        },
+        {
+          "id": "g2",
+          "label": "Métaux",
+          "cardIds": [
+            "c8",
+            "c9",
+            "c10",
+            "c11"
+          ],
+          "intendedReason": "Métaux"
+        },
+        {
+          "id": "g3",
+          "label": "Arbres",
+          "cardIds": [
+            "c12",
+            "c13",
+            "c14",
+            "c15"
+          ],
+          "intendedReason": "Arbres"
+        }
+      ],
+      "hints": [
+        {
+          "id": "pair0",
+          "kind": "pair",
+          "groupId": "g0",
+          "cardIds": [
+            "c0",
+            "c1"
+          ]
+        },
+        {
+          "id": "category0",
+          "kind": "category",
+          "groupId": "g0",
+          "text": "Le calendrier"
+        },
+        {
+          "id": "pair1",
+          "kind": "pair",
+          "groupId": "g1",
+          "cardIds": [
+            "c4",
+            "c5"
+          ]
+        },
+        {
+          "id": "category1",
+          "kind": "category",
+          "groupId": "g1",
+          "text": "Le système solaire"
+        },
+        {
+          "id": "pair2",
+          "kind": "pair",
+          "groupId": "g2",
+          "cardIds": [
+            "c8",
+            "c9"
+          ]
+        },
+        {
+          "id": "category2",
+          "kind": "category",
+          "groupId": "g2",
+          "text": "Des matériaux"
+        },
+        {
+          "id": "pair3",
+          "kind": "pair",
+          "groupId": "g3",
+          "cardIds": [
+            "c12",
+            "c13"
+          ]
+        },
+        {
+          "id": "category3",
+          "kind": "category",
+          "groupId": "g3",
+          "text": "Dans la forêt"
+        }
+      ],
+      "localization": {
+        "kind": "original"
+      },
+      "review": {
+        "status": "draft"
+      },
+      "editorial": {
+        "intendedReason": "Synthetic development fixture; not approved for production.",
+        "knownDecoys": [
+          "Words may cross categories through secondary meanings; e.g. sole/heel or Mars/planet."
+        ],
+        "ambiguityNotes": "Independent native-language review is required."
+      }
+    }
+  ]
+}

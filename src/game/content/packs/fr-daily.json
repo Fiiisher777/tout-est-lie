@@ -1,0 +1,204 @@
+{
+  "packId": "dev-fr-daily",
+  "locale": "fr",
+  "purpose": "daily",
+  "entries": [
+    {
+      "levelId": "fr-daily"
+    }
+  ],
+  "puzzles": [
+    {
+      "schemaVersion": 1,
+      "levelId": "fr-daily",
+      "revision": 1,
+      "locale": "fr",
+      "difficulty": 1,
+      "cards": [
+        {
+          "id": "c0",
+          "text": "CERCLE"
+        },
+        {
+          "id": "c1",
+          "text": "CARRÉ"
+        },
+        {
+          "id": "c2",
+          "text": "TRIANGLE"
+        },
+        {
+          "id": "c3",
+          "text": "RECTANGLE"
+        },
+        {
+          "id": "c4",
+          "text": "PIANO"
+        },
+        {
+          "id": "c5",
+          "text": "VIOLON"
+        },
+        {
+          "id": "c6",
+          "text": "FLÛTE"
+        },
+        {
+          "id": "c7",
+          "text": "TAMBOUR"
+        },
+        {
+          "id": "c8",
+          "text": "PARIS"
+        },
+        {
+          "id": "c9",
+          "text": "LYON"
+        },
+        {
+          "id": "c10",
+          "text": "NICE"
+        },
+        {
+          "id": "c11",
+          "text": "LILLE"
+        },
+        {
+          "id": "c12",
+          "text": "ROSE"
+        },
+        {
+          "id": "c13",
+          "text": "TULIPE"
+        },
+        {
+          "id": "c14",
+          "text": "IRIS"
+        },
+        {
+          "id": "c15",
+          "text": "LYS"
+        }
+      ],
+      "groups": [
+        {
+          "id": "g0",
+          "label": "Figures géométriques",
+          "cardIds": [
+            "c0",
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "intendedReason": "Figures géométriques"
+        },
+        {
+          "id": "g1",
+          "label": "Instruments de musique",
+          "cardIds": [
+            "c4",
+            "c5",
+            "c6",
+            "c7"
+          ],
+          "intendedReason": "Instruments de musique"
+        },
+        {
+          "id": "g2",
+          "label": "Villes françaises",
+          "cardIds": [
+            "c8",
+            "c9",
+            "c10",
+            "c11"
+          ],
+          "intendedReason": "Villes françaises"
+        },
+        {
+          "id": "g3",
+          "label": "Fleurs",
+          "cardIds": [
+            "c12",
+            "c13",
+            "c14",
+            "c15"
+          ],
+          "intendedReason": "Fleurs"
+        }
+      ],
+      "hints": [
+        {
+          "id": "pair0",
+          "kind": "pair",
+          "groupId": "g0",
+          "cardIds": [
+            "c0",
+            "c1"
+          ]
+        },
+        {
+          "id": "category0",
+          "kind": "category",
+          "groupId": "g0",
+          "text": "Pensez à la géométrie"
+        },
+        {
+          "id": "pair1",
+          "kind": "pair",
+          "groupId": "g1",
+          "cardIds": [
+            "c4",
+            "c5"
+          ]
+        },
+        {
+          "id": "category1",
+          "kind": "category",
+          "groupId": "g1",
+          "text": "Ils font de la musique"
+        },
+        {
+          "id": "pair2",
+          "kind": "pair",
+          "groupId": "g2",
+          "cardIds": [
+            "c8",
+            "c9"
+          ]
+        },
+        {
+          "id": "category2",
+          "kind": "category",
+          "groupId": "g2",
+          "text": "Des lieux en France"
+        },
+        {
+          "id": "pair3",
+          "kind": "pair",
+          "groupId": "g3",
+          "cardIds": [
+            "c12",
+            "c13"
+          ]
+        },
+        {
+          "id": "category3",
+          "kind": "category",
+          "groupId": "g3",
+          "text": "Elles fleurissent"
+        }
+      ],
+      "localization": {
+        "kind": "original"
+      },
+      "review": {
+        "status": "draft"
+      },
+      "editorial": {
+        "intendedReason": "Synthetic development fixture; not approved for production.",
+        "knownDecoys": [],
+        "ambiguityNotes": "Independent native-language review is required."
+      }
+    }
+  ]
+}

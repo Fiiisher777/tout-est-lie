@@ -1,7 +1,7 @@
 import type { ExpoConfig } from 'expo/config';
 
 const config: ExpoConfig = {
-  name: 'Tiny Game Starter', slug: 'tiny-game-starter', version: '1.0.0',
+  name: 'Tout est lié', slug: 'tiny-game-starter', version: '1.0.0',
   orientation: 'portrait', scheme: 'tinygamestarter', userInterfaceStyle: 'light',
   platforms: ['ios', 'android'],
   // Assign unique bundleIdentifier / package values when duplicating this starter.

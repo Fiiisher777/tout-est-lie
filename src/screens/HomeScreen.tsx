@@ -3,11 +3,12 @@ import { Screen } from '../components/Screen';
 import { AppText } from '../components/AppText';
 import { Button } from '../components/Button';
 import { gameConfig } from '../config/game';
-import { levels } from '../game/content';
+import { levelsFor } from '../game/content';
 import { useTranslation } from '../i18n';
 import { usePlayer } from '../state/PlayerProvider';
 export function HomeScreen() {
-  const router = useRouter(); const { t } = useTranslation(); const { state, writable } = usePlayer();
+  const router = useRouter(); const { t, locale } = useTranslation(); const { state, writable } = usePlayer();
+  const levels = levelsFor(locale);
   const next = levels.find(level => !state.completedLevels.includes(level.id)) ?? levels[0];
   return <Screen title={gameConfig.name}>
     <AppText>{t('welcome')}</AppText>

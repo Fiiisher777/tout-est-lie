@@ -1,0 +1,204 @@
+{
+  "packId": "dev-es-daily",
+  "locale": "es",
+  "purpose": "daily",
+  "entries": [
+    {
+      "levelId": "es-daily"
+    }
+  ],
+  "puzzles": [
+    {
+      "schemaVersion": 1,
+      "levelId": "es-daily",
+      "revision": 1,
+      "locale": "es",
+      "difficulty": 1,
+      "cards": [
+        {
+          "id": "c0",
+          "text": "CÍRCULO"
+        },
+        {
+          "id": "c1",
+          "text": "CUADRADO"
+        },
+        {
+          "id": "c2",
+          "text": "TRIÁNGULO"
+        },
+        {
+          "id": "c3",
+          "text": "RECTÁNGULO"
+        },
+        {
+          "id": "c4",
+          "text": "PIANO"
+        },
+        {
+          "id": "c5",
+          "text": "VIOLÍN"
+        },
+        {
+          "id": "c6",
+          "text": "FLAUTA"
+        },
+        {
+          "id": "c7",
+          "text": "TAMBOR"
+        },
+        {
+          "id": "c8",
+          "text": "PARÍS"
+        },
+        {
+          "id": "c9",
+          "text": "LYON"
+        },
+        {
+          "id": "c10",
+          "text": "NIZA"
+        },
+        {
+          "id": "c11",
+          "text": "LILLE"
+        },
+        {
+          "id": "c12",
+          "text": "ROSA"
+        },
+        {
+          "id": "c13",
+          "text": "TULIPÁN"
+        },
+        {
+          "id": "c14",
+          "text": "IRIS"
+        },
+        {
+          "id": "c15",
+          "text": "LIRIO"
+        }
+      ],
+      "groups": [
+        {
+          "id": "g0",
+          "label": "Figuras geométricas",
+          "cardIds": [
+            "c0",
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "intendedReason": "Figuras geométricas"
+        },
+        {
+          "id": "g1",
+          "label": "Instrumentos musicales",
+          "cardIds": [
+            "c4",
+            "c5",
+            "c6",
+            "c7"
+          ],
+          "intendedReason": "Instrumentos musicales"
+        },
+        {
+          "id": "g2",
+          "label": "Ciudades francesas",
+          "cardIds": [
+            "c8",
+            "c9",
+            "c10",
+            "c11"
+          ],
+          "intendedReason": "Ciudades francesas"
+        },
+        {
+          "id": "g3",
+          "label": "Flores",
+          "cardIds": [
+            "c12",
+            "c13",
+            "c14",
+            "c15"
+          ],
+          "intendedReason": "Flores"
+        }
+      ],
+      "hints": [
+        {
+          "id": "pair0",
+          "kind": "pair",
+          "groupId": "g0",
+          "cardIds": [
+            "c0",
+            "c1"
+          ]
+        },
+        {
+          "id": "category0",
+          "kind": "category",
+          "groupId": "g0",
+          "text": "Piensa en geometría"
+        },
+        {
+          "id": "pair1",
+          "kind": "pair",
+          "groupId": "g1",
+          "cardIds": [
+            "c4",
+            "c5"
+          ]
+        },
+        {
+          "id": "category1",
+          "kind": "category",
+          "groupId": "g1",
+          "text": "Producen música"
+        },
+        {
+          "id": "pair2",
+          "kind": "pair",
+          "groupId": "g2",
+          "cardIds": [
+            "c8",
+            "c9"
+          ]
+        },
+        {
+          "id": "category2",
+          "kind": "category",
+          "groupId": "g2",
+          "text": "Lugares de Francia"
+        },
+        {
+          "id": "pair3",
+          "kind": "pair",
+          "groupId": "g3",
+          "cardIds": [
+            "c12",
+            "c13"
+          ]
+        },
+        {
+          "id": "category3",
+          "kind": "category",
+          "groupId": "g3",
+          "text": "Florecen"
+        }
+      ],
+      "localization": {
+        "kind": "original"
+      },
+      "review": {
+        "status": "draft"
+      },
+      "editorial": {
+        "intendedReason": "Synthetic development fixture; not approved for production.",
+        "knownDecoys": [],
+        "ambiguityNotes": "Independent native-language review is required."
+      }
+    }
+  ]
+}
