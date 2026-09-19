@@ -1,3 +1,4 @@
+import { isTester } from '../config/environment';
 import { useState } from 'react';
 import { Redirect, Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { View } from 'react-native';
@@ -12,7 +13,7 @@ export function DraftPreviewScreen() {
   const router = useRouter();
   const [result, setResult] = useState<GameResult | null>(null);
   const [replay, setReplay] = useState(0);
-  if (!__DEV__) return <Redirect href="/" />;
+  if (!__DEV__ || isTester) return <Redirect href="/" />;
   const selected = typeof puzzleId === 'string' ? previewPuzzle(puzzleId) : undefined;
   if (puzzleId && !selected) return <Screen title="Draft Preview"><AppText>Draft unavailable or invalid.</AppText><Button title="Back to drafts" onPress={() => router.replace('/draft-preview')} /></Screen>;
   if (selected) {

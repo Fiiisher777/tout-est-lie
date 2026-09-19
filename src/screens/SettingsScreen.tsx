@@ -1,3 +1,4 @@
+import { isTester } from '../config/environment';
 import { useState } from 'react';
 import { Alert } from 'react-native';
 import { Screen } from '../components/Screen';
@@ -28,7 +29,7 @@ export function SettingsScreen() {
     <AppText variant="muted">{t('soundHelp')}</AppText>
     <SettingRow label={t('haptics')} value={preferences.haptics} disabled={!writable || busy} onValueChange={haptics => { void change({ haptics }); }} />
     <AppText variant="subtitle">{t('language')}</AppText>
-    {languages.map(language => <Button key={language.value} secondary selected={preferences.language === language.value} title={language.label} disabled={!writable || busy} onPress={() => { void change({ language: language.value }); }} />)}
+    {(isTester ? languages.filter(language => language.value === 'fr') : languages).map(language => <Button key={language.value} secondary selected={isTester || preferences.language === language.value} title={language.label} disabled={!writable || busy} onPress={() => { void change({ language: language.value }); }} />)}
     <Button secondary title={t('privacy')} onPress={() => { void privacy.openOptions(); Alert.alert(t('privacy'), t('privacyBody')); }} />
     <Button secondary title={t('reset')} disabled={!writable || busy} onPress={() => Alert.alert(t('resetTitle'), t('resetBody'), [
       { text: t('cancel'), style: 'cancel' },

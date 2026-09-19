@@ -1,6 +1,7 @@
+import { playtestEnabled } from './environment';
 // Tunable playtest decisions, not permanent product economics.
 export const playtest = {
-  enabled: __DEV__, maxLives: 5, lifeRegenMinutes: 30,
+  enabled: playtestEnabled, maxLives: 5, lifeRegenMinutes: 30,
   extensionSeconds: 30, urgencySeconds: 20, tickMs: 250, checkpointMs: 1000,
   relaxedPositions: 3,
   countdownSeconds: { 1: 120, 2: 150, 3: 180, 4: 210, 5: 240 },

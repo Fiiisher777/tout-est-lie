@@ -3,6 +3,13 @@
   "build": {
     "development": { "developmentClient": true, "distribution": "internal" },
     "preview": { "distribution": "internal" },
-    "production": {}
+    "production": {},
+    "tester": {
+      "distribution": "internal",
+      "developmentClient": false,
+      "environment": "preview",
+      "env": { "APP_VARIANT": "tester" },
+      "android": { "buildType": "apk" }
+    }
   }
 }

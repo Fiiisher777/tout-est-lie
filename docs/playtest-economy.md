@@ -1,6 +1,7 @@
 # NODI — countdown and lives playtest
 
-This loop is enabled only when `__DEV__` is true. Production approval filtering,
+This loop is enabled in development and the explicit tester build variant.
+See [tester distribution](tester-distribution.md) for standalone beta builds. Production approval filtering,
 puzzle data, and editorial status are unchanged. There is no ad SDK, billing SDK,
 backend, subscription, purchase UI or pricing.
 

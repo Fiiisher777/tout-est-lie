@@ -1,12 +1,13 @@
+import { isTester } from '../../config/environment';
 import { validateProduction } from '../content/production/validate';
 import { toEnginePuzzle, type ProductionPuzzle } from '../content/production/schema';
 import { decodeActiveSession } from '../../state/activeSession';
 import { elapsedTime } from '../engine/engine';
 import type { GameResult } from '../types';
 import type { SessionStorage } from '../sessionAccess';
-export function draftPreviewAvailable() { return __DEV__; }
+export function draftPreviewAvailable() { return __DEV__ && !isTester; }
 export function draftPuzzles(): ProductionPuzzle[] {
-  if (!__DEV__) return [];
+  if (!__DEV__ || isTester) return [];
   // This authoring lookup is reachable only in development.
   const catalog: unknown = require('../../../content/production/puzzles.json');
   if (validateProduction(catalog).length) return [];
@@ -16,7 +17,7 @@ export function draftPuzzles(): ProductionPuzzle[] {
   });
 }
 export function previewPuzzle(id: string) {
-  if (!__DEV__) return undefined;
+  if (!__DEV__ || isTester) return undefined;
   const record = draftPuzzles().find(p => p.levelId === id);
   return record ? { record, puzzle: toEnginePuzzle(record) } : undefined;
 }
@@ -25,7 +26,7 @@ export function previewPuzzle(id: string) {
 export function createPreviewSession() {
   let snapshot: string | null = null;
   let result: GameResult | null = null;
-  const assertDevelopment = () => { if (!__DEV__) throw new Error('Draft preview is development-only'); };
+  const assertDevelopment = () => { if (!__DEV__ || isTester) throw new Error('Draft preview is development-only'); };
   const storage: SessionStorage = {
     load: async () => { assertDevelopment(); return decodeActiveSession(snapshot); },
     save: async (state, now) => {
