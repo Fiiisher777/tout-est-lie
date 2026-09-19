@@ -5,7 +5,7 @@ const object = (v: unknown): v is Record<string, unknown> => !!v && typeof v ===
 const safeId = (v: unknown): v is string => typeof v === 'string' && /^[a-zA-Z0-9_-]{1,150}$/.test(v) && !['__proto__', 'constructor', 'prototype'].includes(v);
 export function validResult(v: unknown): v is GameResult {
   return object(v) && safeId(v.id) && safeId(v.sessionId) && safeId(v.levelId) && ['fr', 'en', 'es'].includes(String(v.locale)) && Number.isInteger(v.puzzleRevision) && Number(v.puzzleRevision) > 0
-    && ['won', 'lost'].includes(String(v.outcome)) && Number.isInteger(v.mistakes) && Number(v.mistakes) >= 0 && Number(v.mistakes) <= 4 && (v.outcome === 'lost' ? v.mistakes === 4 : Number(v.mistakes) < 4)
+    && ['won', 'lost'].includes(String(v.outcome)) && Number.isInteger(v.mistakes) && Number(v.mistakes) >= 0 && Number(v.mistakes) <= 4 && (v.outcome === 'lost' ? (v.failureReason === 'timeout' || v.mistakes === 4) : Number(v.mistakes) < 4)
     && Number.isInteger(v.hintsUsed) && Number(v.hintsUsed) >= 0 && typeof v.elapsedMs === 'number' && Number.isFinite(v.elapsedMs) && v.elapsedMs >= 0
     && typeof v.completedAt === 'string' && Number.isFinite(Date.parse(v.completedAt)) && (v.mode === 'level' || (v.mode === 'daily' && isUtcDate(v.date)));
 }

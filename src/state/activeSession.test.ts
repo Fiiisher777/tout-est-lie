@@ -58,7 +58,7 @@ test.each(['won', 'lost'] as const)('terminal %s removes persisted active state 
   if (outcome === 'won') for (const g of playing.puzzle.groups) terminal = submit(terminal, g.cardIds);
   else { terminal = submit(terminal, ['c0', 'c1', 'c2', 'c4']); for (let i = 0; i < 3; i++) terminal = submitSelection(terminal, { monotonicMs: 200, utcMs: 200 }).state; }
   await Promise.all([saveActiveSession(playing, 50), saveActiveSession(terminal, 200)]);
-  expect(await loadActiveSession()).toBeNull(); expect(mockDisk.size).toBe(0);
+  expect(await loadActiveSession()).toBeNull(); expect(mockDisk.has('tiny-game-starter:active-session')).toBe(false);
 });
 test('legacy absence starts clean without changing player save', async () => { mockDisk.set('tiny-game-starter:player', '{"version":2}'); expect(await loadActiveSession()).toBeNull(); expect(mockDisk.size).toBe(1); });
 test('future versions are preserved and block load', async () => { mockDisk.set('tiny-game-starter:active-session', '{"version":99}'); await expect(loadActiveSession()).rejects.toThrow('Unsupported'); expect(mockDisk.get('tiny-game-starter:active-session')).toBe('{"version":99}'); });

@@ -1,0 +1,14 @@
+import { createEconomyStore } from './store';
+import { regenInterval } from './model';
+import type { AdsService, AdOutcome } from '../services/ads';
+const mockDisk = new Map<string,string>();
+jest.mock('@react-native-async-storage/async-storage',()=>({__esModule:true,default:{getItem:jest.fn(),setItem:jest.fn()}}));
+const disk={getItem:async (key:string)=>mockDisk.get(key)??null,setItem:async (key:string,value:string)=>{mockDisk.set(key,value);}};
+const ads=(outcome:AdOutcome):AdsService=>({showRewarded:async()=>outcome,showInterstitial:async()=> 'unavailable'});
+beforeEach(()=>mockDisk.clear());
+test('persisted debit survives process restart and duplicate settlement',async()=>{ const a=createEconomyStore(disk,()=>0);await a.settle('failed');const b=createEconomyStore(disk,()=>0);expect((await b.refresh()).lives).toBe(4);expect((await b.settle('failed')).lives).toBe(4); });
+test('regeneration on offline return is computed from saved timestamps',async()=>{const a=createEconomyStore(disk,()=>0);for(let i=0;i<4;i++)await a.settle(String(i));const b=createEconomyStore(disk,()=>3*regenInterval());expect((await b.refresh()).lives).toBe(4);});
+test('zero life gate opens after a single completed simulated ad',async()=>{const s=createEconomyStore(disk,()=>0);for(let i=0;i<5;i++)await s.settle(String(i));expect(await s.canStart()).toBe(false);expect(await s.rewardLife(ads('rewarded'))).toBe(true);expect(s.snapshot().value.lives).toBe(1);expect(await s.canStart()).toBe(true);});
+test.each(['dismissed','unavailable'] as const)('%s does not grant a life',async outcome=>{const s=createEconomyStore(disk,()=>0);await s.settle('a');expect(await s.rewardLife(ads(outcome))).toBe(false);expect(s.snapshot().value.lives).toBe(4);});
+test('concurrent reward taps cannot grant twice',async()=>{const s=createEconomyStore(disk,()=>0);await s.settle('a');await s.settle('b');let complete!:(v:AdOutcome)=>void;const pending=s.rewardLife({showRewarded:()=>new Promise(r=>{complete=r;}),showInterstitial:async()=> 'unavailable'});expect(await s.rewardLife(ads('rewarded'))).toBe(false);complete('rewarded');await pending;expect(s.snapshot().value.lives).toBe(4);});
+test('failed debit is retryable and never double-charged',async()=>{const write=jest.fn(disk.setItem);const s=createEconomyStore({...disk,setItem:write},()=>0);await s.refresh();write.mockRejectedValueOnce(new Error('disk'));await expect(s.settle('a')).rejects.toThrow('disk');expect(s.snapshot().value.lives).toBe(5);await s.settle('a');await s.settle('a');expect(s.snapshot().value.lives).toBe(4);});

@@ -1,3 +1,5 @@
+import { economyStore } from '../economy/store';
+import { playtest } from '../config/playtest';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { gameConfig } from '../config/game';
 import { elapsedTime, type State } from '../game/engine/engine';
@@ -8,7 +10,14 @@ const key = `${gameConfig.id}:active-session`;
 let queue: Promise<void> = Promise.resolve();
 export function saveActiveSession(state: State, now: number): Promise<void> {
   const snapshot = JSON.stringify({ version: 1, state: { ...state, selected: [], elapsedMs: elapsedTime(state, now), activeSince: null, pauses: [] } });
-  const write = queue.catch(() => {}).then(() => state.status === 'playing' ? AsyncStorage.setItem(key, snapshot) : AsyncStorage.removeItem(key));
+  const write = queue.catch(() => {}).then(async () => {
+    // Keep a recoverable terminal snapshot until the idempotent life debit commits.
+    await AsyncStorage.setItem(key, snapshot);
+    if (state.status !== 'playing') {
+      if (playtest.enabled && state.launch.mode === 'level' && state.status === 'lost') await economyStore.settle(state.sessionId);
+      await AsyncStorage.removeItem(key);
+    }
+  });
   queue = write;
   return write;
 }
@@ -24,12 +33,17 @@ export function decodeActiveSession(raw: string | null): State | null {
     const puzzle = parsePuzzle(s.puzzle);
     const integer = (n: number) => Number.isSafeInteger(n) && n >= 0;
     const ids = (value: readonly string[], allowed: string[]) => Array.isArray(value) && new Set(value).size === value.length && value.every(id => allowed.includes(id));
-    if (s.status !== 'playing' || typeof s.sessionId !== 'string' || !s.sessionId || !integer(s.seed) || !integer(s.shuffleCount) || !integer(s.mistakes) || s.mistakes >= 4 || !Number.isFinite(s.elapsedMs) || s.elapsedMs < 0 || s.completedAt !== null) return null;
+    if (!['playing', 'won', 'lost'].includes(s.status) || typeof s.sessionId !== 'string' || !s.sessionId || !integer(s.seed) || !integer(s.shuffleCount) || !integer(s.mistakes) || s.mistakes > 4 || (s.status === 'playing' && s.mistakes >= 4) || !Number.isFinite(s.elapsedMs) || s.elapsedMs < 0 || (s.status === 'playing' ? s.completedAt !== null : !Number.isFinite(Date.parse(s.completedAt ?? '')))) return null;
     if (s.launch.levelId !== puzzle.levelId || s.launch.locale !== puzzle.locale || s.launch.puzzleRevision !== puzzle.revision || !['level', 'daily'].includes(s.launch.mode) || (s.launch.mode === 'daily' && !isUtcDate(s.launch.date))) return null;
-    if (!ids(s.solved, puzzle.groups.map(g => g.id)) || s.solved.length >= 4 || !ids(s.usedHints, puzzle.hints.map(h => h.id))) return null;
+    if (!ids(s.solved, puzzle.groups.map(g => g.id)) || s.solved.length > 4 || (s.status === 'playing' && s.solved.length === 4) || !ids(s.usedHints, puzzle.hints.map(h => h.id))) return null;
     const remaining = puzzle.groups.filter(g => !s.solved.includes(g.id)).flatMap(g => g.cardIds);
     if (!ids(s.order, remaining) || s.order.length !== remaining.length) return null;
-    return { ...s, puzzle, selected: [], activeSince: null, pauses: [] };
+    if (s.status === 'won' && (s.solved.length !== 4 || s.mistakes >= 4)) return null;
+    if (s.status === 'lost' && s.mistakes !== 4 && s.failureReason !== 'timeout') return null;
+    if (s.countdownMs !== undefined && s.countdownMs !== null && (!Number.isFinite(s.countdownMs) || s.countdownMs < 0)) return null;
+    if (s.continueUsed !== undefined && typeof s.continueUsed !== 'boolean') return null;
+    if (s.timedOut !== undefined && typeof s.timedOut !== 'boolean') return null;
+    return { ...s, ...(!playtest.enabled ? { countdownMs: null, timedOut: false } : {}), puzzle, selected: [], activeSince: null, pauses: playtest.enabled && s.timedOut && s.status === 'playing' ? ['timeout'] : [] };
   } catch { return null; }
 }
 export async function loadActiveSession(): Promise<State | null> {
@@ -37,6 +51,7 @@ export async function loadActiveSession(): Promise<State | null> {
   const raw = await AsyncStorage.getItem(key);
   const session = decodeActiveSession(raw);
   if (raw !== null && session === null) throw new Error('Invalid active session; refusing to silently reset progress');
+  if (session?.status === 'lost' && session.launch.mode === 'level' && playtest.enabled) await economyStore.settle(session.sessionId);
   return session;
 }
 export function matchesLaunch(state: State, launch: GameLaunch) {

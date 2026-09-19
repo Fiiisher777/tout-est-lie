@@ -7,3 +7,7 @@ test('loss records result without advancing progress', () => { const s = playerR
 test('daily win survives losing replay and stays isolated by locale', () => { const r: GameResult = { ...completion, mode: 'daily', date: '2026-09-17' }; const s = playerReducer(defaultPlayer(), { type: 'complete', result: r }); const next = playerReducer(s, { type: 'complete', result: { ...r, id: 'second', outcome: 'lost', mistakes: 4 } }); expect(next.dailyCompletions['en:2026-09-17']).toEqual(r); expect(next.completedLevels).toEqual([]); expect(next.dailyCompletions['fr:2026-09-17']).toBeUndefined(); });
 test('reset preserves preferences', () => { const s = playerReducer(defaultPlayer(), { type: 'complete', result: completion }); expect(playerReducer(s, { type: 'resetProgress' })).toEqual(defaultPlayer()); });
 test.each([NaN, Infinity, -1])('invalid elapsed time %s rejected', elapsedMs => { const s = defaultPlayer(); expect(playerReducer(s, { type: 'complete', result: { ...completion, elapsedMs } })).toBe(s); });
+test('timeout loss with fewer than four mistakes records failure without progress', () => {
+  const s = playerReducer(defaultPlayer(), { type: 'complete', result: { ...completion, outcome: 'lost', mistakes: 1, failureReason: 'timeout' } });
+  expect(s.lastResult?.failureReason).toBe('timeout'); expect(s.completedLevels).toEqual([]);
+});

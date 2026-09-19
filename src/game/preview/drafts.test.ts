@@ -60,3 +60,18 @@ test('normal GameView continues to select the original persistent session adapte
   const puzzle = sessionAccess({ mode: 'level', levelId: 'en-easy', locale: 'en', puzzleRevision: 1 });
   expect(puzzle.puzzle.levelId).toBe('en-easy'); expect(puzzle.storage.load).toBe(loadActiveSession); expect(puzzle.storage.save).toBe(saveActiveSession);
 });
+test('draft countdown and simulated continue failure remain isolated from persisted lives', async () => {
+  const record = draftPuzzles().find(p => p.locale === 'fr' && p.position === 4)!;
+  const p = previewPuzzle(record.levelId)!.puzzle;
+  let state = startPuzzle(p, { launch: { mode: 'level', levelId: p.levelId, locale: p.locale, puzzleRevision: p.revision }, position: 4, sessionId: 'timed-preview', seed: 1, clock: { monotonicMs: 0, utcMs: 0 } });
+  const { checkCountdown, continueCountdown } = jest.requireActual<typeof import('../engine/countdown')>('../engine/countdown');
+  const session = createPreviewSession(); mockDisk.set('tiny-game-starter:economy', '{"lives":0}'); const before = [...mockDisk.entries()];
+  expect(state.countdownMs).toBe(120000);
+  state = checkCountdown(state, { monotonicMs: 120000, utcMs: 120000 }); await session.storage.save(state, 120000);
+  expect((await session.storage.load())?.timedOut).toBe(true);
+  state = continueCountdown(state, { monotonicMs: 130000, utcMs: 130000 }); await session.storage.save(state, 130000);
+  state = checkCountdown(state, { monotonicMs: 160000, utcMs: 160000 }); await session.storage.save(state, 160000);
+  await session.complete(produceCompletionResult(state)!);
+  expect(state.status).toBe('lost'); expect([...mockDisk.entries()]).toEqual(before);
+  expect(AsyncStorage.setItem).not.toHaveBeenCalled(); expect(AsyncStorage.removeItem).not.toHaveBeenCalled();
+});

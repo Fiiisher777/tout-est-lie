@@ -12,7 +12,7 @@ export function playerReducer(state: PlayerState, action: PlayerAction): PlayerS
     case 'complete': {
       const r = action.result;
       if (state.lastResult?.id === r.id) return state;
-      if (!Number.isFinite(r.elapsedMs) || r.elapsedMs < 0 || !Number.isInteger(r.mistakes) || r.mistakes < 0 || r.mistakes > 4 || !Number.isInteger(r.hintsUsed) || r.hintsUsed < 0 || !['won', 'lost'].includes(r.outcome) || (r.outcome === 'lost' ? r.mistakes !== 4 : r.mistakes >= 4)) return state;
+      if (!Number.isFinite(r.elapsedMs) || r.elapsedMs < 0 || !Number.isInteger(r.mistakes) || r.mistakes < 0 || r.mistakes > 4 || !Number.isInteger(r.hintsUsed) || r.hintsUsed < 0 || !['won', 'lost'].includes(r.outcome) || (r.outcome === 'lost' ? (r.failureReason !== 'timeout' && r.mistakes !== 4) : r.mistakes >= 4)) return state;
       if (r.mode === 'daily') {
         const key = `${r.locale}:${r.date}`;
         return { ...state, lastResult: r, dailyCompletions: r.outcome === 'won' && !state.dailyCompletions[key] ? { ...state.dailyCompletions, [key]: r } : state.dailyCompletions };

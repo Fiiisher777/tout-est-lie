@@ -1,0 +1,14 @@
+import { initialEconomy, settleFailure, regenerate, grantLife, canStart, decodeEconomy, regenInterval } from './model';
+import { playtest } from '../config/playtest';
+import { entitlements } from '../services/entitlements';
+test('starts with five lives and premium defaults false', () => { expect(initialEconomy().lives).toBe(5); expect(entitlements.isPremium).toBe(false); });
+test('final failure charges one life once per attempt', () => { const s = settleFailure(initialEconomy(), 'a', 1000); expect(s.lives).toBe(4); expect(settleFailure(s, 'a', 2000)).toEqual(s); });
+test('lives never go below zero or above maximum', () => { let s = initialEconomy(); for(let i=0;i<10;i++) s=settleFailure(s,String(i),0); expect(s.lives).toBe(0); for(let i=0;i<10;i++) s=grantLife(s,0); expect(s.lives).toBe(playtest.maxLives); expect(s.regenAt).toBeNull(); });
+test('one life regenerates after thirty minutes, not before', () => { const s=settleFailure(initialEconomy(),'a',1000); expect(regenerate(s,1000+regenInterval()-1).lives).toBe(4); expect(regenerate(s,1000+regenInterval()).lives).toBe(5); });
+test('offline ninety minutes regenerates three lives from one', () => { let s=initialEconomy(); for(let i=0;i<4;i++) s=settleFailure(s,String(i),0); expect(regenerate(s,3*regenInterval()).lives).toBe(4); expect(regenerate(s,99*regenInterval()).lives).toBe(5); });
+test('later failures preserve existing regeneration progress', () => { let s=settleFailure(initialEconomy(),'a',0); s=settleFailure(s,'b',regenInterval()/2); expect(s.regenAt).toBe(regenInterval()); });
+test('zero lives gate normal starts, premium bypasses and pays no life', () => { const s={...initialEconomy(),lives:0,regenAt:regenInterval()}; expect(canStart(s,0)).toBe(false); expect(canStart(s,0,true)).toBe(true); expect(settleFailure(initialEconomy(),'premium',0,true).lives).toBe(5); });
+test('one simulated reward grants exactly one life and caps', () => { const s={...initialEconomy(),lives:0,regenAt:regenInterval()}; expect(grantLife(s,0).lives).toBe(1); expect(grantLife(initialEconomy(),0).lives).toBe(5); });
+test('clock rollback does not regenerate or make values negative', () => { const s=settleFailure(initialEconomy(),'a',100000); expect(regenerate(s,0)).toBe(s); });
+test('save round trip and absence migration retain timestamp accounting', () => { const s=settleFailure(initialEconomy(),'a',0); expect(decodeEconomy(JSON.stringify(s))).toEqual(s); expect(decodeEconomy(null)).toEqual(initialEconomy()); expect(regenerate(decodeEconomy(JSON.stringify(s)),regenInterval()).lives).toBe(5); });
+test.each(['null','{}','{"version":2}','{"version":1,"lives":-1}'])('invalid/future economy %s fails closed', raw => { expect(()=>decodeEconomy(raw)).toThrow(); });

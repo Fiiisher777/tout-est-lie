@@ -1,6 +1,7 @@
 import { HomeScreen } from '../../screens/HomeScreen';
 import DraftPreviewRoute from '../../app/draft-preview';
 import type { ReactElement } from 'react';
+jest.mock('@react-native-async-storage/async-storage', () => ({ __esModule: true, default: { getItem: jest.fn(), setItem: jest.fn() } }));
 jest.mock('expo-router', () => ({ useRouter: () => ({ push: jest.fn() }), Redirect: 'Redirect' }));
 jest.mock('../../state/PlayerProvider', () => ({ usePlayer: () => ({ state: { completedLevels: [], preferences: { language: 'fr' } }, writable: true }) }));
 jest.mock('../../i18n', () => ({ useTranslation: () => ({ locale: 'fr', t: (key: string) => key }) }));

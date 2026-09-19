@@ -1,3 +1,6 @@
+import { LifeIndicator } from '../components/LifeIndicator';
+import { playtest, formatTime } from '../config/playtest';
+import { entitlements } from '../services/entitlements';
 import { useEffect, useState } from 'react';
 import { Alert, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -27,8 +30,8 @@ function Feedback({ message }: { message: string }) {
 export function GameView(props: GameViewProps) {
   const { t } = useTranslation(); const router = useRouter();
   const { state: player, issue, retry } = usePlayer();
-  const ads = placeholderAds({ title: t('adTitle'), body: t('adBody'), reward: t('simulateReward'), cancel: t('cancel') });
-  const { state, ready, storageError, retryStorage, act, requestHint, restart, save, saving, adBusy, feedback } = usePuzzleSession(props, ads);
+  const ads = placeholderAds({ title: t('adTitle'), body: t('simulatedAdBody'), reward: t('completeAd'), cancel: t('cancel') });
+  const { state, remaining, blocked, requestContinue, declineContinue, ready, storageError, retryStorage, act, requestHint, restart, save, saving, adBusy, feedback } = usePuzzleSession(props, ads);
   const playing = state.status === 'playing'; const disabled = !ready || storageError || !playing || state.pauses.length > 0;
   const label = (id: string) => state.puzzle.cards.find(c => c.id === id)!.text;
   const hints = state.usedHints.map(id => {
@@ -39,7 +42,7 @@ export function GameView(props: GameViewProps) {
     void hapticFeedback(player.preferences.haptics);
     Alert.alert(t('settings'), t('developmentPack'), [
       { text: t('settings'), onPress: () => router.push('/settings') },
-      ...(!ready || storageError || adBusy || saving ? [] : [{ text: t('restart'), style: 'destructive' as const, onPress: () => Alert.alert(t('restartConfirm'), t('restartBody'), [
+      ...(!ready || storageError || adBusy || saving || state.status !== 'playing' || state.timedOut ? [] : [{ text: t('restart'), style: 'destructive' as const, onPress: () => Alert.alert(t('restartConfirm'), t('restartBody'), [
         { text: t('cancel'), style: 'cancel' }, { text: t('restart'), style: 'destructive', onPress: restart },
       ]) }]),
       { text: t('cancel'), style: 'cancel' },
@@ -52,7 +55,7 @@ export function GameView(props: GameViewProps) {
       <View style={styles.heading}><AppText style={styles.brand}>{t('productName')}</AppText><AppText style={styles.subtitle}>{title}</AppText></View>
       <Pressable accessibilityRole="button" accessibilityLabel={t('settings')} style={styles.iconButton} onPress={settings}><AppText style={styles.gear}>⚙︎</AppText></Pressable>
     </View>
-    {!ready ? <View style={styles.loading}><AppText style={styles.copy}>{t(storageError ? 'storageRead' : 'loading')}</AppText>{storageError && <Action title={t('retry')} onPress={retryStorage} />}</View> : <>
+    {!ready ? <View style={styles.loading}>{blocked && <LifeIndicator onReward={retryStorage} />}<AppText style={styles.copy}>{blocked ? t('noLives') : t(storageError ? 'storageRead' : 'loading')}</AppText>{(storageError || blocked) && <Action title={t('retry')} onPress={retryStorage} />}</View> : <>
       <ScrollView style={styles.scroll} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         {(storageError || issue) && <View style={styles.notice}><AppText style={styles.copy}>{t(storageError ? 'storageWrite' : issue === 'read' ? 'storageRead' : issue === 'write' ? 'storageWrite' : issue === 'recovered' ? 'recovered' : 'futureVersion')}</AppText>{issue !== 'futureVersion' && <Action title={t('retry')} onPress={() => storageError ? retryStorage() : void retry()} />}</View>}
         <AppText style={styles.instruction}>{t('instructions')}</AppText>
@@ -60,6 +63,7 @@ export function GameView(props: GameViewProps) {
           <View accessible accessibilityLabel={t('mistakesRemaining', { count: calculateRemainingMistakes(state) })} accessibilityLiveRegion="polite" style={styles.dots}>
             {Array.from({ length: 4 }, (_, index) => <View key={index} style={[styles.dot, index >= calculateRemainingMistakes(state) && styles.emptyDot]} />)}
           </View>
+          {remaining !== null && <AppText accessibilityLabel={t('timeRemaining', { time: formatTime(remaining) })} style={[styles.meta, remaining <= playtest.urgencySeconds * 1000 && { color: theme.danger, fontWeight: '700' }]}>{formatTime(remaining)}</AppText>}
           <AppText style={styles.meta}>{props.launch.mode === 'daily' ? props.launch.date : t('selectedCount', { count: state.selected.length })}</AppText>
         </View>
         <View style={styles.grid}>
@@ -74,7 +78,12 @@ export function GameView(props: GameViewProps) {
         <HintCard key={`${state.sessionId}-${hints.length}`} hints={hints} />
       </ScrollView>
       <View style={styles.footer}>
-        {playing ? <>
+        {playing && state.timedOut ? <>
+          <AppText style={styles.terminal} accessibilityLiveRegion="polite">{t('timesUp')}</AppText>
+          <AppText style={styles.meta}>{t('groupsFound', { count: state.solved.length })}</AppText>
+          <Action primary title={t(entitlements.isPremium ? 'freeContinue' : 'rewardContinue', { seconds: playtest.extensionSeconds })} disabled={adBusy} onPress={() => { void requestContinue(); }} />
+          <Action title={t('endAttempt')} disabled={adBusy} onPress={declineContinue} />
+        </> : playing ? <>
           <View style={styles.secondary}>
             <Action title={t('shuffle')} disabled={disabled} onPress={() => act(shuffleCards)} />
             <Action title={t('clear')} disabled={disabled || !state.selected.length} onPress={() => act(clearSelection)} />

@@ -1,3 +1,4 @@
+import { LifeIndicator } from '../components/LifeIndicator';
 import { useRouter } from 'expo-router';
 import { Screen } from '../components/Screen';
 import { AppText } from '../components/AppText';
@@ -11,6 +12,7 @@ export function HomeScreen() {
   const next = levels.find(level => !state.completedLevels.includes(level.id)) ?? levels[0];
   return <Screen title={t('productName')}>
     <AppText variant="muted">{t('tagline')}</AppText>
+    <LifeIndicator />
     <AppText variant="muted">{t('progress', { count: levels.filter(level => state.completedLevels.includes(level.id)).length, total: levels.length })}</AppText>
     <Button title={t(state.completedLevels.length ? 'continue' : 'play')} disabled={!writable || !next} onPress={() => router.push({ pathname: '/game', params: { mode: 'level', levelId: next.id } })} />
     <Button secondary title={t('levels')} onPress={() => router.push('/levels')} />

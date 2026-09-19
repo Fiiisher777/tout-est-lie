@@ -3,7 +3,7 @@ export type AdOutcome = 'unavailable' | 'dismissed' | 'rewarded';
 export interface AdsService { showInterstitial(): Promise<AdOutcome>; showRewarded(): Promise<AdOutcome> }
 // Explicit simulation only: no SDK, tracking, requests, or implicit reward.
 export function placeholderAds(labels: { title: string; body: string; reward: string; cancel: string }): AdsService {
-  return { showInterstitial: async () => 'unavailable', showRewarded: () => new Promise(resolve => {
+  return { showInterstitial: async () => 'unavailable', showRewarded: () => !__DEV__ ? Promise.resolve('unavailable') : new Promise(resolve => {
     Alert.alert(labels.title, labels.body, [
       { text: labels.cancel, style: 'cancel', onPress: () => resolve('dismissed') },
       { text: labels.reward, onPress: () => resolve('rewarded') },

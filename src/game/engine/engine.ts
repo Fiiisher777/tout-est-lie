@@ -1,9 +1,11 @@
+import { countdownDuration } from '../../config/playtest';
 import type { Hint, Puzzle } from '../content/schema';
 import { parsePuzzle } from '../content/validate';
 import type { GameLaunch, GameResult } from '../types';
 export type Clock = { monotonicMs: number; utcMs: number };
-export type PauseReason = 'app' | 'ad' | 'navigation' | 'manual';
+export type PauseReason = 'app' | 'ad' | 'navigation' | 'manual' | 'timeout';
 export type State = {
+  countdownMs?: number | null; continueUsed?: boolean; timedOut?: boolean; failureReason?: 'timeout';
   puzzle: Puzzle; launch: GameLaunch; sessionId: string; seed: number; shuffleCount: number;
   status: 'playing' | 'won' | 'lost'; selected: readonly string[]; order: readonly string[];
   solved: readonly string[]; mistakes: number; usedHints: readonly string[];
@@ -21,11 +23,11 @@ export function shuffle<T>(values: readonly T[], seed: number): T[] {
   }
   return result;
 }
-export function startPuzzle(input: Puzzle, options: { launch: GameLaunch; sessionId: string; seed: number; clock: Clock }): State {
+export function startPuzzle(input: Puzzle, options: { launch: GameLaunch; sessionId: string; seed: number; clock: Clock; position?: number }): State {
   const puzzle = JSON.parse(JSON.stringify(parsePuzzle(input))) as Puzzle;
   const { launch, sessionId, seed, clock } = options;
   if (launch.levelId !== puzzle.levelId || launch.locale !== puzzle.locale || launch.puzzleRevision !== puzzle.revision) throw new Error('Launch does not match puzzle');
-  return { puzzle, launch: { ...launch }, sessionId, seed, shuffleCount: 0, status: 'playing', selected: [], order: shuffle(puzzle.cards.map(c => c.id), seed), solved: [], mistakes: 0, usedHints: [], elapsedMs: 0, activeSince: clock.monotonicMs, pauses: [], completedAt: null };
+  return { countdownMs: countdownDuration(puzzle.difficulty, options.position), continueUsed: false, timedOut: false, puzzle, launch: { ...launch }, sessionId, seed, shuffleCount: 0, status: 'playing', selected: [], order: shuffle(puzzle.cards.map(c => c.id), seed), solved: [], mistakes: 0, usedHints: [], elapsedMs: 0, activeSince: clock.monotonicMs, pauses: [], completedAt: null };
 }
 export function elapsedTime(s: State, now: number): number { return s.elapsedMs + (s.activeSince === null ? 0 : Math.max(0, now - s.activeSince)); }
 export function setPaused(s: State, reason: PauseReason, paused: boolean, now: number): State {
@@ -49,7 +51,7 @@ export function shuffleCards(s: State): Transition {
   return { state: { ...s, shuffleCount, order: shuffle(s.order, (s.seed + shuffleCount) >>> 0) }, outcome: 'shuffled' };
 }
 export function calculateRemainingMistakes(s: State): number { return Math.max(0, 4 - s.mistakes); }
-export function determineOutcome(s: State): State['status'] { return s.solved.length === 4 ? 'won' : s.mistakes >= 4 ? 'lost' : 'playing'; }
+export function determineOutcome(s: State): State['status'] { return s.status === 'lost' ? 'lost' : s.solved.length === 4 ? 'won' : s.mistakes >= 4 ? 'lost' : 'playing'; }
 export function submitSelection(s: State, clock: Clock): Transition {
   if (!playable(s) || s.selected.length !== 4) return reject(s);
   const group = s.puzzle.groups.find(g => g.cardIds.every(id => s.selected.includes(id)));
@@ -65,5 +67,5 @@ export function applyHint(s: State, hintId: string): Transition {
 }
 export function produceCompletionResult(s: State): GameResult | null {
   if (s.status === 'playing' || !s.completedAt) return null;
-  return { ...s.launch, id: `result-${s.sessionId}`, sessionId: s.sessionId, outcome: s.status, mistakes: s.mistakes, hintsUsed: s.usedHints.length, elapsedMs: Math.round(s.elapsedMs), completedAt: s.completedAt };
+  return { ...(s.failureReason ? { failureReason: s.failureReason } : {}), ...s.launch, id: `result-${s.sessionId}`, sessionId: s.sessionId, outcome: s.status, mistakes: s.mistakes, hintsUsed: s.usedHints.length, elapsedMs: Math.round(s.elapsedMs), completedAt: s.completedAt };
 }

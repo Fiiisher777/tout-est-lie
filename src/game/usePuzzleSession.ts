@@ -1,3 +1,8 @@
+import { checkCountdown, continueCountdown, endTimeout, remainingTime, restartAttempt } from './engine/countdown';
+import { playtest, countdownDuration } from '../config/playtest';
+import { findLevel } from './content';
+import { economyStore } from '../economy/store';
+import { entitlements } from '../services/entitlements';
 import { matchesLaunch } from '../state/activeSession';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AppState } from 'react-native';
@@ -17,7 +22,9 @@ function newId() { return `${Date.now()}-${++sessionCounter}-${Math.random().toS
 export function usePuzzleSession({ launch, onComplete, developmentPreview }: GameViewProps, ads: AdsService) {
   const { state: player } = usePlayer();
   const { puzzle, storage } = sessionAccess(launch, developmentPreview);
-  function fresh() { return startPuzzle(puzzle, { launch, sessionId: newId(), seed: Math.floor(Math.random() * 4294967296), clock: clock() }); }
+  function fresh() { return startPuzzle(puzzle, { launch, sessionId: newId(), seed: Math.floor(Math.random() * 4294967296), clock: clock(), position: developmentPreview?.position ?? (launch.mode === 'level' ? findLevel(launch.levelId)?.number : undefined) }); }
+  const [blocked, setBlocked] = useState(false);
+  const [remaining, setRemaining] = useState<number | null>(null);
   const [loadAttempt, setLoadAttempt] = useState(0);
   const focused = useRef(true);
   const [ready, setReady] = useState(false); const readyRef = useRef(false);
@@ -26,39 +33,53 @@ export function usePuzzleSession({ launch, onComplete, developmentPreview }: Gam
   const [adBusy, setAdBusy] = useState(false); const requesting = useRef(false);
   const [saving, setSaving] = useState(false); const savingRef = useRef(false);
   const [feedback, setFeedback] = useState<'solved' | 'mistake' | null>(null);
-  const mounted = useRef(false);
+  const mounted = useRef(false); const lastCheckpoint = useRef(0);
   const [events] = useState(() => createSessionEvents(analytics, Date.now));
   const persist = useCallback((next: State) => { if (!focused.current) return Promise.resolve(); return storage.save(next, performance.now()).then(() => { if (mounted.current) setStorageError(false); }, () => { if (mounted.current) setStorageError(true); }); }, [storage]);
   const update = useCallback((next: State) => { current.current = next; if (readyRef.current) void persist(next); if (mounted.current) render(next); }, [persist]);
-  const pause = useCallback((reason: 'app' | 'ad' | 'navigation', value: boolean) => update(setPaused(current.current, reason, value, performance.now())), [update]);
+  const advanceClock = useCallback(() => {
+    const next = checkCountdown(current.current, clock());
+    if (next !== current.current) { events.emit(next, { name: 'timer_expired' }); update(next); events.finish(next); }
+    setRemaining(remainingTime(next, performance.now()));
+    return next;
+  }, [events, update]);
+  const pause = useCallback((reason: 'app' | 'ad' | 'navigation', value: boolean) => {
+    if (readyRef.current) advanceClock();
+    update(setPaused(current.current, reason, value, performance.now()));
+  }, [update, advanceClock]);
   useEffect(() => {
     mounted.current = true;
     let cancelled = false;
-    void storage.load().then(saved => {
+    void storage.load().then(async saved => {
       if (cancelled) return;
+      if ((!saved || !matchesLaunch(saved, launch)) && !developmentPreview && launch.mode === 'level' && !await economyStore.canStart()) {
+        if (!cancelled) setBlocked(true); return;
+      }
+      if (cancelled) return;
+      setBlocked(false);
       let next: State = { ...current.current, elapsedMs: 0, activeSince: performance.now() };
-      if (saved && matchesLaunch(saved, launch)) { next = { ...saved, activeSince: performance.now(), pauses: [] }; events.resume(next); }
+      if (saved && matchesLaunch(saved, launch)) { next = { ...saved, countdownMs: saved.countdownMs === undefined ? countdownDuration(puzzle.difficulty, developmentPreview?.position ?? findLevel(launch.levelId)?.number) : saved.countdownMs, activeSince: saved.status === 'playing' && !saved.timedOut ? performance.now() : null, pauses: saved.timedOut && saved.status === 'playing' ? ['timeout'] : [] }; events.resume(next); }
       else {
         if (saved) { events.resume(saved); events.abandon(saved, performance.now(), 'leave'); }
         events.start(next);
       }
       next = setPaused(next, 'navigation', !focused.current, performance.now());
       next = setPaused(next, 'app', AppState.currentState !== 'active', performance.now());
-      readyRef.current = true; update(next); setReady(true);
+      readyRef.current = true; update(next); events.finish(next); setRemaining(remainingTime(next, performance.now())); setReady(true);
     }).catch(() => { if (!cancelled) setStorageError(true); });
     const listener = AppState.addEventListener('change', status => pause('app', status !== 'active'));
-    const timer = setInterval(() => { if (readyRef.current && current.current.status === 'playing') void persist(current.current); }, 1000);
+    const timer = setInterval(() => { if (readyRef.current && focused.current && current.current.status === 'playing') { advanceClock(); if (performance.now() - lastCheckpoint.current >= playtest.checkpointMs) { lastCheckpoint.current = performance.now(); void persist(current.current); } } }, playtest.tickMs);
     return () => {
       cancelled = true; mounted.current = false; listener.remove(); clearInterval(timer);
       if (readyRef.current) pause('navigation', true);
     };
     // The view is keyed by launch; hydration runs once for that launch.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [events, pause, persist, loadAttempt, storage]);
+  }, [events, pause, persist, loadAttempt, storage, advanceClock]);
   useFocusEffect(useCallback(() => { focused.current = true; pause('navigation', false); return () => { pause('navigation', true); focused.current = false; }; }, [pause]));
   function act(operation: (s: State) => Transition) {
     if (!readyRef.current || storageError) return;
-    const previous = current.current; const transition = operation(previous);
+    const previous = advanceClock(); if (previous.timedOut || previous.status !== 'playing') return; const transition = operation(previous);
     if (transition.outcome === 'rejected') return;
     update(transition.state);
     if (transition.outcome === 'solved' || transition.outcome === 'mistake') {
@@ -72,6 +93,7 @@ export function usePuzzleSession({ launch, onComplete, developmentPreview }: Gam
   }
   async function requestHint() {
     if (!readyRef.current || storageError || requesting.current) return;
+    if (advanceClock().timedOut) return;
     const hint = getAvailableHints(current.current)[0]; if (!hint) return;
     const session = current.current.sessionId;
     requesting.current = true; setAdBusy(true);
@@ -85,11 +107,34 @@ export function usePuzzleSession({ launch, onComplete, developmentPreview }: Gam
     } catch { /* Unavailable reward never spends a hint. */ }
     finally { if (mounted.current && current.current.sessionId === session) { pause('ad', false); requesting.current = false; setAdBusy(false); } }
   }
+  async function requestContinue() {
+    if (requesting.current || !current.current.timedOut || current.current.continueUsed || current.current.status !== 'playing') return;
+    const session = current.current.sessionId; requesting.current = true; setAdBusy(true);
+    events.emit(current.current, { name: 'rewarded_continue_requested' }); pause('ad', true);
+    try {
+      const outcome = entitlements.isPremium ? 'rewarded' : await ads.showRewarded();
+      if (!mounted.current || current.current.sessionId !== session) return;
+      if (outcome === 'rewarded') {
+        update(continueCountdown(current.current, clock()));
+        events.emit(current.current, { name: 'rewarded_continue_completed' });
+      } else if (outcome === 'unavailable') { const next = endTimeout(current.current, clock()); update(next); events.finish(next); }
+    } catch { /* Failed/dismissed reward leaves the timeout decision available. */ }
+    finally { if (mounted.current && current.current.sessionId === session) { pause('ad', false); requesting.current = false; setAdBusy(false); } }
+  }
+  function declineContinue() {
+    if (requesting.current) return;
+    const next = endTimeout(current.current, clock()); update(next); events.finish(next);
+  }
   function restart() {
     if (!readyRef.current || storageError || requesting.current || savingRef.current) return;
-    const next = fresh(); events.emit(current.current, { name: 'puzzle_restarted', nextSessionId: next.sessionId });
-    events.abandon(current.current, performance.now(), 'restart');
-    update(AppState.currentState === 'active' ? next : setPaused(next, 'app', true, performance.now())); setFeedback(null); events.start(next);
+    if (!playtest.enabled) {
+      const next = fresh(); events.emit(current.current, { name: 'puzzle_restarted', nextSessionId: next.sessionId });
+      events.abandon(current.current, performance.now(), 'restart'); update(next); setFeedback(null); events.start(next); return;
+    }
+    const previous = advanceClock(); const next = restartAttempt(previous);
+    if (next === previous) return;
+    events.emit(previous, { name: 'puzzle_restarted', nextSessionId: next.sessionId });
+    update(next); setFeedback(null);
   }
   const save = useCallback(async () => {
     const result = produceCompletionResult(current.current); if (!result || savingRef.current) return;
@@ -105,5 +150,5 @@ export function usePuzzleSession({ launch, onComplete, developmentPreview }: Gam
     }
   }, [state.status, state.sessionId, save]);
   function retryStorage() { if (readyRef.current) void persist(current.current); else { setStorageError(false); setLoadAttempt(n => n + 1); } }
-  return { state, ready, storageError, retryStorage, act, requestHint, restart, save, saving, adBusy, feedback };
+  return { state, remaining, blocked, requestContinue, declineContinue, ready, storageError, retryStorage, act, requestHint, restart, save, saving, adBusy, feedback };
 }
