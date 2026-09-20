@@ -74,3 +74,12 @@ verify the real catalog and release exclusion.
 The generated `report.md` and `report.json` contain the current editorial report.
 No gameplay, UI, persistence, analytics, ads, schema, importer, or release-loader
 implementation changed. No commit or push was performed.
+
+## Subsequent difficulty-profile revision (2026-09-20)
+
+The import results above describe the original import. Under the new shared release
+profile, French position 11 (`puzzle-fr-015`) changes from difficulty 1 to 2 and
+revision 1 to 2. It remains draft/unapproved. This records a revision to an already
+editorially reviewed batch; cards, groups, hints and editorial notes are unchanged.
+Positions 1–10 remain difficulty 1; positions 21–24 remain difficulty 2. All other
+batch records retain revision 1. No new puzzles or approvals were created.

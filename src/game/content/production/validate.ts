@@ -1,3 +1,4 @@
+import { difficultyForPosition } from '../difficulty';
 import { validatePuzzle, type Issue } from '../validate';
 import { approvalContent, approvalCurrent, validReviewDate, locales, statuses, type ProductionPuzzle, type ReleasedRevision } from './schema';
 const object = (x: unknown): x is Record<string, unknown> => !!x && typeof x === 'object' && !Array.isArray(x);
@@ -10,6 +11,7 @@ export function validateProductionPuzzle(input: unknown): Issue[] {
   const issues = validatePuzzle({ ...input, localization: { kind: 'original' }, review: { status: 'draft' } });
   const check = (ok: unknown, path: string, message: string) => { if (!ok) issues.push({ path, message }); };
   check(Number.isInteger(input.position) && Number(input.position) >= 1 && Number(input.position) <= 100, 'position', 'Expected level position 1–100');
+  if (difficultyForPosition(Number(input.position)) !== undefined) check(input.difficulty === difficultyForPosition(Number(input.position)), 'difficulty', 'Incorrect difficulty for position');
   check(statuses.includes(input.status as never), 'status', 'Invalid editorial status');
   for (const field of ['rationale', 'intendedReason', 'ambiguityNotes']) check(text(input[field]), field, 'Required editorial text (write “none identified” only after considering ambiguity)');
   check(Array.isArray(input.knownDecoys) && input.knownDecoys.every(text), 'knownDecoys', 'Expected array of decoy descriptions; empty is allowed');
@@ -45,7 +47,6 @@ export function validateProduction(input: unknown, released: readonly ReleasedRe
     if (!object(p)) return;
     if (text(p.levelId)) ids.set(p.levelId, (ids.get(p.levelId) ?? 0) + 1);
     const position = `${p.locale}:${p.position}`; positions.set(position, (positions.get(position) ?? 0) + 1);
-    if (Number.isInteger(p.position) && p.difficulty !== Math.ceil(Number(p.position) / 20)) issues.push({ path: `${prefix}.difficulty`, message: 'Incorrect difficulty for position' });
   });
   for (const [key, count] of ids) if (count > 1) issues.push({ path: key, message: 'Duplicate puzzle ID' });
   for (const [key, count] of positions) if (count > 1) issues.push({ path: key, message: 'Duplicate level position' });

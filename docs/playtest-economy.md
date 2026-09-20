@@ -12,7 +12,7 @@ Edit `src/config/playtest.ts` only to tune the experiment:
 - `maxLives`: 5.
 - `lifeRegenMinutes`: 30.
 - `relaxedPositions`: 3 (normal and preview positions 1–3 have no countdown).
-- `countdownSeconds`: difficulty 1 = 120, 2 = 150, 3 = 180, 4 = 210, 5 = 240.
+- `countdownSeconds`: difficulty 1 = 60, 2 = 75, 3 = 90, 4 = 105, 5 = 120.
 - `extensionSeconds`: 30, once per attempt.
 - `urgencySeconds`: 20; a restrained text color change, no flashing/animation.
 - `tickMs`: 250; `checkpointMs`: 1000. Meaningful transitions save immediately.
@@ -21,6 +21,8 @@ Countdown uses the existing injected monotonic active-time clock. App inactivity
 backgrounding, navigation suspension and rewarded dialogs pause active time. UTC
 completion timestamps remain separate. Results retain elapsed active milliseconds.
 Persisted attempts retain their granted time budget if configuration later changes.
+The shorter countdowns apply to new attempts in development, Draft Preview and TESTER;
+resume or manual Restart does not replace an existing attempt’s saved budget.
 Legacy unfinished saves acquire a budget without resetting previously elapsed time.
 
 ## Attempt rules
@@ -103,7 +105,7 @@ preview-only state.
    remain usable. Complete the **Simulated ad · +1 life** dialog; cancel once first
    to verify no reward. One completion gives exactly one life and permits play.
 4. Open Home → Draft Preview → FR position 1, 2 or 3: there is no countdown.
-   Open FR position 4: it starts at 2:00. FR position 21 starts at 2:30.
+   Open FR position 4: it starts at 1:00. FR position 21 starts at 1:15.
 5. Solve a group, make a mistake, then background the app briefly. Return and
    confirm time did not tick in the background. The existing Hint reward dialog
    must also suspend time.

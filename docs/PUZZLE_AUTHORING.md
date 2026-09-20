@@ -83,8 +83,9 @@ records to the unchanged engine schema; fixture-only `review`/`localization`
 formats are not the production approval mechanism.
 
 - `position`: integer 1–100, unique within its locale.
-- `difficulty`: 1 for positions 1–20; 2 for 21–40; 3 for 41–60;
+- `difficulty`: 1 for positions 1–10; 2 for 11–35; 3 for 36–60;
   4 for 61–80; 5 for 81–100.
+  The shared source is `src/game/content/difficulty.ts` (10/25/25/20/20 levels per locale).
 - `revision`: positive integer. Increment whenever revising reviewed/published content.
 - `cards`: exactly 16 `{id, text}` objects, with unique IDs and visible text.
   Duplicate checks normalize Unicode NFC, whitespace and locale-aware case;

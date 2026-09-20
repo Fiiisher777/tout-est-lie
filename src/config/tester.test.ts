@@ -19,7 +19,7 @@ test('standalone tester exposes exactly FR 1–10 and enables economy without __
   expect(content.levelsFor('en')).toEqual([]);
   expect(content.puzzles.every(p => p.review.status === 'draft')).toBe(true);
   const { countdownDuration } = require('./playtest') as typeof import('./playtest');
-  expect(countdownDuration(1, 4)).toBe(120000);
+  expect(countdownDuration(1, 4)).toBe(60000);
   expect(countdownDuration(1, 1)).toBeNull();
   expect(require('./environment').playtestEnabled).toBe(true);
 }));

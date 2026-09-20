@@ -1,3 +1,4 @@
+import { difficultyForPosition } from './difficulty';
 import type { Pack, Puzzle } from './schema';
 export type Issue = { path: string; message: string };
 const object = (x: unknown): x is Record<string, unknown> => !!x && typeof x === 'object' && !Array.isArray(x);
@@ -81,7 +82,7 @@ export function validateCatalog(input: unknown, production = false): Issue[] {
       if (pack.purpose === 'normal') {
         const n = entry.number ?? 0;
         if (!Number.isInteger(n) || n < 1 || positions.has(n)) issues.push({ path: pack.packId, message: 'Invalid level position' }); positions.add(n);
-        if (production && puzzle?.difficulty !== Math.ceil(n / 20)) issues.push({ path: entry.levelId, message: 'Difficulty progression mismatch' });
+        if (production && puzzle?.difficulty !== difficultyForPosition(n)) issues.push({ path: entry.levelId, message: 'Difficulty progression mismatch' });
       }
     }
     if (pack.purpose === 'normal' && ([...positions].some(n => n > positions.size) || (production && positions.size !== 100))) issues.push({ path: pack.packId, message: 'Expected contiguous level positions (100 for release)' });

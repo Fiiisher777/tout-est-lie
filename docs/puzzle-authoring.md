@@ -4,7 +4,7 @@ This build contains nine synthetic development puzzles: two normal positions and
 
 The release target is 100 playable positions per locale, not 300 original concepts. Each locale pack maps numbered positions to concrete puzzle IDs. Direct translations use `translated-equivalent`; adaptations use `adapted-equivalent`, both referencing the source ID and revision. Independent replacements use `original`. All equivalents receive independent native-language review. Never silently fall back to another language.
 
-Each puzzle requires 16 unique visible cards, four groups of four, complete disjoint membership, difficulty 1–5, stable IDs, revision, locale, source metadata, hints, and review status. UI strings belong in i18n; puzzle strings belong in JSON. Group and hint IDs are local to their puzzle; puzzle IDs are globally unique. Production positions 1–20 have difficulty 1, 21–40 difficulty 2, etc.
+Each puzzle requires 16 unique visible cards, four groups of four, complete disjoint membership, difficulty 1–5, stable IDs, revision, locale, source metadata, hints, and review status. UI strings belong in i18n; puzzle strings belong in JSON. Group and hint IDs are local to their puzzle; puzzle IDs are globally unique. Production positions 1–10 have difficulty 1, 11–35 difficulty 2, 36–60 difficulty 3, 61–80 difficulty 4, and 81–100 difficulty 5. The shared profile is `src/game/content/difficulty.ts`.
 
 PAIR identifies two members of an unsolved group. CATEGORY contains an authored partial clue. IDs are once per session, never auto-solve groups, and are granted only after a rewarded outcome from the ads abstraction. V1 has no elimination hint.
 

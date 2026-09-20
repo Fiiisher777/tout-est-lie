@@ -52,8 +52,9 @@ created during this implementation.
   Normal screens, engine, local player persistence and economy are reused.
 - Tester has no additional route. Play opens Levels. Draft Preview entry, route and
   injection access are blocked in tester, including when locally using Expo Go.
-- Countdown/life/reward values and rules are unchanged. Only their environment
-  gate and tester-facing reward wording differ.
+- Tester and Draft Preview share `src/config/playtest.ts`: positions 1–3 are
+  untimed; difficulties 1–5 use 60/75/90/105/120 seconds for new attempts. One
+  rewarded timeout continue still adds 30 seconds. Life and attempt rules are unchanged.
 - Android tester package is **`com.nodi.playtest.tester`**, with scheme `noditester`.
   There was no existing Android package or iOS bundle ID to suffix. Development and
   production identifiers remain unset and unchanged. Reserve this package for beta;

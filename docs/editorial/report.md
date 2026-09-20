@@ -14,6 +14,14 @@ Approved-release readiness: NOT READY
 | EN | 1 | 0 | 2–100 |
 | ES | 1 | 0 | 2–100 |
 
+## Release difficulty profile (per locale)
+
+- Positions 1–10: difficulty 1 (10 levels)
+- Positions 11–35: difficulty 2 (25 levels)
+- Positions 36–60: difficulty 3 (25 levels)
+- Positions 61–80: difficulty 4 (20 levels)
+- Positions 81–100: difficulty 5 (20 levels)
+
 ## Counts by status
 
 - draft: 17
@@ -24,8 +32,8 @@ Approved-release readiness: NOT READY
 
 ## Counts by difficulty
 
-- Difficulty 1: 13
-- Difficulty 2: 4
+- Difficulty 1: 12
+- Difficulty 2: 5
 - Difficulty 3: 0
 - Difficulty 4: 0
 - Difficulty 5: 0
@@ -661,7 +669,7 @@ Hints:
 
 ### puzzle-fr-015
 
-Locale: fr · Position: 11 · Difficulty: 1 · Revision: 1
+Locale: fr · Position: 11 · Difficulty: 2 · Revision: 2
 
 Status: **draft** · Approval: not current
 

@@ -4,7 +4,7 @@ export const playtest = {
   enabled: playtestEnabled, maxLives: 5, lifeRegenMinutes: 30,
   extensionSeconds: 30, urgencySeconds: 20, tickMs: 250, checkpointMs: 1000,
   relaxedPositions: 3,
-  countdownSeconds: { 1: 120, 2: 150, 3: 180, 4: 210, 5: 240 },
+  countdownSeconds: { 1: 60, 2: 75, 3: 90, 4: 105, 5: 120 },
 } as const;
 export function countdownDuration(difficulty: 1 | 2 | 3 | 4 | 5, position?: number): number | null {
   if (!playtest.enabled || (position !== undefined && position >= 1 && position <= playtest.relaxedPositions)) return null;

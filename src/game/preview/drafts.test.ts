@@ -66,11 +66,11 @@ test('draft countdown and simulated continue failure remain isolated from persis
   let state = startPuzzle(p, { launch: { mode: 'level', levelId: p.levelId, locale: p.locale, puzzleRevision: p.revision }, position: 4, sessionId: 'timed-preview', seed: 1, clock: { monotonicMs: 0, utcMs: 0 } });
   const { checkCountdown, continueCountdown } = jest.requireActual<typeof import('../engine/countdown')>('../engine/countdown');
   const session = createPreviewSession(); mockDisk.set('tiny-game-starter:economy', '{"lives":0}'); const before = [...mockDisk.entries()];
-  expect(state.countdownMs).toBe(120000);
-  state = checkCountdown(state, { monotonicMs: 120000, utcMs: 120000 }); await session.storage.save(state, 120000);
+  expect(state.countdownMs).toBe(60000);
+  state = checkCountdown(state, { monotonicMs: 60000, utcMs: 60000 }); await session.storage.save(state, 60000);
   expect((await session.storage.load())?.timedOut).toBe(true);
-  state = continueCountdown(state, { monotonicMs: 130000, utcMs: 130000 }); await session.storage.save(state, 130000);
-  state = checkCountdown(state, { monotonicMs: 160000, utcMs: 160000 }); await session.storage.save(state, 160000);
+  state = continueCountdown(state, { monotonicMs: 70000, utcMs: 70000 }); await session.storage.save(state, 70000);
+  state = checkCountdown(state, { monotonicMs: 100000, utcMs: 100000 }); await session.storage.save(state, 100000);
   await session.complete(produceCompletionResult(state)!);
   expect(state.status).toBe('lost'); expect([...mockDisk.entries()]).toEqual(before);
   expect(AsyncStorage.setItem).not.toHaveBeenCalled(); expect(AsyncStorage.removeItem).not.toHaveBeenCalled();

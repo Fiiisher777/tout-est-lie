@@ -1,3 +1,4 @@
+import { releaseDifficultyProfile } from '../difficulty';
 import { approvalCurrent, locales, statuses, type ProductionPuzzle, type ReleasedRevision } from './schema';
 import { releaseCheck, validateProduction, validateProductionPuzzle } from './validate';
 import { releasePuzzles } from './release';
@@ -25,6 +26,7 @@ export function productionSummary(input: unknown, released: readonly ReleasedRev
       missingPositions: missing(locale, records), missingApprovedPositions: missing(locale, approved),
     }])),
     statuses: Object.fromEntries(statuses.map(status => [status, records.filter(p => p.status === status).length])),
+    difficultyProfile: releaseDifficultyProfile.map(band => ({ ...band, levelsPerLocale: band.last - band.first + 1 })),
     difficulties: Object.fromEntries([1, 2, 3, 4, 5].map(difficulty => [difficulty, records.filter(p => p.difficulty === difficulty).length])),
     equivalenceCoverage: concepts.map(concept => ({ concept, locales: locales.filter(locale => records.some(p => p.concept?.id === concept && p.locale === locale)), missingLocales: locales.filter(locale => !records.some(p => p.concept?.id === concept && p.locale === locale)), relationships: records.filter(p => p.concept?.id === concept).map(p => ({ puzzleId: p.levelId, relationship: p.concept.relationship, source: p.concept.source ?? null })) })),
     structuralErrors: errors, releaseErrors, approvedPlayable: approved.length,
@@ -35,6 +37,7 @@ export function editorialReport(input: unknown, released: readonly ReleasedRevis
   const summary = productionSummary(input, released);
   const lines = ['# Production puzzle editorial report', '', '> Structural checks do not prove semantic uniqueness. Human editorial review is required.', '', `TOTAL PUZZLES: ${summary.total}`, `Approved playable: ${summary.approvedPlayable}`, `Approved-release readiness: ${summary.releaseReady ? 'READY' : 'NOT READY'}`, '', '## Locale coverage', '', '| Locale | Present | Approved | Missing positions |', '| --- | ---: | ---: | --- |'];
   for (const locale of locales) { const s = summary.locales[locale]; lines.push(`| ${locale.toUpperCase()} | ${s.total} | ${s.approved} | ${positionRanges(s.missingPositions)} |`); }
+  lines.push('', '## Release difficulty profile (per locale)', '', ...summary.difficultyProfile.map(band => `- Positions ${band.first}–${band.last}: difficulty ${band.difficulty} (${band.levelsPerLocale} levels)`));
   lines.push('', '## Counts by status', '', ...Object.entries(summary.statuses).map(([s, n]) => `- ${s}: ${n}`), '', '## Counts by difficulty', '', ...Object.entries(summary.difficulties).map(([d, n]) => `- Difficulty ${d}: ${n}`), '', '## Structural errors', '', ...(summary.structuralErrors.length ? summary.structuralErrors.map(i => `- ${escape(i.path)}: ${escape(i.message)}`) : ['None.']), '', '## Equivalence coverage', '');
   for (const c of summary.equivalenceCoverage) lines.push(`- ${escape(c.concept)}: ${c.locales.join(', ')}; missing: ${c.missingLocales.join(', ') || 'none'}. ${c.relationships.map(r => `${escape(r.puzzleId)} (${r.relationship}${r.source ? ` → ${escape(r.source.puzzleId)} revision ${r.source.revision}` : ''})`).join('; ')}`);
   lines.push('', '## Release blockers', '', ...locales.map(locale => `- ${locale.toUpperCase()}: missing approved positions ${positionRanges(summary.locales[locale].missingApprovedPositions)}`), '', 'See the JSON report for the complete machine-readable error list.', '', '## Individual puzzles', '');

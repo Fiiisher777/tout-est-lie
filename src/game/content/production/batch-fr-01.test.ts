@@ -11,9 +11,9 @@ test('first French batch contains exactly the reserved 15 positions and stable I
   expect(batch.map(p => p.levelId).sort()).toEqual(Array.from({ length: 15 }, (_, i) => `puzzle-fr-${String(i + 1).padStart(3, '0')}`));
   expect(validateProduction(catalog, released)).toEqual([]);
 });
-test.each(batch.map(p => [p.levelId, p] as const))('%s retains revision-one draft status and valid structure', (_, puzzle) => {
-  expect(puzzle.status).toBe('draft'); expect(puzzle.revision).toBe(1);
-  expect(puzzle.difficulty).toBe(puzzle.position <= 11 ? 1 : 2);
+test.each(batch.map(p => [p.levelId, p] as const))('%s retains expected revision and draft status and valid structure', (_, puzzle) => {
+  expect(puzzle.status).toBe('draft'); expect(puzzle.revision).toBe(puzzle.position === 11 ? 2 : 1);
+  expect(puzzle.difficulty).toBe(puzzle.position <= 10 ? 1 : 2);
   expect(validateProductionPuzzle(puzzle)).toEqual([]);
   expect(puzzle.cards).toHaveLength(16);
   expect(new Set(puzzle.cards.map(c => c.text.normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('fr'))).size).toBe(16);

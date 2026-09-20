@@ -1,3 +1,4 @@
+import { difficultyForPosition } from '../difficulty';
 import samples from './__fixtures__/samples.json';
 import { approvalContent, approvalCurrent, locales, toEnginePuzzle, type ProductionPuzzle } from './schema';
 import { approvePuzzle, releaseCheck, importDrafts, validateProduction, validateProductionPuzzle } from './validate';
@@ -57,7 +58,7 @@ test('duplicate IDs are rejected, including a malformed duplicate', () => {
   const p = approve(); const bad = { ...draft(), cards: [] };
   expect(messages([p, bad])).toContain('Duplicate puzzle ID'); expect(releasePuzzles([p, bad])).toEqual([]);
 });
-test.each([[1, 1], [20, 1], [21, 2], [40, 2], [41, 3], [60, 3], [61, 4], [80, 4], [81, 5], [100, 5]])('position %i requires difficulty %i', (position, difficulty) => {
+test.each([[1, 1], [10, 1], [11, 2], [35, 2], [36, 3], [60, 3], [61, 4], [80, 4], [81, 5], [100, 5]])('position %i requires difficulty %i', (position, difficulty) => {
   const p = { ...draft(), position, difficulty };
   expect(validateProduction([p])).toEqual([]);
   expect(messages([{ ...p, difficulty: difficulty === 5 ? 1 : difficulty + 1 }])).toContain('Incorrect difficulty');
@@ -91,7 +92,7 @@ test('three sample drafts cannot become release content', () => {
 });
 test('strict release needs exactly 100 approved positions per locale', () => {
   // Synthetic fixtures exercise the gate, not authored production content.
-  const full = locales.flatMap(locale => Array.from({ length: 100 }, (_, i) => approve({ ...draft(), levelId: `test-${locale}-${i + 1}`, locale, position: i + 1, difficulty: Math.ceil((i + 1) / 20) as ProductionPuzzle['difficulty'], concept: { id: `test-${locale}-${i + 1}`, relationship: 'original' } })));
+  const full = locales.flatMap(locale => Array.from({ length: 100 }, (_, i) => approve({ ...draft(), levelId: `test-${locale}-${i + 1}`, locale, position: i + 1, difficulty: difficultyForPosition(i + 1)!, concept: { id: `test-${locale}-${i + 1}`, relationship: 'original' } })));
   expect(releaseCheck(full)).toEqual([]); expect(releasePuzzles(full)).toHaveLength(300);
   expect(releaseCheck(full.slice(1))).not.toEqual([]);
   expect(releaseCheck(full.map((p, i) => i ? p : { ...p, status: 'draft' }))).not.toEqual([]);

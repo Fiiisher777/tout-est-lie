@@ -616,9 +616,41 @@
     "approved": 0,
     "rejected": 0
   },
+  "difficultyProfile": [
+    {
+      "first": 1,
+      "last": 10,
+      "difficulty": 1,
+      "levelsPerLocale": 10
+    },
+    {
+      "first": 11,
+      "last": 35,
+      "difficulty": 2,
+      "levelsPerLocale": 25
+    },
+    {
+      "first": 36,
+      "last": 60,
+      "difficulty": 3,
+      "levelsPerLocale": 25
+    },
+    {
+      "first": 61,
+      "last": 80,
+      "difficulty": 4,
+      "levelsPerLocale": 20
+    },
+    {
+      "first": 81,
+      "last": 100,
+      "difficulty": 5,
+      "levelsPerLocale": 20
+    }
+  ],
   "difficulties": {
-    "1": 13,
-    "2": 4,
+    "1": 12,
+    "2": 5,
     "3": 0,
     "4": 0,
     "5": 0

@@ -2119,10 +2119,10 @@
   {
     "schemaVersion": 1,
     "levelId": "puzzle-fr-015",
-    "revision": 1,
+    "revision": 2,
     "locale": "fr",
     "position": 11,
-    "difficulty": 1,
+    "difficulty": 2,
     "status": "draft",
     "concept": {
       "id": "concept-fr-rouge-poissons-tri-sols",

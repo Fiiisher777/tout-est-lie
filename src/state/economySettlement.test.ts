@@ -23,17 +23,17 @@ test('winning and incorrect submissions never debit lives; final loss debits exa
   expect(JSON.parse(mockDisk.get('tiny-game-starter:economy')!).lives).toBe(4);
 });
 test('timeout decision persists frozen across reload without spending a life until declined',async()=>{
-  const timed=checkCountdown(fresh('timeout'),{monotonicMs:120000,utcMs:120000});await saveActiveSession(timed,120000);
+  const timed=checkCountdown(fresh('timeout'),{monotonicMs:60000,utcMs:60000});await saveActiveSession(timed,60000);
   const restored=(await loadActiveSession())!;expect(restored.timedOut).toBe(true);expect(restored.pauses).toEqual(['timeout']);
   const before=JSON.parse(mockDisk.get('tiny-game-starter:economy')!).lives;
-  await saveActiveSession(endTimeout(restored,{monotonicMs:130000,utcMs:130000}),130000);
+  await saveActiveSession(endTimeout(restored,{monotonicMs:70000,utcMs:70000}),70000);
   expect(JSON.parse(mockDisk.get('tiny-game-starter:economy')!).lives).toBe(before-1);
 });
 test('failed removal leaves terminal journal recoverable without another debit',async()=>{
-  const failed=endTimeout(checkCountdown(fresh('journal'),{monotonicMs:120000,utcMs:120000}),{monotonicMs:130000,utcMs:130000});
+  const failed=endTimeout(checkCountdown(fresh('journal'),{monotonicMs:60000,utcMs:60000}),{monotonicMs:70000,utcMs:70000});
   jest.mocked(AsyncStorage.removeItem).mockRejectedValueOnce(new Error('disk'));
-  await expect(saveActiveSession(failed,130000)).rejects.toThrow('disk');
+  await expect(saveActiveSession(failed,70000)).rejects.toThrow('disk');
   const charged=JSON.parse(mockDisk.get('tiny-game-starter:economy')!).lives;
-  expect((await loadActiveSession())?.status).toBe('lost');await saveActiveSession(failed,130000);
+  expect((await loadActiveSession())?.status).toBe('lost');await saveActiveSession(failed,70000);
   expect(JSON.parse(mockDisk.get('tiny-game-starter:economy')!).lives).toBe(charged);expect(await loadActiveSession()).toBeNull();
 });
