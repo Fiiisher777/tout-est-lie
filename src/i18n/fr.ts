@@ -1,7 +1,14 @@
+import { dailyLore } from '../lore/content';
 import type { Translations } from './en';
 export const fr: Translations = {
+  connections: "%{count} / 4 connexions",
+  hintPairTitle: "Paire",
+  hintPairDescription: "Révéler deux cartes du même groupe.",
+  hintCategoryTitle: "Catégorie",
+  hintCategoryDescription: "Révéler l’indice rédigé pour une catégorie.",
   lifeCount: "%{count} vies sur %{max}",
   unlimitedLives: "Vies illimitées",
+  nextLifeCompact: "+1 dans %{time}",
   nextLife: "Prochaine vie dans %{time}",
   noLives: "Plus de vies. Patientez ou terminez une publicité simulée.",
   rewardLife: "Pub simulée · +1 vie",
@@ -41,7 +48,7 @@ export const fr: Translations = {
   adBody: "Aucune publicité réelle. Simulez une récompense pour obtenir un indice.",
   simulateReward: "Simuler la récompense",
   resultStats: "Erreurs : %{mistakes} · Indices : %{hints} · Temps actif : %{seconds}s",
-  home: 'Accueil', levels: 'Niveaux', game: 'Jeu', results: 'Résultats', settings: 'Réglages', daily: 'Défi du jour',
+  home: 'Accueil', levels: 'Niveaux', game: 'Jeu', results: 'Résultats', settings: 'Réglages', daily: dailyLore.publicName,
   welcome: 'Trouvez les liens. Quatre groupes, seize cartes.', play: 'Jouer', continue: 'Continuer',
   level: 'Niveau %{number}', completed: 'Terminé', available: 'Disponible', best: 'Meilleur score : %{score}',
   progress: '%{count} niveaux terminés sur %{total}', placeholder: 'Emplacement du jeu',
@@ -49,7 +56,7 @@ export const fr: Translations = {
   completeDemo: 'Terminer la démo (0 point)', saving: 'Enregistrement…', score: 'Score : %{score}',
   replay: 'Rejouer', next: 'Niveau suivant', backHome: 'Retour à l’accueil', noResult: 'Aucun résultat enregistré à afficher.',
   invalidGame: 'Ce niveau ou ce défi est indisponible.', dailyHelp: 'Un niveau sélectionné chaque jour à 00 h 00 UTC. Disponible hors ligne ; la date dépend de l’horloge de l’appareil.',
-  dailyDate: 'Date UTC : %{date}', dailyDone: 'Le défi du jour est terminé.', playDaily: 'Jouer au défi du jour',
+  dailyDate: 'Date UTC : %{date}', dailyDone: 'Observation du jour terminée.', playDaily: 'Observer',
   sound: 'Son', haptics: 'Vibrations', language: 'Langue', system: 'Langue du système',
   soundHelp: 'Le choix du son est enregistré. Les sons seront ajoutés avec un jeu.',
   reset: 'Réinitialiser la progression', resetTitle: 'Effacer toute la progression ?', resetBody: 'Les résultats et les défis terminés seront effacés. Vos réglages seront conservés.',

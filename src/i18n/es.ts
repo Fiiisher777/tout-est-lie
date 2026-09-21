@@ -1,7 +1,13 @@
 import type { Translations } from './en';
 export const es: Translations = {
+  connections: "%{count} / 4 conexiones",
+  hintPairTitle: "Pareja",
+  hintPairDescription: "Revelar dos cartas del mismo grupo.",
+  hintCategoryTitle: "Categoría",
+  hintCategoryDescription: "Revelar la pista escrita para una categoría.",
   lifeCount: "%{count} de %{max} vidas",
   unlimitedLives: "Vidas ilimitadas",
+  nextLifeCompact: "+1 en %{time}",
   nextLife: "Próxima vida en %{time}",
   noLives: "No quedan vidas. Espera o completa un anuncio simulado.",
   rewardLife: "Anuncio simulado · +1 vida",

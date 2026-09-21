@@ -1,0 +1,695 @@
+{
+  "version": "1.0",
+  "status": "brand-lore-draft",
+  "brand": {
+    "publicName": "NODI",
+    "machineName": "N.O.D.I.",
+    "machineExpansion": "Neural Observation of Distant Ideas",
+    "taglineFr": "Tout est lié.",
+    "centralBelief": "Aucune idée n’existe seule.",
+    "worldPremise": "Le Professeur vit dans une bibliothèque immense, ancienne, chaleureuse et légèrement impossible. Il a construit N.O.D.I., une machine analogique étrange qui détecte des connexions invisibles entre des idées éloignées. Il pense étudier la machine, mais certains signaux suggèrent progressivement que N.O.D.I. et la bibliothèque savent peut-être plus de choses que lui.",
+    "narrativePrinciples": [
+      "Curiosité > intelligence.",
+      "Émerveillement > gamification.",
+      "Humour sec > humour enfantin.",
+      "Les mots sont vivants.",
+      "Mystère sans exposition.",
+      "Le joueur ne passe jamais un test de QI.",
+      "Le lore doit se découvrir par fragments, jamais par un long écran explicatif."
+    ]
+  },
+  "professor": {
+    "temporaryName": "Le Professeur",
+    "namingRule": "Ne pas lui donner de nom définitif avant l’exploration visuelle du personnage.",
+    "core": "Brillant sans chercher à le montrer, tendre, extrêmement curieux, légèrement obsessionnel. Il trouve le monde fascinant et préfère une excellente question à une réponse définitive.",
+    "comicEngine": "Il prend au sérieux des détails minuscules, s’égare dans une étymologie pendant des heures, soupçonne parfois les mots de mauvaise foi et traite N.O.D.I. comme une collègue brillante mais exaspérante.",
+    "never": [
+      "Ne parle jamais comme un coach.",
+      "Ne félicite pas le joueur pour 'entraîner son cerveau'.",
+      "N’utilise pas de langage de productivité, performance, QI ou optimisation mentale.",
+      "Ne culpabilise jamais le joueur d’avoir manqué un jour.",
+      "Ne devient pas une mascotte surexcitée ou infantile.",
+      "N’explique jamais une blague qu’il vient de faire."
+    ],
+    "always": [
+      "Réagit à la découverte elle-même plutôt qu’à la performance du joueur.",
+      "Peut admettre qu’un faux regroupement était séduisant.",
+      "Parle comme s’il enquêtait aux côtés du joueur.",
+      "Garde des phrases relativement courtes.",
+      "Laisse parfois un silence ou une hésitation.",
+      "Montre de l’émerveillement sans emphase artificielle."
+    ]
+  },
+  "openingRitual": {
+    "name": "Le Carnet du Professeur",
+    "frequency": "Première ouverture significative de la journée, pas chaque retour bref dans l’app.",
+    "durationTargetSeconds": "2–4",
+    "actions": [
+      "Continuer",
+      "Conserver dans le carnet"
+    ],
+    "collectionName": "Le Carnet des mots retrouvés",
+    "rule": "Une carte d’ouverture est une petite récompense de curiosité. Elle ne donne ni XP ni monnaie. La collection existe pour l’attachement, pas pour compléter un compteur."
+  },
+  "openingCards": [
+    {
+      "id": "opening-001",
+      "type": "mot_retrouve",
+      "title": "Ébaubi",
+      "body": "Très étonné, frappé de stupeur.",
+      "professorNote": "« Il faudrait être ébaubi plus souvent. On regarde mieux autour de soi. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-002",
+      "type": "mot_retrouve",
+      "title": "Amphigouri",
+      "body": "Discours ou texte volontairement ou involontairement obscur et embrouillé.",
+      "professorNote": "« Mot extrêmement utile. Surtout pendant les réunions. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-003",
+      "type": "mot_retrouve",
+      "title": "Billevesée",
+      "body": "Idée, propos ou chose jugée futile ou sans importance.",
+      "professorNote": "« Une billevesée peut occuper une excellente après-midi. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-004",
+      "type": "mot_retrouve",
+      "title": "Palimpseste",
+      "body": "Support écrit dont un premier texte a été effacé pour permettre une nouvelle écriture, tout en laissant parfois des traces.",
+      "professorNote": "« Rien n’efface jamais parfaitement une phrase. J’aime beaucoup cette idée. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-005",
+      "type": "mot_retrouve",
+      "title": "Ineffable",
+      "body": "Qu’on ne parvient pas à exprimer par des mots.",
+      "professorNote": "« Évidemment, nous avons créé un mot pour dire que les mots ne suffisent pas. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-006",
+      "type": "mot_retrouve",
+      "title": "Liminaire",
+      "body": "Qui se trouve au seuil, au commencement d’un ouvrage ou d’un propos.",
+      "professorNote": "« Un mot qui vit littéralement à l’entrée. Convenable pour aujourd’hui. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-007",
+      "type": "mot_retrouve",
+      "title": "Lacunaire",
+      "body": "Incomplet parce qu’il comporte des lacunes ou des manques.",
+      "professorNote": "« Les trous racontent parfois autant que ce qui reste. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-008",
+      "type": "mot_retrouve",
+      "title": "Pérégrination",
+      "body": "Voyage ou déplacement comportant de nombreux détours.",
+      "professorNote": "« Un terme élégant pour dire que j’ai encore pris le mauvais escalier. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-009",
+      "type": "mot_retrouve",
+      "title": "Désuet",
+      "body": "Qui n’est plus ou presque plus en usage.",
+      "professorNote": "« Les mots désuets ne sont pas morts. Ils attendent. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-010",
+      "type": "mot_retrouve",
+      "title": "Ubiquité",
+      "body": "Fait d’être présent en plusieurs lieux à la fois.",
+      "professorNote": "« Très pratique. Je travaille encore sur la méthode. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-011",
+      "type": "mot_retrouve",
+      "title": "Velléité",
+      "body": "Intention ou envie faible qui n’aboutit pas nécessairement à l’action.",
+      "professorNote": "« J’ai une velléité de ranger cette table depuis 1987. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-012",
+      "type": "mot_retrouve",
+      "title": "Prolixe",
+      "body": "Qui s’exprime avec une abondance excessive de paroles ou de détails.",
+      "professorNote": "« Je n’ai aucun commentaire à faire sur ce mot. Aucun. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-013",
+      "type": "etymologie",
+      "title": "Compagnon",
+      "body": "Le mot remonte à une formation liée à l’idée de partager le pain.",
+      "professorNote": "« Certaines relations commencent donc par une miche. C’est rassurant. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-014",
+      "type": "etymologie",
+      "title": "Copain",
+      "body": "Le mot est historiquement apparenté à compagnon.",
+      "professorNote": "« La langue recycle. Elle est beaucoup moins gaspilleuse que nous. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-015",
+      "type": "etymologie",
+      "title": "Enthousiaste",
+      "body": "Le mot vient d’une histoire ancienne liée à l’idée d’inspiration divine.",
+      "professorNote": "« Aujourd’hui, nous l’utilisons surtout devant un très bon dessert. Les mots voyagent. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-016",
+      "type": "etymologie",
+      "title": "Palindrome",
+      "body": "Son nom renvoie à l’idée de revenir en arrière dans sa course.",
+      "professorNote": "« KAYAK devait évidemment finir par attirer notre attention. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-017",
+      "type": "etymologie",
+      "title": "Alphabet",
+      "body": "Son nom est construit à partir des noms des premières lettres grecques, alpha et bêta.",
+      "professorNote": "« Nous avons nommé toutes les lettres avec deux lettres. Audacieux. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-018",
+      "type": "etymologie",
+      "title": "Nostalgie",
+      "body": "Le mot a été construit à partir de racines grecques associées au retour et à la douleur.",
+      "professorNote": "« Il existe donc des mots qui ressemblent déjà à une petite histoire. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-019",
+      "type": "etymologie",
+      "title": "Catastrophe",
+      "body": "Le mot vient d’une racine grecque exprimant un renversement ou un retournement.",
+      "professorNote": "« À l’origine, tout était donc affaire de retournement. Les scénaristes n’ont rien inventé. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-020",
+      "type": "etymologie",
+      "title": "Hasard",
+      "body": "Le mot français a une histoire ancienne liée au jeu et au dé.",
+      "professorNote": "« Évidemment que le hasard a fréquenté les dés avant nous. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-021",
+      "type": "curiosite_linguistique",
+      "title": "Hôte",
+      "body": "En français, “hôte” peut désigner celui qui reçoit comme celui qui est reçu.",
+      "professorNote": "« Je maintiens que ce mot doit s’expliquer devant un tribunal. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-022",
+      "type": "curiosite_linguistique",
+      "title": "Plus",
+      "body": "Selon le contexte, “plus” peut signaler une augmentation ou, avec la négation, la disparition de quelque chose.",
+      "professorNote": "« Un mot parfaitement capable de vouloir dire davantage et plus du tout. Remarquable. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-023",
+      "type": "curiosite_linguistique",
+      "title": "Personne",
+      "body": "“Personne” peut désigner un être humain ou, dans une phrase négative, l’absence de tout être humain.",
+      "professorNote": "« Je commence à soupçonner la langue de faire exprès. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-024",
+      "type": "curiosite_linguistique",
+      "title": "Louer",
+      "body": "Selon la construction, le même verbe peut se rencontrer du côté de celui qui donne un bien en location comme de celui qui le prend.",
+      "professorNote": "« La transaction est donc claire pour tout le monde sauf pour le verbe. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-025",
+      "type": "curiosite_linguistique",
+      "title": "Apprendre",
+      "body": "Selon la phrase, on peut apprendre quelque chose soi-même ou apprendre quelque chose à quelqu’un.",
+      "professorNote": "« Deux directions. Un seul verbe. Économie admirable. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-026",
+      "type": "curiosite_linguistique",
+      "title": "Sens",
+      "body": "Le mot peut parler de perception, de direction ou de signification.",
+      "professorNote": "« Trois vies dans quatre lettres. N.O.D.I. approuve. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-027",
+      "type": "curiosite_linguistique",
+      "title": "Temps",
+      "body": "Le même mot sert à parler de durée, de météo et de grammaire.",
+      "professorNote": "« Il pleut. Au passé. Depuis longtemps. Parfait. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-028",
+      "type": "curiosite_linguistique",
+      "title": "Vol",
+      "body": "Un vol peut être un déplacement dans les airs… ou un larcin.",
+      "professorNote": "« Même mot. Ambiances radicalement différentes. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-029",
+      "type": "curiosite_linguistique",
+      "title": "Grève",
+      "body": "Le mot possède plusieurs sens, dont la cessation collective du travail et un ancien sens lié au rivage.",
+      "professorNote": "« Les mots conservent des chambres auxquelles nous ne rendons presque plus visite. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-030",
+      "type": "curiosite_linguistique",
+      "title": "Pierre",
+      "body": "Un même mot peut être nom commun, prénom ou nom propre selon le contexte.",
+      "professorNote": "« Les majuscules ont parfois beaucoup de responsabilités. »",
+      "factCheckRequired": true,
+      "status": "draft"
+    },
+    {
+      "id": "opening-031",
+      "type": "note_professeur",
+      "title": "Note n°14",
+      "body": "« Les dictionnaires mettent les mots dans l’ordre alphabétique parce qu’ils ont renoncé à faire mieux. »",
+      "professorNote": null,
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-032",
+      "type": "note_professeur",
+      "title": "Note n°27",
+      "body": "« Un mot seul est souvent très raisonnable. C’est dès qu’il rencontre d’autres mots que les ennuis commencent. »",
+      "professorNote": null,
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-033",
+      "type": "note_professeur",
+      "title": "Note n°31",
+      "body": "« J’ai passé quarante-sept minutes à chercher le lien entre quatre mots. Il n’y en avait pas. Excellente soirée. »",
+      "professorNote": null,
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-034",
+      "type": "note_professeur",
+      "title": "Note n°44",
+      "body": "« Les synonymes sont des mots qui prétendent être identiques jusqu’au moment précis où l’on a besoin de remplacer l’un par l’autre. »",
+      "professorNote": null,
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-035",
+      "type": "note_professeur",
+      "title": "Note n°52",
+      "body": "« Une bibliothèque bien rangée est probablement le signe que personne n’y cherche vraiment quelque chose. »",
+      "professorNote": null,
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-036",
+      "type": "note_professeur",
+      "title": "Note n°61",
+      "body": "« Je n’ai jamais rencontré un mot inutile. Quelques phrases, en revanche… »",
+      "professorNote": null,
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-037",
+      "type": "note_professeur",
+      "title": "Note n°73",
+      "body": "« N.O.D.I. refuse depuis ce matin de relier “chaussette” à quoi que ce soit. Je respecte sa position. »",
+      "professorNote": null,
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-038",
+      "type": "note_professeur",
+      "title": "Note n°88",
+      "body": "« Le problème des évidences est qu’elles arrivent presque toujours après la réponse. »",
+      "professorNote": null,
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-039",
+      "type": "note_professeur",
+      "title": "Note n°91",
+      "body": "« Il existe deux sortes de mauvaises pistes : celles qu’on regrette et celles qu’on aurait suivies avec plaisir. »",
+      "professorNote": null,
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-040",
+      "type": "note_professeur",
+      "title": "Note n°103",
+      "body": "« Je pensais connaître ce mot. C’est souvent comme cela que commencent les problèmes. »",
+      "professorNote": null,
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-041",
+      "type": "observation_nodi",
+      "title": "Observation 004",
+      "body": "Quatre idées sans rapport apparent peuvent partager une structure avant de partager un sujet.",
+      "professorNote": "« N.O.D.I. semble préférer les formes aux thèmes aujourd’hui. »",
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-042",
+      "type": "observation_nodi",
+      "title": "Observation 011",
+      "body": "Une fausse piste convaincante n’est pas nécessairement une erreur. Parfois, elle est la porte d’entrée.",
+      "professorNote": "« Elle aime laisser des portes ouvertes. Puis les verrouiller. »",
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-043",
+      "type": "observation_nodi",
+      "title": "Observation 019",
+      "body": "Plus un regroupement semble évident tôt, plus il mérite parfois d’être soupçonné.",
+      "professorNote": "« Je me méfie désormais énormément des choses bien rangées. »",
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-044",
+      "type": "observation_nodi",
+      "title": "Observation 028",
+      "body": "Certains mots changent complètement de personnalité dès qu’un autre mot se place devant eux.",
+      "professorNote": "« C’est une forme de chimie. Sans les lunettes de protection. »",
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-045",
+      "type": "observation_nodi",
+      "title": "Observation 033",
+      "body": "Les catégories sont utiles. Jusqu’au moment où elles empêchent de voir une relation plus précise.",
+      "professorNote": "« Les tiroirs aident. Les tiroirs enferment aussi. »",
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-046",
+      "type": "observation_nodi",
+      "title": "Observation 041",
+      "body": "Une connexion élégante donne l’impression d’avoir toujours été là.",
+      "professorNote": "« C’est peut-être cela qui m’agace le plus. »",
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-047",
+      "type": "observation_nodi",
+      "title": "Observation 056",
+      "body": "N.O.D.I. distingue rarement les mots importants des mots ordinaires.",
+      "professorNote": "« Elle a probablement raison. »",
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-048",
+      "type": "observation_nodi",
+      "title": "Observation 063",
+      "body": "Deux idées éloignées peuvent parfois être reliées par un geste plutôt que par un sens.",
+      "professorNote": "« Aujourd’hui : les mains. Demain, peut-être les pieds. »",
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-049",
+      "type": "observation_nodi",
+      "title": "Observation 071",
+      "body": "Une bonne réponse peut rendre trois anciennes hypothèses fausses d’un seul coup.",
+      "professorNote": "« Très impoli. Très efficace. »",
+      "factCheckRequired": false,
+      "status": "draft"
+    },
+    {
+      "id": "opening-050",
+      "type": "observation_nodi",
+      "title": "Observation 084",
+      "body": "Il existe des connexions qu’on ne voit qu’après avoir cessé de chercher ce que les mots veulent dire.",
+      "professorNote": "« Celle-ci me plaît beaucoup. »",
+      "factCheckRequired": false,
+      "status": "draft"
+    }
+  ],
+  "gameplayReactions": {
+    "victory": [
+      "« Ah ! Je savais qu’il y avait quelque chose. »",
+      "« Évidemment. Maintenant que vous l’avez trouvé. »",
+      "« Magnifique. »",
+      "« Voilà qui mérite une fiche. »",
+      "« N.O.D.I. va être insupportable pendant des heures. »",
+      "« Oui. Oui, c’est exactement ça. »",
+      "« Je vais prétendre que j’avais trouvé avant vous. »",
+      "« Une très belle connexion. Je la garde. »",
+      "« Ah… celle-ci était élégante. »",
+      "« Consigné. Avant que les mots changent d’avis. »"
+    ],
+    "wrongAnswer": [
+      "« Non… mais c’était séduisant. »",
+      "« J’aurais essayé aussi. »",
+      "« Presque trop logique. »",
+      "« Les mots vous ont tendu un piège très convenable. »",
+      "« Hm. Défendable. Faux, mais défendable. »",
+      "« N.O.D.I. n’est pas convaincue. Moi, presque. »",
+      "« Cette piste mérite mieux que d’être simplement fausse. »",
+      "« Pas ça. Gardez l’idée quelque part. »",
+      "« Curieux… non. »",
+      "« Je commence à soupçonner les mots de mauvaise foi. »"
+    ],
+    "timeout": [
+      "« Hm. N.O.D.I. manque parfois cruellement de patience. »",
+      "« Elle a coupé. Quelle manière. »",
+      "« Le temps. Toujours cette manie de passer. »",
+      "« J’aurais volontiers négocié quelques secondes de plus. »",
+      "« Elle considère manifestement que l’observation est terminée. »",
+      "« Ce n’est pas perdu. C’est simplement… non consigné. »"
+    ],
+    "rewardedContinue": [
+      "« Trente secondes. N.O.D.I. prétend que c’est exceptionnel. »",
+      "« Elle vous accorde une rallonge. Ne lui dites pas que je vous l’ai dit. »",
+      "« Encore un peu de temps. Faites-en mauvais usage avec élégance. »"
+    ],
+    "hintPair": [
+      "« Ces deux-là se connaissent. J’en suis presque certain. »",
+      "« Commencez peut-être par les regarder ensemble. »",
+      "« N.O.D.I. insiste sur cette paire. »"
+    ],
+    "hintCategory": [
+      "« Voici le genre de lien qu’elle cherche. Le reste vous appartient. »",
+      "« Une direction, pas une réponse. Théoriquement. »",
+      "« Je vous donne le tiroir. À vous de trouver ce qu’on y range. »"
+    ],
+    "zeroLives": [
+      "« N.O.D.I. refuse de continuer pour le moment. Elle a ses humeurs. »",
+      "« La machine refroidit. C’est probablement plus sage pour nous aussi. »",
+      "« Nous reprendrons. Les mots ne vont nulle part. Enfin, normalement. »"
+    ],
+    "returnAfterAbsence": [
+      "« Ah. Vous revoilà. J’avais laissé votre place exactement… quelque part. »",
+      "« J’espérais que vous reviendriez. N.O.D.I. aussi, mais elle ne l’admettra pas. »",
+      "« Parfait. Plusieurs choses ont refusé de se ranger en votre absence. »"
+    ]
+  },
+  "zones": [
+    {
+      "levels": "1–10",
+      "name": "Le Bureau",
+      "purpose": "Découverte de N.O.D.I. et de ses règles de base.",
+      "entryLine": "« Commençons ici. C’est la seule table dont je connaisse encore approximativement le contenu. »",
+      "visualSeeds": [
+        "bureau encombré",
+        "fiches",
+        "petites lampes",
+        "premiers cadrans N.O.D.I.",
+        "livres ouverts"
+      ]
+    },
+    {
+      "levels": "11–35",
+      "name": "Les Rayonnages",
+      "purpose": "Le monde s’ouvre; les connexions deviennent plus ambiguës.",
+      "entryLine": "« Nous allons devoir monter. Ne regardez pas trop les étagères du haut. Elles prennent cela pour une invitation. »",
+      "visualSeeds": [
+        "échelles mobiles",
+        "passerelles",
+        "rayonnages immenses",
+        "fiches suspendues",
+        "lumière chaude"
+      ]
+    },
+    {
+      "levels": "36–60",
+      "name": "Les Archives",
+      "purpose": "Connexions plus anciennes, lexicales et étranges.",
+      "entryLine": "« Les Archives n’aiment pas qu’on les dérange. C’est réciproque. »",
+      "visualSeeds": [
+        "tiroirs d’archives",
+        "cartes anciennes",
+        "poussière lumineuse",
+        "classeurs",
+        "sceaux"
+      ]
+    },
+    {
+      "levels": "61–80",
+      "name": "Le Cabinet des Curiosités",
+      "purpose": "Objets, anomalies, collections et mécaniques de raisonnement plus inhabituelles.",
+      "entryLine": "« Tout ce qui n’entrait dans aucune catégorie a fini ici. Naturellement, c’est devenu ma pièce préférée. »",
+      "visualSeeds": [
+        "vitrines",
+        "globes",
+        "instruments scientifiques",
+        "objets impossibles",
+        "étiquettes manuscrites"
+      ]
+    },
+    {
+      "levels": "81–100",
+      "name": "La Réserve",
+      "purpose": "Dernier acte du premier cycle; le mystère de N.O.D.I. devient plus visible.",
+      "entryLine": "« Cette porte devait rester fermée. J’ai simplement changé d’avis très lentement. »",
+      "visualSeeds": [
+        "porte massive",
+        "rayonnages sombres",
+        "machines anciennes",
+        "symboles N.O.D.I.",
+        "lumière froide au loin"
+      ]
+    }
+  ],
+  "daily": {
+    "publicName": "Observation du jour",
+    "introLines": [
+      "N.O.D.I. a trouvé quelque chose cette nuit.",
+      "Elle insiste depuis ce matin. Je suppose qu’il faut regarder.",
+      "Un nouveau signal. Celui-ci a l’air… têtu.",
+      "J’avais prévu de classer mes notes. N.O.D.I. avait manifestement d’autres projets."
+    ],
+    "successLines": [
+      "Observation consignée.",
+      "Voilà. Elle avait raison d’insister.",
+      "Je vais garder celle-ci.",
+      "Consigné. Et légèrement inquiétant."
+    ],
+    "streakLanguage": "{n} jours d’observations",
+    "missedDayRule": "Aucune culpabilisation, aucune perte dramatique, aucun message de honte.",
+    "missedDayExamples": [
+      "Vous avez manqué hier. N.O.D.I. aussi, apparemment. Elle n’a absolument rien trouvé d’intéressant.",
+      "Hier est resté très calme. C’est suspect, mais reposant."
+    ]
+  },
+  "contentSafety": {
+    "factCheckRequiredFor": [
+      "mot_retrouve",
+      "etymologie",
+      "curiosite_linguistique"
+    ],
+    "rule": "Aucune définition, étymologie ou curiosité linguistique ne passe en production sans vérification éditoriale. Les pensées et notes du Professeur sont du contenu fictionnel original."
+  },
+  "level100Beat": {
+    "sequence": [
+      "Le joueur termine le niveau 100.",
+      "N.O.D.I. imprime une fiche inhabituelle.",
+      "Le Professeur la lit et perd brièvement son ton amusé.",
+      "Il dit : « …ça, ce n’est pas possible. »",
+      "Il marche vers une porte de la bibliothèque aperçue auparavant.",
+      "Noir."
+    ],
+    "rule": "Pas de longue cinématique ni d’explication du mystère."
+  },
+  "editorialRules": {
+    "openingCards": [
+      "Maximum une idée principale par carte.",
+      "Lecture visée : 2 à 6 secondes.",
+      "La note du Professeur doit ajouter une personnalité, pas paraphraser la définition.",
+      "Éviter les citations célèbres comme contenu par défaut.",
+      "Préférer la curiosité et l’élégance à la morale ou au développement personnel.",
+      "Les faits linguistiques doivent être vérifiés avant passage en approved."
+    ],
+    "reactions": [
+      "Éviter le mot 'bravo' comme réflexe systématique.",
+      "Ne jamais parler de QI, cerveau entraîné, performance cognitive ou intelligence.",
+      "Une erreur peut être reconnue comme séduisante.",
+      "Le Professeur ne se moque jamais du joueur.",
+      "Éviter les exclamations répétitives et l’énergie de mascotte enfantine."
+    ],
+    "lore": [
+      "N.O.D.I. reste partiellement inexpliquée.",
+      "La bibliothèque peut sembler impossible sans être explicitement magique.",
+      "Le Professeur croit avoir construit N.O.D.I.; le jeu peut progressivement semer un doute sans le résoudre.",
+      "Le mystère reste en arrière-plan : le puzzle doit toujours fonctionner sans suivre le lore."
+    ]
+  }
+}

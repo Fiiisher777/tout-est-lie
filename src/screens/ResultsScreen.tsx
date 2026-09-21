@@ -1,3 +1,4 @@
+import { ProfessorReaction, ZoneMoment } from '../lore/components';
 import { nextUnlockedLevel } from '../state/progression';
 import { analytics } from '../services/analytics';
 import { useLocalSearchParams, useRouter } from 'expo-router';
@@ -14,6 +15,8 @@ export function ResultsScreen() {
   return <Screen title={t('results')}>
     {!result ? <AppText>{t('noResult')}</AppText> : <>
       <AppText variant="subtitle">{t(result.outcome)}</AppText>
+      {result.outcome === 'won' && <><ProfessorReaction kind="victory" seed={result.id} /><ZoneMoment /></>}
+      {result.outcome === 'lost' && <ProfessorReaction kind="timeout" seed={result.id} />}
       <AppText>{t('resultStats', { mistakes: result.mistakes, hints: result.hintsUsed, seconds: Math.floor(result.elapsedMs / 1000) })}</AppText>
       {result.mode === 'daily' && <AppText>{t('dailyDate', { date: result.date })}</AppText>}
       {next && <Button title={t('next')} disabled={!writable} onPress={() => {

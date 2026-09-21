@@ -1,6 +1,12 @@
 export const en = {
+  connections: "%{count} / 4 connections",
+  hintPairTitle: "Pair",
+  hintPairDescription: "Reveal two cards in the same group.",
+  hintCategoryTitle: "Category",
+  hintCategoryDescription: "Reveal the authored category clue.",
   lifeCount: "%{count} of %{max} lives",
   unlimitedLives: "Unlimited lives",
+  nextLifeCompact: "+1 in %{time}",
   nextLife: "Next life in %{time}",
   noLives: "No lives left. Wait or complete a simulated ad.",
   rewardLife: "Simulated ad · +1 life",

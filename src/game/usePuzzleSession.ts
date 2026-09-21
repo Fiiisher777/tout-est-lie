@@ -95,10 +95,10 @@ export function usePuzzleSession({ launch, onComplete, developmentPreview }: Gam
     void hapticFeedback(player.preferences.haptics, transition.outcome === 'solved' ? 'complete' : transition.outcome === 'mistake' ? 'error' : 'press');
     events.finish(transition.state);
   }
-  async function requestHint() {
+  async function requestHint(kind?: 'pair' | 'category') {
     if (!readyRef.current || storageError || requesting.current) return;
     if (advanceClock().timedOut) return;
-    const hint = getAvailableHints(current.current)[0]; if (!hint) return;
+    const hint = getAvailableHints(current.current).find(h => kind === undefined || h.kind === kind); if (!hint) return;
     const session = current.current.sessionId;
     requesting.current = true; setAdBusy(true);
     events.emit(current.current, { name: 'hint_requested', hintId: hint.id, hintKind: hint.kind });

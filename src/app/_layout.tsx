@@ -1,3 +1,5 @@
+import { loreStore } from '../lore/store';
+import { prototypeLoreAvailable } from '../lore/content';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
@@ -15,14 +17,17 @@ function Navigation() {
   const { ready } = usePlayer(); const { t } = useTranslation();
   useEffect(() => { if (ready) void SplashScreen.hideAsync().catch(() => {}); }, [ready]);
   useEffect(() => {
-    const listener = AppState.addEventListener('change', status => { if (status !== 'active') audio.stop(); });
+    const listener = AppState.addEventListener('change', status => { if (status !== 'active') { audio.stop(); if (prototypeLoreAvailable('fr')) void loreStore.touch().catch(() => {}); } });
     return () => listener.remove();
   }, []);
   if (!ready) return <Screen><ActivityIndicator /><AppText>{t('loading')}</AppText></Screen>;
   return <>
+    {/* Expo Go owns its Info.plist. Keep the established Expo bar; do not add
+        native-stack statusBarStyle overrides here. A standalone iOS build can
+        configure UIViewControllerBasedStatusBarAppearance via app.config.ts later. */}
     <StatusBar style="dark" />
     <Stack screenOptions={{ headerStyle: { backgroundColor: theme.background }, headerTintColor: theme.text, contentStyle: { backgroundColor: theme.background } }}>
-      <Stack.Screen name="index" options={{ title: t('home') }} />
+      <Stack.Screen name="index" options={{ title: t('home'), headerShown:false, headerRight:()=>null }} />
       <Stack.Screen name="levels" options={{ title: t('levels') }} />
       <Stack.Screen name="game" options={{ title: t('game') }} />
       <Stack.Screen name="results" options={{ title: t('results'), gestureEnabled: false }} />
