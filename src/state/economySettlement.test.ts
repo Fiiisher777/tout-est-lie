@@ -18,7 +18,9 @@ test('winning and incorrect submissions never debit lives; final loss debits exa
   expect(JSON.parse(mockDisk.get('tiny-game-starter:economy')!).lives).toBe(5);
   let won=fresh('won');for(const g of won.puzzle.groups)won=submit(won,g.cardIds);await saveActiveSession(won,100);
   expect(JSON.parse(mockDisk.get('tiny-game-starter:economy')!).lives).toBe(5);
-  for(let i=0;i<3;i++)wrong=submitSelection(wrong,{monotonicMs:100,utcMs:100}).state;
+  for(let i=0;i<3;i++)wrong=submit(wrong,['c0','c1','c2','c4']);
+  await saveActiveSession(wrong,100); expect(JSON.parse(mockDisk.get('tiny-game-starter:economy')!).lives).toBe(5);
+  wrong=endTimeout(checkCountdown(wrong,{monotonicMs:60000,utcMs:60000}),{monotonicMs:60000,utcMs:60000});
   await saveActiveSession(wrong,100);await saveActiveSession(wrong,100);
   expect(JSON.parse(mockDisk.get('tiny-game-starter:economy')!).lives).toBe(4);
 });

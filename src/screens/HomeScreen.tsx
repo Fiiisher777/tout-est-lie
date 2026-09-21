@@ -1,3 +1,4 @@
+import { canStartLevel } from '../state/progression';
 import { isTester } from '../config/environment';
 import { LifeIndicator } from '../components/LifeIndicator';
 import { useRouter } from 'expo-router';
@@ -10,7 +11,7 @@ import { usePlayer } from '../state/PlayerProvider';
 export function HomeScreen() {
   const router = useRouter(); const { t, locale } = useTranslation(); const { state, writable } = usePlayer();
   const levels = levelsFor(locale);
-  const next = levels.find(level => !state.completedLevels.includes(level.id)) ?? levels[0];
+  const next = levels.find(level => canStartLevel(state, locale, level.id) && !state.completedLevels.includes(level.id)) ?? levels[0];
   return <Screen title={t('productName')}>
     <AppText variant="muted">{t('tagline')}{isTester ? ' · BETA' : ''}</AppText>
     <LifeIndicator />

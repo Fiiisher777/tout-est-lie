@@ -12,7 +12,7 @@ import { placeholderAds } from '../services/ads';
 import { usePlayer } from '../state/PlayerProvider';
 import { hapticFeedback } from '../services/haptics';
 import type { GameViewProps } from './types';
-import { calculateRemainingMistakes, clearSelection, deselectCard, getAvailableHints, selectCard, shuffleCards, submitSelection } from './engine/engine';
+import { clearSelection, deselectCard, getAvailableHints, selectCard, shuffleCards, submitSelection } from './engine/engine';
 import { clock, usePuzzleSession } from './usePuzzleSession';
 import { findLevel } from './content';
 import { HintCard } from './components/HintCard';
@@ -60,9 +60,6 @@ export function GameView(props: GameViewProps) {
         {(storageError || issue) && <View style={styles.notice}><AppText style={styles.copy}>{t(storageError ? 'storageWrite' : issue === 'read' ? 'storageRead' : issue === 'write' ? 'storageWrite' : issue === 'recovered' ? 'recovered' : 'futureVersion')}</AppText>{issue !== 'futureVersion' && <Action title={t('retry')} onPress={() => storageError ? retryStorage() : void retry()} />}</View>}
         <AppText style={styles.instruction}>{t('instructions')}</AppText>
         <View style={styles.status}>
-          <View accessible accessibilityLabel={t('mistakesRemaining', { count: calculateRemainingMistakes(state) })} accessibilityLiveRegion="polite" style={styles.dots}>
-            {Array.from({ length: 4 }, (_, index) => <View key={index} style={[styles.dot, index >= calculateRemainingMistakes(state) && styles.emptyDot]} />)}
-          </View>
           {remaining !== null && <AppText accessibilityLabel={t('timeRemaining', { time: formatTime(remaining) })} style={[styles.meta, remaining <= playtest.urgencySeconds * 1000 && { color: theme.danger, fontWeight: '700' }]}>{formatTime(remaining)}</AppText>}
           <AppText style={styles.meta}>{props.launch.mode === 'daily' ? props.launch.date : t('selectedCount', { count: state.selected.length })}</AppText>
         </View>
@@ -74,7 +71,7 @@ export function GameView(props: GameViewProps) {
         {state.solved.map(id => { const group = state.puzzle.groups.find(g => g.id === id)!; return <View key={id} style={styles.solved} accessible accessibilityLabel={`${group.label}: ${group.cardIds.map(label).join(', ')}`}>
           <AppText style={styles.category}>{group.label}</AppText><AppText style={styles.items}>{group.cardIds.map(label).join(' · ')}</AppText>
         </View>; })}
-        {feedback && <Feedback key={`${state.sessionId}-${state.mistakes}-${state.solved.length}`} message={t(feedback === 'solved' ? 'correctGroup' : 'incorrectGroup')} />}
+        {feedback && <Feedback key={`${state.sessionId}-${state.mistakes}-${state.solved.length}`} message={feedback === 'solved' ? t('correctGroup') : remaining === null ? t('incorrectGroup') : t('wrongPenalty', { seconds: playtest.wrongAnswerPenaltySeconds })} />}
         <HintCard key={`${state.sessionId}-${hints.length}`} hints={hints} />
       </ScrollView>
       <View style={styles.footer}>
@@ -106,7 +103,6 @@ const styles = StyleSheet.create({
   scroll: { flex: 1 }, content: { width: '100%', maxWidth: 560, alignSelf: 'center', paddingHorizontal: theme.space.lg, paddingTop: theme.space.sm, paddingBottom: theme.space.lg, gap: theme.space.sm },
   instruction: { fontSize: 14, lineHeight: 20, color: theme.textSecondary, textAlign: 'center' },
   status: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', minHeight: 28, marginBottom: theme.space.xs },
-  dots: { flexDirection: 'row', gap: 6 }, dot: { width: 9, height: 9, borderRadius: 5, backgroundColor: theme.accent, borderWidth: 1, borderColor: theme.accent }, emptyDot: { backgroundColor: theme.background, borderColor: theme.textSecondary },
   meta: { fontSize: 12, lineHeight: 18, color: theme.textSecondary }, grid: { gap: 6 }, row: { flexDirection: 'row', gap: 6 },
   solved: { paddingVertical: theme.space.sm, paddingHorizontal: theme.space.md, borderRadius: theme.radius.card, backgroundColor: theme.successSurface },
   category: { fontSize: 12, lineHeight: 17, fontWeight: '700', color: theme.textPrimary, textTransform: 'uppercase', letterSpacing: 0.6 }, items: { fontSize: 12, lineHeight: 17, color: theme.textSecondary },

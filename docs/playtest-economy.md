@@ -14,6 +14,7 @@ Edit `src/config/playtest.ts` only to tune the experiment:
 - `relaxedPositions`: 3 (normal and preview positions 1–3 have no countdown).
 - `countdownSeconds`: difficulty 1 = 60, 2 = 75, 3 = 90, 4 = 105, 5 = 120.
 - `extensionSeconds`: 30, once per attempt.
+- `wrongAnswerPenaltySeconds`: 5; zero penalty on untimed levels.
 - `urgencySeconds`: 20; a restrained text color change, no flashing/animation.
 - `tickMs`: 250; `checkpointMs`: 1000. Meaningful transitions save immediately.
 
@@ -27,7 +28,9 @@ Legacy unfinished saves acquire a budget without resetting previously elapsed ti
 
 ## Attempt rules
 
-Four mistakes still lose; individual wrong submissions cost no life. A first
+Wrong submissions clear the selection and subtract up to five remaining seconds,
+clamped at zero. Their count never ends an attempt, and they cost no life. Untimed
+levels remain untimed. Active elapsed time excludes penalty seconds. A first
 countdown expiry freezes the existing puzzle and offers one simulated rewarded
 extension or End attempt. Completed reward adds the configured extension without
 changing layout, solved groups, mistakes, hints or session ID. Dismissal leaves the
@@ -99,8 +102,9 @@ preview-only state.
 
 1. In the project folder run `npx expo start --go --port 8083` (or reload that
    existing server). Open the QR code in Expo Go on the same network.
-2. Home shows hearts. In normal Play, submit four incorrect groups. Hearts must
-   decrease once, not once per mistake. Replay and repeat to reach zero.
+2. Win levels 1–3 (untimed), then open unlocked level 4 in TESTER. Wrong answers
+   subtract five seconds but no lives. At timeout, End attempt costs exactly one
+   life. Repeat final failures to reach zero.
 3. At zero, normal Play stops at the life gate. Home, Settings and Draft Preview
    remain usable. Complete the **Simulated ad · +1 life** dialog; cancel once first
    to verify no reward. One completion gives exactly one life and permits play.
@@ -115,7 +119,7 @@ preview-only state.
    another extension, and normal Home hearts are unchanged by preview play.
 7. Repeat and choose End attempt at the first timeout. Normal hearts must again be
    unchanged. Restart a board partway through an attempt: solved groups reset,
-   but time, mistakes, used hints and extension eligibility do not refill.
+   but time, penalties, wrong-answer count, used hints and extension eligibility do not refill.
 8. Test offline regeneration by leaving the app below full for 30/90 minutes. For
    a faster local experiment temporarily set `lifeRegenMinutes: 1`; set countdown
    seconds to a short value to test timeouts. New attempts use the new budget.
@@ -166,3 +170,8 @@ Exact files added or modified for this implementation:
 - `src/state/migrations.ts`
 - `src/state/player.test.ts`
 - `src/state/player.ts`
+
+## Linear progression
+
+See [gameplay loop migration](gameplay-loop.md). Normal levels unlock sequentially;
+Draft Preview retains editorial direct access. Victory offers Next Level first.

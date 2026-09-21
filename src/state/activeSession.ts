@@ -9,7 +9,7 @@ import type { GameLaunch } from '../game/types';
 const key = `${gameConfig.id}:active-session`;
 let queue: Promise<void> = Promise.resolve();
 export function saveActiveSession(state: State, now: number): Promise<void> {
-  const snapshot = JSON.stringify({ version: 1, state: { ...state, selected: [], elapsedMs: elapsedTime(state, now), activeSince: null, pauses: [] } });
+  const snapshot = JSON.stringify({ version: 2, state: { ...state, selected: [], elapsedMs: elapsedTime(state, now), activeSince: null, pauses: [] } });
   const write = queue.catch(() => {}).then(async () => {
     // Keep a recoverable terminal snapshot until the idempotent life debit commits.
     await AsyncStorage.setItem(key, snapshot);
@@ -26,24 +26,26 @@ export function decodeActiveSession(raw: string | null): State | null {
   let data;
   try { data = JSON.parse(raw); } catch { return null; }
   if (!data || typeof data !== 'object') throw new Error('Invalid active session');
-  if (data.version > 1) throw new Error('Unsupported active session version');
+  if (data.version > 2) throw new Error('Unsupported active session version');
   try {
-    if (data.version !== 1) return null;
+    if (![1, 2].includes(data.version)) return null;
     const s: State = data.state;
     const puzzle = parsePuzzle(s.puzzle);
     const integer = (n: number) => Number.isSafeInteger(n) && n >= 0;
     const ids = (value: readonly string[], allowed: string[]) => Array.isArray(value) && new Set(value).size === value.length && value.every(id => allowed.includes(id));
-    if (!['playing', 'won', 'lost'].includes(s.status) || typeof s.sessionId !== 'string' || !s.sessionId || !integer(s.seed) || !integer(s.shuffleCount) || !integer(s.mistakes) || s.mistakes > 4 || (s.status === 'playing' && s.mistakes >= 4) || !Number.isFinite(s.elapsedMs) || s.elapsedMs < 0 || (s.status === 'playing' ? s.completedAt !== null : !Number.isFinite(Date.parse(s.completedAt ?? '')))) return null;
+    if (!['playing', 'won', 'lost'].includes(s.status) || typeof s.sessionId !== 'string' || !s.sessionId || !integer(s.seed) || !integer(s.shuffleCount) || !integer(s.mistakes) || !Number.isFinite(s.elapsedMs) || s.elapsedMs < 0 || (s.status === 'playing' ? s.completedAt !== null : !Number.isFinite(Date.parse(s.completedAt ?? '')))) return null;
     if (s.launch.levelId !== puzzle.levelId || s.launch.locale !== puzzle.locale || s.launch.puzzleRevision !== puzzle.revision || !['level', 'daily'].includes(s.launch.mode) || (s.launch.mode === 'daily' && !isUtcDate(s.launch.date))) return null;
     if (!ids(s.solved, puzzle.groups.map(g => g.id)) || s.solved.length > 4 || (s.status === 'playing' && s.solved.length === 4) || !ids(s.usedHints, puzzle.hints.map(h => h.id))) return null;
     const remaining = puzzle.groups.filter(g => !s.solved.includes(g.id)).flatMap(g => g.cardIds);
     if (!ids(s.order, remaining) || s.order.length !== remaining.length) return null;
-    if (s.status === 'won' && (s.solved.length !== 4 || s.mistakes >= 4)) return null;
-    if (s.status === 'lost' && s.mistakes !== 4 && s.failureReason !== 'timeout') return null;
+    if (s.status === 'won' && s.solved.length !== 4) return null;
+    // Historical terminal losses remain terminal; counts never determine status.
+    if (s.failureReason !== undefined && s.failureReason !== 'timeout') return null;
+    if (s.penaltyMs !== undefined && (!Number.isFinite(s.penaltyMs) || s.penaltyMs < 0)) return null;
     if (s.countdownMs !== undefined && s.countdownMs !== null && (!Number.isFinite(s.countdownMs) || s.countdownMs < 0)) return null;
     if (s.continueUsed !== undefined && typeof s.continueUsed !== 'boolean') return null;
     if (s.timedOut !== undefined && typeof s.timedOut !== 'boolean') return null;
-    return { ...s, ...(!playtest.enabled ? { countdownMs: null, timedOut: false } : {}), puzzle, selected: [], activeSince: null, pauses: playtest.enabled && s.timedOut && s.status === 'playing' ? ['timeout'] : [] };
+    return { ...s, penaltyMs: s.penaltyMs ?? 0, ...(!playtest.enabled ? { countdownMs: null, timedOut: false } : {}), puzzle, selected: [], activeSince: null, pauses: playtest.enabled && s.timedOut && s.status === 'playing' ? ['timeout'] : [] };
   } catch { return null; }
 }
 export async function loadActiveSession(): Promise<State | null> {

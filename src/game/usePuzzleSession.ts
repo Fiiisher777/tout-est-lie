@@ -10,7 +10,7 @@ import { useFocusEffect } from 'expo-router';
 import { sessionAccess } from './sessionAccess';
 import type { GameViewProps } from './types';
 import { rewardedHint } from './engine/reward';
-import { calculateRemainingMistakes, getAvailableHints, produceCompletionResult, setPaused, startPuzzle, type State, type Transition } from './engine/engine';
+import { getAvailableHints, produceCompletionResult, setPaused, startPuzzle, type State, type Transition } from './engine/engine';
 import { createSessionEvents } from './engine/sessionEvents';
 import { analytics } from '../services/analytics';
 import type { AdsService } from '../services/ads';
@@ -80,15 +80,19 @@ export function usePuzzleSession({ launch, onComplete, developmentPreview }: Gam
   function act(operation: (s: State) => Transition) {
     if (!readyRef.current || storageError) return;
     const previous = advanceClock(); if (previous.timedOut || previous.status !== 'playing') return; const transition = operation(previous);
-    if (transition.outcome === 'rejected') return;
+    if (transition.outcome === 'rejected') {
+      if (transition.state !== previous) { update(transition.state); events.emit(transition.state, { name: 'timer_expired' }); events.finish(transition.state); }
+      return;
+    }
     update(transition.state);
+    if (transition.state.timedOut && !previous.timedOut) events.emit(transition.state, { name: 'timer_expired' });
     if (transition.outcome === 'solved' || transition.outcome === 'mistake') {
       setFeedback(transition.outcome);
       events.emit(previous, { name: 'group_submitted', cardIds: previous.selected, correct: transition.outcome === 'solved' });
       if (transition.groupId) events.emit(transition.state, { name: 'group_solved', groupId: transition.groupId, solvedCount: transition.state.solved.length });
-      else events.emit(transition.state, { name: 'mistake_made', mistakes: transition.state.mistakes, remainingMistakes: calculateRemainingMistakes(transition.state) });
+      else events.emit(transition.state, { name: 'mistake_made', mistakes: transition.state.mistakes, penaltySeconds: ((transition.state.penaltyMs ?? 0) - (previous.penaltyMs ?? 0)) / 1000, totalPenaltySeconds: (transition.state.penaltyMs ?? 0) / 1000 });
     }
-    void hapticFeedback(player.preferences.haptics, transition.outcome === 'solved' ? 'complete' : 'press');
+    void hapticFeedback(player.preferences.haptics, transition.outcome === 'solved' ? 'complete' : transition.outcome === 'mistake' ? 'error' : 'press');
     events.finish(transition.state);
   }
   async function requestHint() {

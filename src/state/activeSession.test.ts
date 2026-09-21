@@ -1,6 +1,7 @@
+import { checkCountdown, endTimeout } from '../game/engine/countdown';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { findPuzzle } from '../game/content';
-import { applyHint, calculateRemainingMistakes, elapsedTime, selectCard, setPaused, shuffleCards, startPuzzle, submitSelection, type State } from '../game/engine/engine';
+import { applyHint, elapsedTime, selectCard, setPaused, shuffleCards, startPuzzle, submitSelection, type State } from '../game/engine/engine';
 import { decodeActiveSession, loadActiveSession, matchesLaunch, saveActiveSession } from './activeSession';
 const mockDisk = new Map<string, string>();
 jest.mock('@react-native-async-storage/async-storage', () => ({ __esModule: true, default: {
@@ -27,10 +28,10 @@ test('process restart reloads from disk with no in-memory session or monotonic e
   expect(restored.mistakes).toBe(1); expect(restored.elapsedMs).toBe(500); expect(restored.activeSince).toBeNull();
   expect(elapsedTime({ ...restored, activeSince: 10 }, 110)).toBe(600);
 });
-test('mistakes and remaining lives survive leaving', async () => {
-  let s = submit(fresh(), ['c0', 'c1', 'c2', 'c4']); s = submitSelection(s, { monotonicMs: 200, utcMs: 200 }).state;
+test('wrong-answer counts and penalties survive leaving', async () => {
+  let s = submit(fresh(), ['c0', 'c1', 'c2', 'c4']); s = submit(s, ['c0', 'c1', 'c2', 'c4']);
   await saveActiveSession(s, 300); const restored = (await loadActiveSession())!;
-  expect(restored.mistakes).toBe(2); expect(calculateRemainingMistakes(restored)).toBe(2);
+  expect(restored.mistakes).toBe(2); expect(restored.penaltyMs).toBe(10000);
 });
 test('solved groups retain solve order and remaining shuffled card order', async () => {
   let s = submit(fresh(), ['c8', 'c9', 'c10', 'c11']); s = submit(s, ['c0', 'c1', 'c2', 'c3']); s = shuffleCards(s).state;
@@ -56,7 +57,7 @@ test('restart replaces persisted state with fresh session and counters', async (
 test.each(['won', 'lost'] as const)('terminal %s removes persisted active state after queued saves', async outcome => {
   const playing = fresh(); let terminal = playing;
   if (outcome === 'won') for (const g of playing.puzzle.groups) terminal = submit(terminal, g.cardIds);
-  else { terminal = submit(terminal, ['c0', 'c1', 'c2', 'c4']); for (let i = 0; i < 3; i++) terminal = submitSelection(terminal, { monotonicMs: 200, utcMs: 200 }).state; }
+  else terminal = endTimeout(checkCountdown(terminal, { monotonicMs: 60000, utcMs: 60000 }), { monotonicMs: 60000, utcMs: 60000 });
   await Promise.all([saveActiveSession(playing, 50), saveActiveSession(terminal, 200)]);
   expect(await loadActiveSession()).toBeNull(); expect(mockDisk.has('tiny-game-starter:active-session')).toBe(false);
 });

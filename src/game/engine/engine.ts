@@ -1,10 +1,11 @@
-import { countdownDuration } from '../../config/playtest';
+import { countdownDuration, playtest } from '../../config/playtest';
 import type { Hint, Puzzle } from '../content/schema';
 import { parsePuzzle } from '../content/validate';
 import type { GameLaunch, GameResult } from '../types';
 export type Clock = { monotonicMs: number; utcMs: number };
 export type PauseReason = 'app' | 'ad' | 'navigation' | 'manual' | 'timeout';
 export type State = {
+  penaltyMs?: number;
   countdownMs?: number | null; continueUsed?: boolean; timedOut?: boolean; failureReason?: 'timeout';
   puzzle: Puzzle; launch: GameLaunch; sessionId: string; seed: number; shuffleCount: number;
   status: 'playing' | 'won' | 'lost'; selected: readonly string[]; order: readonly string[];
@@ -27,7 +28,7 @@ export function startPuzzle(input: Puzzle, options: { launch: GameLaunch; sessio
   const puzzle = JSON.parse(JSON.stringify(parsePuzzle(input))) as Puzzle;
   const { launch, sessionId, seed, clock } = options;
   if (launch.levelId !== puzzle.levelId || launch.locale !== puzzle.locale || launch.puzzleRevision !== puzzle.revision) throw new Error('Launch does not match puzzle');
-  return { countdownMs: countdownDuration(puzzle.difficulty, options.position), continueUsed: false, timedOut: false, puzzle, launch: { ...launch }, sessionId, seed, shuffleCount: 0, status: 'playing', selected: [], order: shuffle(puzzle.cards.map(c => c.id), seed), solved: [], mistakes: 0, usedHints: [], elapsedMs: 0, activeSince: clock.monotonicMs, pauses: [], completedAt: null };
+  return { penaltyMs: 0, countdownMs: countdownDuration(puzzle.difficulty, options.position), continueUsed: false, timedOut: false, puzzle, launch: { ...launch }, sessionId, seed, shuffleCount: 0, status: 'playing', selected: [], order: shuffle(puzzle.cards.map(c => c.id), seed), solved: [], mistakes: 0, usedHints: [], elapsedMs: 0, activeSince: clock.monotonicMs, pauses: [], completedAt: null };
 }
 export function elapsedTime(s: State, now: number): number { return s.elapsedMs + (s.activeSince === null ? 0 : Math.max(0, now - s.activeSince)); }
 export function setPaused(s: State, reason: PauseReason, paused: boolean, now: number): State {
@@ -50,12 +51,14 @@ export function shuffleCards(s: State): Transition {
   const shuffleCount = s.shuffleCount + 1;
   return { state: { ...s, shuffleCount, order: shuffle(s.order, (s.seed + shuffleCount) >>> 0) }, outcome: 'shuffled' };
 }
-export function calculateRemainingMistakes(s: State): number { return Math.max(0, 4 - s.mistakes); }
-export function determineOutcome(s: State): State['status'] { return s.status === 'lost' ? 'lost' : s.solved.length === 4 ? 'won' : s.mistakes >= 4 ? 'lost' : 'playing'; }
+export function determineOutcome(s: State): State['status'] { return s.status === 'lost' ? 'lost' : s.solved.length === 4 ? 'won' : 'playing'; }
 export function submitSelection(s: State, clock: Clock): Transition {
   if (!playable(s) || s.selected.length !== 4) return reject(s);
+  const timed = checkCountdown(s, clock);
+  if (timed.timedOut || timed.status !== 'playing') return reject(timed);
   const group = s.puzzle.groups.find(g => g.cardIds.every(id => s.selected.includes(id)));
-  let next: State = group ? { ...s, selected: [], solved: [...s.solved, group.id], order: s.order.filter(id => !group.cardIds.includes(id)) } : { ...s, mistakes: s.mistakes + 1 };
+  let next: State = group ? { ...s, selected: [], solved: [...s.solved, group.id], order: s.order.filter(id => !group.cardIds.includes(id)) } : { ...s, selected: [], mistakes: s.mistakes + 1, penaltyMs: (s.penaltyMs ?? 0) + Math.min(remainingTime(s, clock.monotonicMs) ?? 0, playtest.wrongAnswerPenaltySeconds * 1000) };
+  if (!group) next = checkCountdown(next, clock);
   const status = determineOutcome(next);
   if (status !== 'playing') next = { ...next, status, elapsedMs: elapsedTime(s, clock.monotonicMs), activeSince: null, completedAt: new Date(clock.utcMs).toISOString() };
   return { state: next, outcome: group ? 'solved' : 'mistake', groupId: group?.id };
@@ -67,5 +70,23 @@ export function applyHint(s: State, hintId: string): Transition {
 }
 export function produceCompletionResult(s: State): GameResult | null {
   if (s.status === 'playing' || !s.completedAt) return null;
-  return { ...(s.failureReason ? { failureReason: s.failureReason } : {}), ...s.launch, id: `result-${s.sessionId}`, sessionId: s.sessionId, outcome: s.status, mistakes: s.mistakes, hintsUsed: s.usedHints.length, elapsedMs: Math.round(s.elapsedMs), completedAt: s.completedAt };
+  return { ...(s.failureReason ? { failureReason: s.failureReason } : {}), penaltySeconds: (s.penaltyMs ?? 0) / 1000, rewardedContinueUsed: s.continueUsed ?? false, ...s.launch, id: `result-${s.sessionId}`, sessionId: s.sessionId, outcome: s.status, mistakes: s.mistakes, hintsUsed: s.usedHints.length, elapsedMs: Math.round(s.elapsedMs), completedAt: s.completedAt };
+}
+
+export function remainingTime(s: State, now: number): number | null {
+  return !playtest.enabled || s.countdownMs == null ? null : Math.max(0, s.countdownMs - elapsedTime(s, now) - (s.penaltyMs ?? 0));
+}
+export function endTimeout(s: State, clock: Clock): State {
+  if (s.status !== 'playing' || !s.timedOut) return s;
+  return { ...s, status: 'lost', failureReason: 'timeout', activeSince: null, completedAt: new Date(clock.utcMs).toISOString() };
+}
+export function checkCountdown(s: State, clock: Clock): State {
+  if (s.status !== 'playing' || s.timedOut || remainingTime(s, clock.monotonicMs) !== 0) return s;
+  const paused = setPaused(s, 'timeout', true, clock.monotonicMs);
+  const next = { ...paused, elapsedMs: Math.max(0, s.countdownMs! - (s.penaltyMs ?? 0)), timedOut: true };
+  return s.continueUsed ? endTimeout(next, clock) : next;
+}
+export function continueCountdown(s: State, clock: Clock): State {
+  if (s.status !== 'playing' || !s.timedOut || s.continueUsed || s.countdownMs == null) return s;
+  return setPaused({ ...s, timedOut: false, continueUsed: true, countdownMs: s.countdownMs + playtest.extensionSeconds * 1000 }, 'timeout', false, clock.monotonicMs);
 }

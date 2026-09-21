@@ -1,3 +1,4 @@
+import { analytics } from '../services/analytics';
 import { createContext, useCallback, useContext, useEffect, useReducer, useRef, useState, type ReactNode } from 'react';
 import { defaultPlayer, playerReducer, type PlayerAction, type PlayerState } from './player';
 import { loadPlayer, savePlayer } from './storage';
@@ -21,8 +22,16 @@ export function PlayerProvider({ children }: {
     const [writable, setWritable] = useState(false);
     const [issue, setIssue] = useState<PlayerContext['issue']>(null);
     const writing = useRef(0);
+    const durableProgress = useRef(defaultPlayer().highestUnlockedLevel);
+    function recordUnlocks(next: PlayerState) {
+        for (const locale of ['fr', 'en', 'es'] as const) {
+            if (next.highestUnlockedLevel[locale] > durableProgress.current[locale]) analytics.track({ name: 'level_unlocked', locale, highestUnlockedLevel: next.highestUnlockedLevel[locale] });
+            durableProgress.current[locale] = Math.max(durableProgress.current[locale], next.highestUnlockedLevel[locale]);
+        }
+    }
     const hydrate = useCallback(() => loadPlayer().then(loaded => {
         current.current = loaded.state;
+        durableProgress.current = { ...loaded.state.highestUnlockedLevel };
         dispatch({ type: 'hydrate', state: loaded.state });
         setIssue(loaded.warning);
         setWritable(loaded.writable);
@@ -43,6 +52,8 @@ export function PlayerProvider({ children }: {
         const revision = ++writing.current;
         try {
             await savePlayer(next);
+            if (action.type === 'resetProgress') durableProgress.current = { ...next.highestUnlockedLevel };
+            else recordUnlocks(next);
             if (revision === writing.current)
                 setIssue(null);
         }
@@ -58,6 +69,7 @@ export function PlayerProvider({ children }: {
         }
         try {
             await savePlayer(current.current);
+            recordUnlocks(current.current);
             setIssue(null);
         }
         catch {

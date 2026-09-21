@@ -1,5 +1,5 @@
 import { findPuzzle } from '../content';
-import { applyHint, calculateRemainingMistakes, clearSelection, deselectCard, elapsedTime, getAvailableHints, produceCompletionResult, selectCard, setPaused, shuffle, shuffleCards, startPuzzle, submitSelection, type State } from './engine';
+import { applyHint, clearSelection, deselectCard, elapsedTime, getAvailableHints, produceCompletionResult, selectCard, setPaused, shuffle, shuffleCards, startPuzzle, submitSelection, type State } from './engine';
 const puzzle = findPuzzle('en-easy')!;
 export const fresh = () => startPuzzle(puzzle, { launch: { mode: 'level', levelId: puzzle.levelId, locale: 'en', puzzleRevision: 1 }, sessionId: 'test', seed: 42, clock: { monotonicMs: 0, utcMs: 0 } });
 const select = (s: State, ids: readonly string[]) => ids.reduce((next, id) => selectCard(next, id).state, s);
@@ -14,14 +14,13 @@ test('correct group matches regardless of selection order and locks cards', () =
   const s = submit(select(fresh(), ['c3', 'c1', 'c0', 'c2'])).state;
   expect(s.solved).toEqual(['g0']); expect(s.order).toHaveLength(12); expect(s.selected).toEqual([]); expect(selectCard(s, 'c0').state).toBe(s);
 });
-test('incorrect submission preserves selection and consumes one mistake', () => {
+test('incorrect submission clears selection and records a wrong answer', () => {
   const s = select(fresh(), ['c0', 'c1', 'c2', 'c4']); const next = submit(s).state;
-  expect(next.mistakes).toBe(1); expect(next.selected).toEqual(s.selected); expect(calculateRemainingMistakes(next)).toBe(3);
+  expect(next.mistakes).toBe(1); expect(next.selected).toEqual([]); expect(next.penaltyMs).toBe(5000);
 });
-test('four mistakes lose; terminal operations cannot change state', () => {
-  let s = select(fresh(), ['c0', 'c1', 'c2', 'c4']); for (let i = 0; i < 4; i++) s = submit(s).state;
-  expect(s.status).toBe('lost'); expect(calculateRemainingMistakes(s)).toBe(0);
-  expect(submit(s).state).toBe(s); expect(shuffleCards(s).state).toBe(s); expect(applyHint(s, 'pair0').state).toBe(s);
+test('wrong submissions never fail by count', () => {
+  let s: State = { ...fresh(), countdownMs: null }; for (let i = 0; i < 10; i++) s = submit(select(s, ['c0','c1','c2','c4'])).state;
+  expect(s.status).toBe('playing'); expect(s.mistakes).toBe(10); expect(s.penaltyMs).toBe(0);
 });
 test('four solved groups win and completion result is frozen', () => {
   const s = win(); expect(s.status).toBe('won'); expect(s.order).toEqual([]);

@@ -1,3 +1,4 @@
+import { canStartLevel } from '../state/progression';
 import { LifeIndicator } from '../components/LifeIndicator';
 import { useRouter } from 'expo-router';
 import { Screen } from '../components/Screen';
@@ -10,7 +11,7 @@ export function LevelsScreen() {
   const levels = levelsFor(locale);
   return <Screen title={t('levels')}>
     <LifeIndicator />
-    {levels.map(level => <LevelCard key={level.id} number={level.number} completed={state.completedLevels.includes(level.id)} disabled={!writable}
+    {levels.map(level => <LevelCard key={level.id} number={level.number} completed={state.completedLevels.includes(level.id)} locked={!canStartLevel(state, locale, level.id)} disabled={!writable || !canStartLevel(state, locale, level.id)}
       onPress={() => router.push({ pathname: '/game', params: { mode: 'level', levelId: level.id } })} />)}
   </Screen>;
 }

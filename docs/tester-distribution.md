@@ -1,7 +1,7 @@
 # NODI Beta — Android tester distribution
 
 This is a private playtest, not a store release. Testers install **NODI Beta**, open
-it, tap **Jouer**, and choose levels 1–35. No Expo Go or development computer is
+it, tap **Jouer**, and play levels 1–35 in order. Future levels stay visible but locked; victories unlock the next level. No Expo Go or development computer is
 needed. This first batch is French-only (including the interface). Rewards are
 labelled as free beta test rewards; there are no advertisements or payments.
 
