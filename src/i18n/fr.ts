@@ -1,11 +1,17 @@
 import { dailyLore } from '../lore/content';
 import type { Translations } from './en';
 export const fr: Translations = {
+  observationsRecorded: '%{count} observations consignées',
+  currentLevel: 'En cours',
   connections: "%{count} / 4 connexions",
   hintPairTitle: "Paire",
   hintPairDescription: "Révéler deux cartes du même groupe.",
   hintCategoryTitle: "Catégorie",
   hintCategoryDescription: "Révéler l’indice rédigé pour une catégorie.",
+  observationArchived: "Observation consignée",
+  observationInterrupted: "Observation interrompue",
+  archiveComplete: "Tout est consigné pour l’instant.",
+  recapUnavailable: "Les connexions de cette observation ne sont plus disponibles.",
   lifeCount: "%{count} vies sur %{max}",
   unlimitedLives: "Vies illimitées",
   nextLifeCompact: "+1 dans %{time}",

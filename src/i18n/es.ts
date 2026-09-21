@@ -1,10 +1,16 @@
 import type { Translations } from './en';
 export const es: Translations = {
+  observationsRecorded: '%{count} observaciones registradas',
+  currentLevel: 'Actual',
   connections: "%{count} / 4 conexiones",
   hintPairTitle: "Pareja",
   hintPairDescription: "Revelar dos cartas del mismo grupo.",
   hintCategoryTitle: "Categoría",
   hintCategoryDescription: "Revelar la pista escrita para una categoría.",
+  observationArchived: "Observación registrada",
+  observationInterrupted: "Observación interrumpida",
+  archiveComplete: "Todo está registrado por ahora.",
+  recapUnavailable: "Las conexiones de esta observación ya no están disponibles.",
   lifeCount: "%{count} de %{max} vidas",
   unlimitedLives: "Vidas ilimitadas",
   nextLifeCompact: "+1 en %{time}",

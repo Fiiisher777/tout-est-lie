@@ -28,3 +28,10 @@ export const homeTheme = {
   // Bundled system fallbacks; ready for authored font assets without global changes.
   typography: { editorialIOS: 'Baskerville', editorialAndroid: 'serif', functionalIOS: 'System', functionalAndroid: 'sans-serif' },
 } as const;
+
+// Results opts in independently; other shell screens keep their own surfaces.
+export const resultsTheme = {
+  background: nodiColors.midnight, paper: nodiColors.paper, text: nodiColors.ink,
+  onDark: nodiColors.ivory, accent: nodiColors.brass, primary: nodiColors.paper,
+  radius: 14, tapTarget: 48, typography: homeTheme.typography,
+} as const;
