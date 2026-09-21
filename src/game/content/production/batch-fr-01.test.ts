@@ -1,4 +1,5 @@
-import catalog from '../../../../content/production/puzzles.json';
+import active from '../../../../content/production/puzzles.json';
+import catalog from '../../../../content/production/history/catalog-before-fr-curated-11-35.json';
 import released from '../../../../content/production/released.json';
 import { validateProduction, validateProductionPuzzle } from './validate';
 import { releasePacks, releasePuzzles } from './release';
@@ -33,4 +34,8 @@ test('none of the French drafts is exposed through either production release loa
   expect(releasePuzzles(catalog, released)).toEqual([]);
   expect(releasePacks(catalog, released).flatMap(p => p.puzzles)).toEqual([]);
   expect(releasePacks(catalog, released).flatMap(p => p.entries)).toEqual([]);
+});
+
+test('original FR 1–10 and all EN/ES records remain exactly unchanged', () => {
+  for (const original of catalog.filter(p => p.locale !== 'fr' || p.position <= 10)) expect(active.find(p => p.levelId === original.levelId)).toEqual(original);
 });

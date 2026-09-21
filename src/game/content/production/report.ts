@@ -52,6 +52,8 @@ export function editorialReport(input: unknown, released: readonly ReleasedRevis
       if (!g || typeof g !== 'object') continue;
       lines.push(`- **${escape(g.label)}**: ${(Array.isArray(g.cardIds) ? g.cardIds : []).map((id: string) => escape(label(id))).join(' · ')}`, `  - Intended reason: ${escape(g.intendedReason)}`, `  - Explanation: ${escape(g.explanation)}`);
     }
+    if (p.editorialNotes) lines.push('', `Editorial notes: ${escape(p.editorialNotes)}`);
+    if (p.provenance) lines.push('', `Source: ${escape(p.provenance.sourceFile)} · Candidate: ${escape(p.provenance.sourceCandidate)}`);
     lines.push('', `Rationale: ${escape(p.rationale)}`, '', `Intended reason: ${escape(p.intendedReason)}`, '', `Known decoys: ${Array.isArray(p.knownDecoys) && p.knownDecoys.length ? p.knownDecoys.map(escape).join('; ') : 'none listed'}`, '', `Ambiguity notes: ${escape(p.ambiguityNotes)}`, '', 'Hints:', '');
     for (const h of (Array.isArray(p.hints) ? p.hints : [])) if (h && typeof h === 'object') lines.push(`- ${escape(h.kind)} / ${escape(h.groupId)}: ${h.kind === 'pair' && Array.isArray(h.cardIds) ? h.cardIds.map((id: string) => escape(label(id))).join(' + ') : escape(h.text)}`);
     if (p.rejectionReason) lines.push('', `Rejection reason: ${escape(p.rejectionReason)}`);

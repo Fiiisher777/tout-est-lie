@@ -14,6 +14,11 @@ export function validateProductionPuzzle(input: unknown): Issue[] {
   if (difficultyForPosition(Number(input.position)) !== undefined) check(input.difficulty === difficultyForPosition(Number(input.position)), 'difficulty', 'Incorrect difficulty for position');
   check(statuses.includes(input.status as never), 'status', 'Invalid editorial status');
   for (const field of ['rationale', 'intendedReason', 'ambiguityNotes']) check(text(input[field]), field, 'Required editorial text (write “none identified” only after considering ambiguity)');
+  if (input.editorialNotes !== undefined) check(text(input.editorialNotes), 'editorialNotes', 'Expected editorial notes text');
+  if (input.provenance !== undefined) {
+    const provenance = input.provenance;
+    check(object(provenance) && text(provenance.sourceFile) && Number.isInteger(provenance.sourceCandidate) && Number(provenance.sourceCandidate) > 0, 'provenance', 'Expected source file and positive candidate number');
+  }
   check(Array.isArray(input.knownDecoys) && input.knownDecoys.every(text), 'knownDecoys', 'Expected array of decoy descriptions; empty is allowed');
   for (const [i, group] of (Array.isArray(input.groups) ? input.groups : []).entries()) {
     check(object(group) && text(group.explanation) && text(group.intendedReason), `groups.${i}`, 'Each group needs explanation and intendedReason');

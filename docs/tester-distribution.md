@@ -1,7 +1,7 @@
 # NODI Beta — Android tester distribution
 
 This is a private playtest, not a store release. Testers install **NODI Beta**, open
-it, tap **Jouer**, and choose levels 1–10. No Expo Go or development computer is
+it, tap **Jouer**, and choose levels 1–35. No Expo Go or development computer is
 needed. This first batch is French-only (including the interface). Rewards are
 labelled as free beta test rewards; there are no advertisements or payments.
 
@@ -47,8 +47,8 @@ created during this implementation.
 - Production/unrecognized runtime variants fail closed for tester access. The
   production EAS profile rejects `APP_VARIANT=tester`. Its existing profile and
   approved-only loader have not been changed.
-- Tester uses a separate validated source: exactly the ten French draft positions
-  1–10. It clones engine data; approval metadata/catalog files are never written.
+- Tester uses a separate validated source: exactly the 35 French draft positions
+  1–35. It clones engine data; approval metadata/catalog files are never written.
   Normal screens, engine, local player persistence and economy are reused.
 - Tester has no additional route. Play opens Levels. Draft Preview entry, route and
   injection access are blocked in tester, including when locally using Expo Go.

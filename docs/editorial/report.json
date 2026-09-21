@@ -1,30 +1,10 @@
 {
-  "total": 17,
+  "total": 37,
   "locales": {
     "fr": {
-      "total": 15,
+      "total": 35,
       "approved": 0,
       "missingPositions": [
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        25,
-        26,
-        27,
-        28,
-        29,
-        30,
-        31,
-        32,
-        33,
-        34,
-        35,
         36,
         37,
         38,
@@ -610,7 +590,7 @@
     }
   },
   "statuses": {
-    "draft": 17,
+    "draft": 37,
     "structurally_valid": 0,
     "editorial_review": 0,
     "approved": 0,
@@ -650,7 +630,7 @@
   ],
   "difficulties": {
     "1": 12,
-    "2": 5,
+    "2": 25,
     "3": 0,
     "4": 0,
     "5": 0
@@ -852,7 +832,7 @@
       ]
     },
     {
-      "concept": "concept-fr-rouge-poissons-tri-sols",
+      "concept": "concept-fr-curated-011",
       "locales": [
         "fr"
       ],
@@ -869,7 +849,7 @@
       ]
     },
     {
-      "concept": "concept-fr-animaux-caches",
+      "concept": "concept-fr-curated-021",
       "locales": [
         "fr"
       ],
@@ -886,7 +866,7 @@
       ]
     },
     {
-      "concept": "concept-fr-porte-devises-imprimes",
+      "concept": "concept-fr-curated-022",
       "locales": [
         "fr"
       ],
@@ -903,7 +883,7 @@
       ]
     },
     {
-      "concept": "concept-fr-tennis-vetement-escalier-vaisselle",
+      "concept": "concept-fr-curated-023",
       "locales": [
         "fr"
       ],
@@ -920,7 +900,7 @@
       ]
     },
     {
-      "concept": "concept-fr-de-mer-articulations-ferme-noyau",
+      "concept": "concept-fr-curated-024",
       "locales": [
         "fr"
       ],
@@ -935,90 +915,350 @@
           "source": null
         }
       ]
+    },
+    {
+      "concept": "concept-fr-curated-012",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-012",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-013",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-013",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-014",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-014",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-015",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-015",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-016",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-016",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-017",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-017",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-018",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-018",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-019",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-019",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-020",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-020",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-025",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-025",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-026",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-026",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-027",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-027",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-028",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-028",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-029",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-029",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-030",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-030",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-031",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-031",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-032",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-032",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-033",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-033",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-034",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-034",
+          "relationship": "original",
+          "source": null
+        }
+      ]
+    },
+    {
+      "concept": "concept-fr-curated-035",
+      "locales": [
+        "fr"
+      ],
+      "missingLocales": [
+        "en",
+        "es"
+      ],
+      "relationships": [
+        {
+          "puzzleId": "puzzle-fr-curated-035",
+          "relationship": "original",
+          "source": null
+        }
+      ]
     }
   ],
   "structuralErrors": [],
   "releaseErrors": [
-    {
-      "path": "fr:12",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:13",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:14",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:15",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:16",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:17",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:18",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:19",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:20",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:25",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:26",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:27",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:28",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:29",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:30",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:31",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:32",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:33",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:34",
-      "message": "Missing level position"
-    },
-    {
-      "path": "fr:35",
-      "message": "Missing level position"
-    },
     {
       "path": "fr:36",
       "message": "Missing level position"
@@ -2137,6 +2377,86 @@
     },
     {
       "path": "puzzle-fr-007",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-012",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-013",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-014",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-015",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-016",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-017",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-018",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-019",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-020",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-025",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-026",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-027",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-028",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-029",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-030",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-031",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-032",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-033",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-034",
+      "message": "Unapproved puzzle: explicit current editorial approval required"
+    },
+    {
+      "path": "puzzle-fr-curated-035",
       "message": "Unapproved puzzle: explicit current editorial approval required"
     }
   ],

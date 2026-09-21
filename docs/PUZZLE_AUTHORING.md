@@ -95,6 +95,9 @@ formats are not the production approval mechanism.
 - `hints`: at least one PAIR (`kind: "pair"`, two distinct member `cardIds`) and
   one CATEGORY (`kind: "category"`, nonempty `text`) hint. Each has a unique `id`
   and a valid `groupId`. Additional hints may cover other groups.
+- Optional `editorialNotes` preserves source author notes verbatim. Optional
+  `provenance: {sourceFile, sourceCandidate}` records import provenance only; neither
+  field is projected into gameplay. Both appear in editorial reports.
 - `rationale`: why the puzzle and its difficulty are appropriate.
 - `intendedReason`: the intended overall partition logic.
 - `knownDecoys`: array of plausible alternate readings, or `[]` after consideration.

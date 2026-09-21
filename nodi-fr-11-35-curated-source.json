@@ -1,0 +1,1874 @@
+{
+  "packName": "NODI FR D2 curated playtest positions 11-35",
+  "purpose": "Editorial source pack for Codex import into the existing NODI authoring pipeline.",
+  "rules": {
+    "doNotApprove": true,
+    "targetStatus": "draft",
+    "difficulty": 2,
+    "positions": "11-35",
+    "preserveProductionApprovalSafeguards": true,
+    "notes": [
+      "Editorial source only; adapt to the repository's existing production authoring schema.",
+      "Do not overwrite positions 1-10.",
+      "Archive or supersede existing draft records occupying 11 or 21-24 according to existing revision rules; never silently delete editorial history.",
+      "Keep release loader approved-only and tester/dev access rules unchanged."
+    ]
+  },
+  "puzzles": [
+    {
+      "position": 11,
+      "sourceCandidate": 11,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "CITRON",
+        "ORANGE",
+        "CASSIS",
+        "FRAMBOISE",
+        "LAVANDE",
+        "COQUELICOT",
+        "MIMOSA",
+        "PERVENCHE",
+        "ÉMERAUDE",
+        "RUBIS",
+        "SAPHIR",
+        "TURQUOISE",
+        "SOURIS",
+        "CANARI",
+        "SAUMON",
+        "TAUPE"
+      ],
+      "groups": [
+        {
+          "label": "Fruits",
+          "cards": [
+            "CITRON",
+            "ORANGE",
+            "CASSIS",
+            "FRAMBOISE"
+          ],
+          "intendedReason": "Quatre fruits comestibles familiers."
+        },
+        {
+          "label": "Fleurs",
+          "cards": [
+            "LAVANDE",
+            "COQUELICOT",
+            "MIMOSA",
+            "PERVENCHE"
+          ],
+          "intendedReason": "Quatre plantes à fleurs familières."
+        },
+        {
+          "label": "Pierres",
+          "cards": [
+            "ÉMERAUDE",
+            "RUBIS",
+            "SAPHIR",
+            "TURQUOISE"
+          ],
+          "intendedReason": "Quatre pierres ou minéraux couramment associés à la bijouterie."
+        },
+        {
+          "label": "Animaux",
+          "cards": [
+            "SOURIS",
+            "CANARI",
+            "SAUMON",
+            "TAUPE"
+          ],
+          "intendedReason": "Quatre animaux appartenant à des familles très différentes."
+        }
+      ],
+      "knownDecoys": [
+        "FRAMBOISE + COQUELICOT + RUBIS : rouge",
+        "CITRON + MIMOSA + CANARI : jaune",
+        "SAPHIR + PERVENCHE + TURQUOISE : bleu"
+      ],
+      "ambiguityNotes": "Les seize cartes peuvent aussi être lues comme des noms de couleurs. Les faux regroupements chromatiques restent incomplets.",
+      "editorialNotes": "Rôle: entrée D2 ludique; victoire relativement rapide."
+    },
+    {
+      "position": 12,
+      "sourceCandidate": 18,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "MENUISIER",
+        "CHARPENTIER",
+        "ÉBÉNISTE",
+        "BÛCHERON",
+        "BOULANGER",
+        "BOUCHER",
+        "PÂTISSIER",
+        "POISSONNIER",
+        "BAGUETTE",
+        "CROISSANT",
+        "BRIOCHE",
+        "FICELLE",
+        "CHÊNE",
+        "HÊTRE",
+        "SAPIN",
+        "NOYER"
+      ],
+      "groups": [
+        {
+          "label": "Métiers liés au bois",
+          "cards": [
+            "MENUISIER",
+            "CHARPENTIER",
+            "ÉBÉNISTE",
+            "BÛCHERON"
+          ],
+          "intendedReason": "Quatre métiers directement liés au bois, de l'abattage à la transformation."
+        },
+        {
+          "label": "Métiers de bouche",
+          "cards": [
+            "BOULANGER",
+            "BOUCHER",
+            "PÂTISSIER",
+            "POISSONNIER"
+          ],
+          "intendedReason": "Quatre métiers spécialisés dans la préparation ou la vente de denrées alimentaires."
+        },
+        {
+          "label": "Pains et viennoiseries",
+          "cards": [
+            "BAGUETTE",
+            "CROISSANT",
+            "BRIOCHE",
+            "FICELLE"
+          ],
+          "intendedReason": "Quatre produits vendus couramment en boulangerie."
+        },
+        {
+          "label": "Arbres",
+          "cards": [
+            "CHÊNE",
+            "HÊTRE",
+            "SAPIN",
+            "NOYER"
+          ],
+          "intendedReason": "Quatre essences d'arbres familières en Europe."
+        }
+      ],
+      "knownDecoys": [
+        "BOULANGER + BAGUETTE + CROISSANT + BRIOCHE : boulangerie",
+        "MENUISIER + ÉBÉNISTE + CHÊNE + NOYER : travail du bois",
+        "Les huit cartes de métiers invitent à une mauvaise catégorie générale"
+      ],
+      "ambiguityNotes": "La grande catégorie 'métiers' contient huit cartes et ne permet donc pas un groupe unique de quatre.",
+      "editorialNotes": "Rôle: accessible; apprend que des catégories très générales doivent parfois être divisées."
+    },
+    {
+      "position": 13,
+      "sourceCandidate": 42,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "PORTE",
+        "VALISE",
+        "CASSEROLE",
+        "TIROIR",
+        "ARMOIRE",
+        "COMMODE",
+        "BUFFET",
+        "BIBLIOTHÈQUE",
+        "PASSEPORT",
+        "VISA",
+        "BILLET",
+        "CARTE D'EMBARQUEMENT",
+        "POÊLE",
+        "MARMITE",
+        "FAITOUT",
+        "COCOTTE"
+      ],
+      "groups": [
+        {
+          "label": "Ont une poignée",
+          "cards": [
+            "PORTE",
+            "VALISE",
+            "CASSEROLE",
+            "TIROIR"
+          ],
+          "intendedReason": "Une poignée de porte, de valise, de casserole et de tiroir : 'poignée' nomme une partie fonctionnelle de chaque objet."
+        },
+        {
+          "label": "Meubles de rangement",
+          "cards": [
+            "ARMOIRE",
+            "COMMODE",
+            "BUFFET",
+            "BIBLIOTHÈQUE"
+          ],
+          "intendedReason": "Quatre meubles dont une fonction principale est le rangement."
+        },
+        {
+          "label": "Documents utilisés pour voyager",
+          "cards": [
+            "PASSEPORT",
+            "VISA",
+            "BILLET",
+            "CARTE D'EMBARQUEMENT"
+          ],
+          "intendedReason": "Quatre documents qu'un voyageur peut devoir présenter ou utiliser pendant un déplacement."
+        },
+        {
+          "label": "Récipients de cuisson",
+          "cards": [
+            "POÊLE",
+            "MARMITE",
+            "FAITOUT",
+            "COCOTTE"
+          ],
+          "intendedReason": "Quatre récipients utilisés directement pour cuire des aliments."
+        }
+      ],
+      "knownDecoys": [
+        "TIROIR + ARMOIRE + COMMODE + BUFFET : rangement",
+        "VALISE + PASSEPORT + VISA + BILLET : voyage",
+        "CASSEROLE + POÊLE + MARMITE + FAITOUT : cuisson"
+      ],
+      "ambiguityNotes": "TIROIR est une partie de meuble et VALISE un contenant de voyage; CASSEROLE crée une surpopulation volontaire parmi les récipients.",
+      "editorialNotes": "Rôle: propriété physique concrète."
+    },
+    {
+      "position": 14,
+      "sourceCandidate": 22,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "BOUSSOLE",
+        "HORLOGE",
+        "SERINGUE",
+        "SAPIN",
+        "PANSEMENT",
+        "STÉTHOSCOPE",
+        "COMPRESSE",
+        "SCALPEL",
+        "BOULE",
+        "GUIRLANDE",
+        "ANGE",
+        "RUBAN",
+        "CARTE",
+        "PLAN",
+        "GPS",
+        "BALISE"
+      ],
+      "groups": [
+        {
+          "label": "Ont une aiguille / des aiguilles",
+          "cards": [
+            "BOUSSOLE",
+            "HORLOGE",
+            "SERINGUE",
+            "SAPIN"
+          ],
+          "intendedReason": "Aiguille de boussole, aiguilles d'horloge, aiguille de seringue et aiguilles de sapin."
+        },
+        {
+          "label": "Matériel médical",
+          "cards": [
+            "PANSEMENT",
+            "STÉTHOSCOPE",
+            "COMPRESSE",
+            "SCALPEL"
+          ],
+          "intendedReason": "Quatre objets utilisés dans le soin ou l'examen médical."
+        },
+        {
+          "label": "Décorations de sapin",
+          "cards": [
+            "BOULE",
+            "GUIRLANDE",
+            "ANGE",
+            "RUBAN"
+          ],
+          "intendedReason": "Quatre ornements que l'on peut placer sur un sapin de Noël."
+        },
+        {
+          "label": "Aides à l'orientation",
+          "cards": [
+            "CARTE",
+            "PLAN",
+            "GPS",
+            "BALISE"
+          ],
+          "intendedReason": "Quatre moyens utilisés pour déterminer ou suivre une direction."
+        }
+      ],
+      "knownDecoys": [
+        "SERINGUE + PANSEMENT + STÉTHOSCOPE + COMPRESSE : médical",
+        "SAPIN + BOULE + GUIRLANDE + ANGE : Noël",
+        "BOUSSOLE + CARTE + PLAN + GPS : orientation"
+      ],
+      "ambiguityNotes": "THERMOMÈTRE et ÉTOILE ont été retirés lors de l'audit car ils appartenaient légitimement à deux groupes.",
+      "editorialNotes": "Rôle: premier aha physique fort."
+    },
+    {
+      "position": 15,
+      "sourceCandidate": 21,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "CADEAU",
+        "TOILETTE",
+        "CALQUE",
+        "CUISSON",
+        "BALLON",
+        "CONFETTI",
+        "GUIRLANDE",
+        "SERPENTIN",
+        "SAVON",
+        "SHAMPOING",
+        "DENTIFRICE",
+        "DÉODORANT",
+        "RÈGLE",
+        "COMPAS",
+        "ÉQUERRE",
+        "RAPPORTEUR"
+      ],
+      "groups": [
+        {
+          "label": "PAPIER ___",
+          "cards": [
+            "CADEAU",
+            "TOILETTE",
+            "CALQUE",
+            "CUISSON"
+          ],
+          "intendedReason": "Papier cadeau, papier toilette, papier calque, papier cuisson : quatre expressions courantes."
+        },
+        {
+          "label": "Décorations de fête",
+          "cards": [
+            "BALLON",
+            "CONFETTI",
+            "GUIRLANDE",
+            "SERPENTIN"
+          ],
+          "intendedReason": "Quatre éléments décoratifs utilisés lors d'une fête."
+        },
+        {
+          "label": "Produits d'hygiène",
+          "cards": [
+            "SAVON",
+            "SHAMPOING",
+            "DENTIFRICE",
+            "DÉODORANT"
+          ],
+          "intendedReason": "Quatre produits destinés directement à l'hygiène corporelle."
+        },
+        {
+          "label": "Instruments de tracé géométrique",
+          "cards": [
+            "RÈGLE",
+            "COMPAS",
+            "ÉQUERRE",
+            "RAPPORTEUR"
+          ],
+          "intendedReason": "Quatre outils servant à tracer ou mesurer des figures géométriques."
+        }
+      ],
+      "knownDecoys": [
+        "CADEAU + BALLON + CONFETTI + GUIRLANDE : fête",
+        "TOILETTE + SAVON + SHAMPOING + DENTIFRICE : salle de bain",
+        "CALQUE + RÈGLE + COMPAS + ÉQUERRE : dessin technique"
+      ],
+      "ambiguityNotes": "Les faux groupes sont des proximités de contexte ou de fonction, pas des catégories aussi précises que les groupes officiels.",
+      "editorialNotes": "Rôle: respiration lexicale."
+    },
+    {
+      "position": 16,
+      "sourceCandidate": 3,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "SORTIE",
+        "ROUE",
+        "PLAN",
+        "TROUSSE",
+        "GUIDON",
+        "SELLE",
+        "PÉDALE",
+        "CHAÎNE",
+        "SCÈNE",
+        "SÉQUENCE",
+        "PRISE",
+        "CLAP",
+        "COMPAS",
+        "ÉQUERRE",
+        "AGENDA",
+        "SURLIGNEUR"
+      ],
+      "groups": [
+        {
+          "label": "___ DE SECOURS",
+          "cards": [
+            "SORTIE",
+            "ROUE",
+            "PLAN",
+            "TROUSSE"
+          ],
+          "intendedReason": "Sortie de secours, roue de secours, plan de secours et trousse de secours."
+        },
+        {
+          "label": "Parties d'un vélo",
+          "cards": [
+            "GUIDON",
+            "SELLE",
+            "PÉDALE",
+            "CHAÎNE"
+          ],
+          "intendedReason": "Quatre pièces montées sur une bicyclette."
+        },
+        {
+          "label": "Vocabulaire du tournage",
+          "cards": [
+            "SCÈNE",
+            "SÉQUENCE",
+            "PRISE",
+            "CLAP"
+          ],
+          "intendedReason": "Quatre termes directement associés au tournage et au découpage d'un film."
+        },
+        {
+          "label": "Fournitures scolaires",
+          "cards": [
+            "COMPAS",
+            "ÉQUERRE",
+            "AGENDA",
+            "SURLIGNEUR"
+          ],
+          "intendedReason": "Quatre objets couramment présents sur une liste de fournitures scolaires."
+        }
+      ],
+      "knownDecoys": [
+        "ROUE + GUIDON + SELLE + PÉDALE : vélo",
+        "PLAN + SCÈNE + SÉQUENCE + PRISE : cinéma/tournage",
+        "TROUSSE + COMPAS + ÉQUERRE + AGENDA : scolaire",
+        "PLAN + COMPAS + ÉQUERRE : amorce de dessin technique"
+      ],
+      "ambiguityNotes": "Version réparée: MONTAGE a été remplacé par PRISE et RÉPLIQUE par CLAP afin de garder un groupe réellement centré sur le tournage.",
+      "editorialNotes": "Rôle: première tension forte par plusieurs univers concurrents."
+    },
+    {
+      "position": 17,
+      "sourceCandidate": 12,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "NEZ",
+        "MOULIN",
+        "CHÂTEAU",
+        "VOITURE",
+        "TOUR",
+        "FOU",
+        "CAVALIER",
+        "PION",
+        "FRONT",
+        "MENTON",
+        "JOUE",
+        "TEMPE",
+        "TASSE",
+        "CUILLÈRE",
+        "FILTRE",
+        "MACHINE"
+      ],
+      "groups": [
+        {
+          "label": "Choses qui ont une aile",
+          "cards": [
+            "NEZ",
+            "MOULIN",
+            "CHÂTEAU",
+            "VOITURE"
+          ],
+          "intendedReason": "Ailes du nez, ailes d'un moulin, aile d'un château, aile d'une voiture."
+        },
+        {
+          "label": "Pièces du jeu d'échecs",
+          "cards": [
+            "TOUR",
+            "FOU",
+            "CAVALIER",
+            "PION"
+          ],
+          "intendedReason": "Quatre pièces officielles d'un jeu d'échecs."
+        },
+        {
+          "label": "Parties du visage",
+          "cards": [
+            "FRONT",
+            "MENTON",
+            "JOUE",
+            "TEMPE"
+          ],
+          "intendedReason": "Quatre zones anatomiques du visage."
+        },
+        {
+          "label": "___ À CAFÉ",
+          "cards": [
+            "TASSE",
+            "CUILLÈRE",
+            "FILTRE",
+            "MACHINE"
+          ],
+          "intendedReason": "Tasse à café, cuillère à café, filtre à café, machine à café."
+        }
+      ],
+      "knownDecoys": [
+        "TOUR + FOU + CAVALIER + CHÂTEAU : château médiéval",
+        "NEZ + FRONT + MENTON + JOUE : visage",
+        "MOULIN + TASSE + CUILLÈRE + FILTRE : café"
+      ],
+      "ambiguityNotes": "Le piège médiéval est thématique mais CHÂTEAU n'est pas une pièce d'échecs; les autres pièges sont surpeuplés ou incomplets.",
+      "editorialNotes": "Rôle: propriété inattendue."
+    },
+    {
+      "position": 18,
+      "sourceCandidate": 6,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "PIED",
+        "BRAS",
+        "DOSSIER",
+        "ASSISE",
+        "POIGNET",
+        "CHEVILLE",
+        "COU",
+        "DOIGT",
+        "CHEMISE",
+        "CLASSEUR",
+        "POCHETTE",
+        "TRIEUR",
+        "CADRAN",
+        "AIGUILLE",
+        "BRACELET",
+        "REMONTOIR"
+      ],
+      "groups": [
+        {
+          "label": "Parties d'un fauteuil",
+          "cards": [
+            "PIED",
+            "BRAS",
+            "DOSSIER",
+            "ASSISE"
+          ],
+          "intendedReason": "Quatre composants nommés d'un fauteuil."
+        },
+        {
+          "label": "Endroits du corps où l'on porte un bijou",
+          "cards": [
+            "POIGNET",
+            "CHEVILLE",
+            "COU",
+            "DOIGT"
+          ],
+          "intendedReason": "Bracelet, chaîne de cheville, collier et bague correspondent à ces quatre endroits du corps."
+        },
+        {
+          "label": "Contenants pour ranger des papiers",
+          "cards": [
+            "CHEMISE",
+            "CLASSEUR",
+            "POCHETTE",
+            "TRIEUR"
+          ],
+          "intendedReason": "Quatre objets de bureau servant à contenir ou organiser des feuilles."
+        },
+        {
+          "label": "Parties d'une montre",
+          "cards": [
+            "CADRAN",
+            "AIGUILLE",
+            "BRACELET",
+            "REMONTOIR"
+          ],
+          "intendedReason": "Quatre composants d'une montre-bracelet."
+        }
+      ],
+      "knownDecoys": [
+        "PIED + BRAS + POIGNET + CHEVILLE : corps",
+        "DOSSIER + CLASSEUR + POCHETTE + TRIEUR : bureau",
+        "BRACELET + POIGNET + COU + DOIGT : bijoux/corps"
+      ],
+      "ambiguityNotes": "La famille corporelle est volontairement surpeuplée; aucun découpage alternatif ne permet une seconde partition complète.",
+      "editorialNotes": "Rôle: polysémie forte."
+    },
+    {
+      "position": 19,
+      "sourceCandidate": 14,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "TEMPÉRATURE",
+        "ANGLE",
+        "ALCOOL",
+        "LATITUDE",
+        "THÉ",
+        "TISANE",
+        "CHOCOLAT",
+        "CAFÉ",
+        "PLAFOND",
+        "CLOISON",
+        "PLINTHE",
+        "POUTRE",
+        "ÉQUATEUR",
+        "MÉRIDIEN",
+        "PÔLE",
+        "TROPIQUE"
+      ],
+      "groups": [
+        {
+          "label": "Se mesurent en degrés",
+          "cards": [
+            "TEMPÉRATURE",
+            "ANGLE",
+            "ALCOOL",
+            "LATITUDE"
+          ],
+          "intendedReason": "Température, angle, degré alcoolique et latitude utilisent tous le degré comme unité ou notation."
+        },
+        {
+          "label": "Boissons chaudes",
+          "cards": [
+            "THÉ",
+            "TISANE",
+            "CHOCOLAT",
+            "CAFÉ"
+          ],
+          "intendedReason": "Quatre boissons couramment servies chaudes."
+        },
+        {
+          "label": "Éléments de construction d'une pièce",
+          "cards": [
+            "PLAFOND",
+            "CLOISON",
+            "PLINTHE",
+            "POUTRE"
+          ],
+          "intendedReason": "Quatre éléments bâtis ou posés dans l'aménagement d'une pièce."
+        },
+        {
+          "label": "Repères tracés sur un globe",
+          "cards": [
+            "ÉQUATEUR",
+            "MÉRIDIEN",
+            "PÔLE",
+            "TROPIQUE"
+          ],
+          "intendedReason": "Quatre repères géographiques représentés sur un globe terrestre."
+        }
+      ],
+      "knownDecoys": [
+        "LATITUDE + ÉQUATEUR + MÉRIDIEN + PÔLE : géographie",
+        "ANGLE + PLAFOND + CLOISON + PLINTHE : pièce",
+        "ÉQUATEUR + TROPIQUE + PÔLE : climat",
+        "ALCOOL + THÉ + CHOCOLAT + CAFÉ : boissons"
+      ],
+      "ambiguityNotes": "Le groupe 'degrés' doit rester une propriété transversale et non une catégorie thématique.",
+      "editorialNotes": "Rôle: relation transversale."
+    },
+    {
+      "position": 20,
+      "sourceCandidate": 26,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "GARE",
+        "CHANTIER",
+        "CUISINE",
+        "ORCHESTRE",
+        "LOCOMOTIVE",
+        "WAGON",
+        "ROUE",
+        "FREIN",
+        "GRUE",
+        "PELLETEUSE",
+        "BÉTONNIÈRE",
+        "BULLDOZER",
+        "VIOLON",
+        "FLÛTE",
+        "HAUTBOIS",
+        "TROMPETTE"
+      ],
+      "groups": [
+        {
+          "label": "CHEF DE ___",
+          "cards": [
+            "GARE",
+            "CHANTIER",
+            "CUISINE",
+            "ORCHESTRE"
+          ],
+          "intendedReason": "Chef de gare, chef de chantier, chef de cuisine, chef d'orchestre."
+        },
+        {
+          "label": "Éléments d'un train",
+          "cards": [
+            "LOCOMOTIVE",
+            "WAGON",
+            "ROUE",
+            "FREIN"
+          ],
+          "intendedReason": "Quatre éléments physiques d'un train."
+        },
+        {
+          "label": "Engins de chantier",
+          "cards": [
+            "GRUE",
+            "PELLETEUSE",
+            "BÉTONNIÈRE",
+            "BULLDOZER"
+          ],
+          "intendedReason": "Quatre engins utilisés sur un chantier."
+        },
+        {
+          "label": "Instruments d'orchestre",
+          "cards": [
+            "VIOLON",
+            "FLÛTE",
+            "HAUTBOIS",
+            "TROMPETTE"
+          ],
+          "intendedReason": "Quatre instruments courants d'un orchestre."
+        }
+      ],
+      "knownDecoys": [
+        "GARE + LOCOMOTIVE + WAGON + ROUE : train",
+        "CHANTIER + GRUE + PELLETEUSE + BÉTONNIÈRE : chantier",
+        "ORCHESTRE + VIOLON + FLÛTE + HAUTBOIS : musique"
+      ],
+      "ambiguityNotes": "Les mots GARE, CHANTIER et ORCHESTRE sont des contextes/ensembles, pas des membres équivalents des groupes voisins.",
+      "editorialNotes": "Rôle: niveau très satisfaisant et lisible."
+    },
+    {
+      "position": 21,
+      "sourceCandidate": 44,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "VOITURE",
+        "VÉLO",
+        "PIANO",
+        "MACHINE À COUDRE",
+        "VIOLON",
+        "FLÛTE",
+        "TROMPETTE",
+        "GUITARE",
+        "BUS",
+        "CAMION",
+        "MOTO",
+        "TRACTEUR",
+        "AIGUILLE",
+        "BOBINE",
+        "ÉPINGLE",
+        "DÉ"
+      ],
+      "groups": [
+        {
+          "label": "Ont une ou plusieurs pédales",
+          "cards": [
+            "VOITURE",
+            "VÉLO",
+            "PIANO",
+            "MACHINE À COUDRE"
+          ],
+          "intendedReason": "Ces quatre objets s'utilisent couramment avec une ou plusieurs pédales actionnées au pied."
+        },
+        {
+          "label": "Instruments de musique",
+          "cards": [
+            "VIOLON",
+            "FLÛTE",
+            "TROMPETTE",
+            "GUITARE"
+          ],
+          "intendedReason": "Quatre instruments de musique."
+        },
+        {
+          "label": "Véhicules motorisés",
+          "cards": [
+            "BUS",
+            "CAMION",
+            "MOTO",
+            "TRACTEUR"
+          ],
+          "intendedReason": "Quatre véhicules motorisés."
+        },
+        {
+          "label": "Petit matériel de couture",
+          "cards": [
+            "AIGUILLE",
+            "BOBINE",
+            "ÉPINGLE",
+            "DÉ"
+          ],
+          "intendedReason": "Quatre petits objets d'une boîte à couture."
+        }
+      ],
+      "knownDecoys": [
+        "PIANO + VIOLON + FLÛTE + GUITARE : musique",
+        "VOITURE + BUS + CAMION + MOTO : véhicules motorisés",
+        "MACHINE À COUDRE + AIGUILLE + BOBINE + ÉPINGLE : couture",
+        "VÉLO est un véhicule mais pas motorisé"
+      ],
+      "ambiguityNotes": "La propriété commune est un geste du pied plutôt qu'un thème. DÉ signifie ici dé à coudre.",
+      "editorialNotes": "Rôle: retour au concret et respiration."
+    },
+    {
+      "position": 22,
+      "sourceCandidate": 8,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "MANCHE",
+        "CORDE",
+        "CAISSE",
+        "CHEVALET",
+        "PINCEAU",
+        "PALETTE",
+        "TOILE",
+        "FUSAIN",
+        "COL",
+        "POIGNET",
+        "BOUTON",
+        "POCHE",
+        "FICELLE",
+        "LACET",
+        "RUBAN",
+        "ÉLASTIQUE"
+      ],
+      "groups": [
+        {
+          "label": "Parties d'une guitare",
+          "cards": [
+            "MANCHE",
+            "CORDE",
+            "CAISSE",
+            "CHEVALET"
+          ],
+          "intendedReason": "Le manche, les cordes, la caisse de résonance et le chevalet sont des éléments constitutifs d'une guitare acoustique."
+        },
+        {
+          "label": "Matériel du peintre",
+          "cards": [
+            "PINCEAU",
+            "PALETTE",
+            "TOILE",
+            "FUSAIN"
+          ],
+          "intendedReason": "Quatre objets directement utilisés pour produire une image."
+        },
+        {
+          "label": "Parties d'une chemise",
+          "cards": [
+            "COL",
+            "POIGNET",
+            "BOUTON",
+            "POCHE"
+          ],
+          "intendedReason": "Quatre éléments cousus ou intégrés à une chemise."
+        },
+        {
+          "label": "Liens souples pour attacher",
+          "cards": [
+            "FICELLE",
+            "LACET",
+            "RUBAN",
+            "ÉLASTIQUE"
+          ],
+          "intendedReason": "Quatre liens souples servant à nouer, serrer ou fermer."
+        }
+      ],
+      "knownDecoys": [
+        "CHEVALET + PINCEAU + PALETTE + TOILE : peinture",
+        "MANCHE + COL + POIGNET + BOUTON : chemise",
+        "CORDE + FICELLE + LACET + RUBAN : liens"
+      ],
+      "ambiguityNotes": "Trois catégories voisines sont volontairement surpeuplées; CAISSE sert d'ancre de la guitare.",
+      "editorialNotes": "Rôle: grosse identité NODI."
+    },
+    {
+      "position": 23,
+      "sourceCandidate": 24,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "POISSONS",
+        "SABLE",
+        "ÉCOLE",
+        "ESSAI",
+        "DUNE",
+        "FALAISE",
+        "CRIQUE",
+        "CAP",
+        "MÊLÉE",
+        "PLAQUAGE",
+        "TRANSFORMATION",
+        "PÉNALITÉ",
+        "CAHIER",
+        "CARTABLE",
+        "TROUSSE",
+        "ARDOISE"
+      ],
+      "groups": [
+        {
+          "label": "BANC DE ___",
+          "cards": [
+            "POISSONS",
+            "SABLE",
+            "ÉCOLE",
+            "ESSAI"
+          ],
+          "intendedReason": "Banc de poissons, banc de sable, banc d'école, banc d'essai."
+        },
+        {
+          "label": "Formes du relief côtier",
+          "cards": [
+            "DUNE",
+            "FALAISE",
+            "CRIQUE",
+            "CAP"
+          ],
+          "intendedReason": "Quatre formes géographiques du littoral."
+        },
+        {
+          "label": "Termes du rugby",
+          "cards": [
+            "MÊLÉE",
+            "PLAQUAGE",
+            "TRANSFORMATION",
+            "PÉNALITÉ"
+          ],
+          "intendedReason": "Quatre termes techniques courants du rugby."
+        },
+        {
+          "label": "Fournitures scolaires",
+          "cards": [
+            "CAHIER",
+            "CARTABLE",
+            "TROUSSE",
+            "ARDOISE"
+          ],
+          "intendedReason": "Quatre fournitures ou équipements scolaires familiers."
+        }
+      ],
+      "knownDecoys": [
+        "SABLE + DUNE + FALAISE + CRIQUE : littoral",
+        "ESSAI + MÊLÉE + PLAQUAGE + TRANSFORMATION : rugby",
+        "ÉCOLE + CAHIER + CARTABLE + TROUSSE : scolaire"
+      ],
+      "ambiguityNotes": "TOUCHE a été remplacée par PLAQUAGE pour éviter la seconde solution 'banc de touche'.",
+      "editorialNotes": "Rôle: piège lexical propre."
+    },
+    {
+      "position": 24,
+      "sourceCandidate": 17,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "LANGUE",
+        "RIDEAU",
+        "TRAIT",
+        "LEÇON",
+        "DENT",
+        "PALAIS",
+        "GENCIVE",
+        "LÈVRE",
+        "FAUTEUIL",
+        "BALCON",
+        "ORCHESTRE",
+        "POULAILLER",
+        "MATHS",
+        "HISTOIRE",
+        "GÉOGRAPHIE",
+        "MUSIQUE"
+      ],
+      "groups": [
+        {
+          "label": "Ce qu'on tire",
+          "cards": [
+            "LANGUE",
+            "RIDEAU",
+            "TRAIT",
+            "LEÇON"
+          ],
+          "intendedReason": "Tirer la langue, tirer le rideau, tirer un trait, tirer une leçon."
+        },
+        {
+          "label": "Parties de la bouche",
+          "cards": [
+            "DENT",
+            "PALAIS",
+            "GENCIVE",
+            "LÈVRE"
+          ],
+          "intendedReason": "Quatre éléments anatomiques de la bouche ou de son pourtour."
+        },
+        {
+          "label": "Places du public dans un théâtre",
+          "cards": [
+            "FAUTEUIL",
+            "BALCON",
+            "ORCHESTRE",
+            "POULAILLER"
+          ],
+          "intendedReason": "Quatre zones ou catégories de places où s'installe le public d'un théâtre."
+        },
+        {
+          "label": "Matières scolaires",
+          "cards": [
+            "MATHS",
+            "HISTOIRE",
+            "GÉOGRAPHIE",
+            "MUSIQUE"
+          ],
+          "intendedReason": "Quatre disciplines scolaires courantes."
+        }
+      ],
+      "knownDecoys": [
+        "LANGUE + DENT + PALAIS + GENCIVE : bouche",
+        "RIDEAU + FAUTEUIL + BALCON + ORCHESTRE : théâtre",
+        "LEÇON + MATHS + HISTOIRE + GÉOGRAPHIE : scolaire",
+        "MUSIQUE + ORCHESTRE : amorce musicale"
+      ],
+      "ambiguityNotes": "LEÇON n'est pas une matière scolaire; RIDEAU est du côté de la scène, pas une place du public. LANGUE est volontairement très disputée.",
+      "editorialNotes": "Rôle: expressions + catégories concurrentes."
+    },
+    {
+      "position": 25,
+      "sourceCandidate": 35,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "SENS",
+        "FOND",
+        "JEU",
+        "VIE",
+        "VUE",
+        "OUÏE",
+        "ODORAT",
+        "GOÛT",
+        "DÉ",
+        "PION",
+        "JETON",
+        "PLATEAU",
+        "ENFANCE",
+        "ADOLESCENCE",
+        "ÂGE ADULTE",
+        "VIEILLESSE"
+      ],
+      "groups": [
+        {
+          "label": "DOUBLE ___",
+          "cards": [
+            "SENS",
+            "FOND",
+            "JEU",
+            "VIE"
+          ],
+          "intendedReason": "Double sens, double fond, double jeu, double vie."
+        },
+        {
+          "label": "Quatre des cinq sens",
+          "cards": [
+            "VUE",
+            "OUÏE",
+            "ODORAT",
+            "GOÛT"
+          ],
+          "intendedReason": "Quatre sens humains."
+        },
+        {
+          "label": "Matériel de jeu de société",
+          "cards": [
+            "DÉ",
+            "PION",
+            "JETON",
+            "PLATEAU"
+          ],
+          "intendedReason": "Quatre éléments physiques courants d'un jeu de société."
+        },
+        {
+          "label": "Grandes étapes de la vie",
+          "cards": [
+            "ENFANCE",
+            "ADOLESCENCE",
+            "ÂGE ADULTE",
+            "VIEILLESSE"
+          ],
+          "intendedReason": "Quatre grandes périodes de la vie humaine."
+        }
+      ],
+      "knownDecoys": [
+        "SENS ressemble au titre du groupe des sens",
+        "JEU ressemble au titre du groupe de jeu",
+        "VIE ressemble au titre du groupe des âges"
+      ],
+      "ambiguityNotes": "Les trois pivots sont des hyperonymes ou titres plausibles plutôt que des membres équivalents aux cartes des groupes voisins.",
+      "editorialNotes": "Rôle: les cartes semblent être les labels des autres groupes."
+    },
+    {
+      "position": 26,
+      "sourceCandidate": 19,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "AVION",
+        "COMÈTE",
+        "PIANO",
+        "CERF-VOLANT",
+        "FLÛTE",
+        "TROMPETTE",
+        "CLARINETTE",
+        "HARMONICA",
+        "PLUIE",
+        "NEIGE",
+        "GRÊLON",
+        "MÉTÉORITE",
+        "POÊLE",
+        "MARMITE",
+        "COCOTTE",
+        "FAITOUT"
+      ],
+      "groups": [
+        {
+          "label": "Choses qui ont une queue",
+          "cards": [
+            "AVION",
+            "COMÈTE",
+            "PIANO",
+            "CERF-VOLANT"
+          ],
+          "intendedReason": "La queue de l'avion, de la comète, du cerf-volant et le piano à queue."
+        },
+        {
+          "label": "Instruments à vent",
+          "cards": [
+            "FLÛTE",
+            "TROMPETTE",
+            "CLARINETTE",
+            "HARMONICA"
+          ],
+          "intendedReason": "Quatre instruments dont le son est produit par le souffle."
+        },
+        {
+          "label": "Ce qui tombe du ciel",
+          "cards": [
+            "PLUIE",
+            "NEIGE",
+            "GRÊLON",
+            "MÉTÉORITE"
+          ],
+          "intendedReason": "Quatre choses pouvant réellement atteindre le sol en tombant depuis le ciel."
+        },
+        {
+          "label": "Ustensiles de cuisson",
+          "cards": [
+            "POÊLE",
+            "MARMITE",
+            "COCOTTE",
+            "FAITOUT"
+          ],
+          "intendedReason": "Quatre récipients utilisés pour cuire des aliments."
+        }
+      ],
+      "knownDecoys": [
+        "AVION + COMÈTE + MÉTÉORITE + CERF-VOLANT : ciel",
+        "PIANO + FLÛTE + TROMPETTE + CLARINETTE : instruments",
+        "NEIGE évoque aussi les blancs en neige"
+      ],
+      "ambiguityNotes": "Le faux quatuor céleste est volontairement très fort mais ne laisse pas une seconde partition complète.",
+      "editorialNotes": "Rôle: propriété physique inattendue."
+    },
+    {
+      "position": 27,
+      "sourceCandidate": 38,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "PLANTE",
+        "DENT",
+        "MOT",
+        "ÉQUATION",
+        "ROSE",
+        "TULIPE",
+        "IRIS",
+        "LYS",
+        "GENCIVE",
+        "LANGUE",
+        "PALAIS",
+        "LÈVRE",
+        "NOM",
+        "VERBE",
+        "ADJECTIF",
+        "ADVERBE"
+      ],
+      "groups": [
+        {
+          "label": "Ont une racine",
+          "cards": [
+            "PLANTE",
+            "DENT",
+            "MOT",
+            "ÉQUATION"
+          ],
+          "intendedReason": "Racine d'une plante, d'une dent, d'un mot et d'une équation."
+        },
+        {
+          "label": "Fleurs",
+          "cards": [
+            "ROSE",
+            "TULIPE",
+            "IRIS",
+            "LYS"
+          ],
+          "intendedReason": "Quatre fleurs familières."
+        },
+        {
+          "label": "Parties de la bouche",
+          "cards": [
+            "GENCIVE",
+            "LANGUE",
+            "PALAIS",
+            "LÈVRE"
+          ],
+          "intendedReason": "Quatre éléments anatomiques de la bouche ou de son pourtour."
+        },
+        {
+          "label": "Classes grammaticales",
+          "cards": [
+            "NOM",
+            "VERBE",
+            "ADJECTIF",
+            "ADVERBE"
+          ],
+          "intendedReason": "Quatre classes grammaticales fondamentales."
+        }
+      ],
+      "knownDecoys": [
+        "PLANTE + ROSE + TULIPE + IRIS : botanique",
+        "DENT + GENCIVE + LANGUE + PALAIS : bouche",
+        "MOT + NOM + VERBE + ADJECTIF : grammaire"
+      ],
+      "ambiguityNotes": "ÉQUATION est l'ancre. La notion de racine au sens mathématique doit rester familière; à surveiller en playtest.",
+      "editorialNotes": "Rôle: gros aha conceptuel."
+    },
+    {
+      "position": 28,
+      "sourceCandidate": 13,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "VERSEMENT",
+        "RETRAIT",
+        "VIREMENT",
+        "PRÉLÈVEMENT",
+        "SOURCE",
+        "BERGE",
+        "LIT",
+        "COURANT",
+        "MATELAS",
+        "OREILLER",
+        "COUETTE",
+        "TRAVERSIN",
+        "AMPOULE",
+        "FIL",
+        "FUSIBLE",
+        "INTERRUPTEUR"
+      ],
+      "groups": [
+        {
+          "label": "Opérations bancaires",
+          "cards": [
+            "VERSEMENT",
+            "RETRAIT",
+            "VIREMENT",
+            "PRÉLÈVEMENT"
+          ],
+          "intendedReason": "Quatre opérations correspondant à des mouvements d'argent sur un compte."
+        },
+        {
+          "label": "Éléments constitutifs d'une rivière",
+          "cards": [
+            "SOURCE",
+            "BERGE",
+            "LIT",
+            "COURANT"
+          ],
+          "intendedReason": "Quatre éléments utilisés pour décrire physiquement un cours d'eau."
+        },
+        {
+          "label": "Éléments de literie",
+          "cards": [
+            "MATELAS",
+            "OREILLER",
+            "COUETTE",
+            "TRAVERSIN"
+          ],
+          "intendedReason": "Quatre articles qui garnissent un lit."
+        },
+        {
+          "label": "Composants d'une installation électrique",
+          "cards": [
+            "AMPOULE",
+            "FIL",
+            "FUSIBLE",
+            "INTERRUPTEUR"
+          ],
+          "intendedReason": "Quatre pièces raccordées ou installées dans un circuit électrique domestique."
+        }
+      ],
+      "knownDecoys": [
+        "LIT + MATELAS + OREILLER + COUETTE : chambre/lit",
+        "COURANT + AMPOULE + FIL + FUSIBLE : électricité",
+        "VERSEMENT + RETRAIT + PRÉLÈVEMENT + COURANT : faux champ lexical de mouvement"
+      ],
+      "ambiguityNotes": "LIT n'est pas de la literie mais le meuble; COURANT n'est pas un composant électrique. BERGE verrouille le groupe rivière.",
+      "editorialNotes": "Rôle: polysémie croisée."
+    },
+    {
+      "position": 29,
+      "sourceCandidate": 20,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "MAL",
+        "BRAS",
+        "LOUP",
+        "FRUITS",
+        "JET",
+        "COURS",
+        "POINT",
+        "GOUTTE",
+        "VIRGULE",
+        "TIRET",
+        "PARENTHÈSE",
+        "GUILLEMET",
+        "RENARD",
+        "SANGLIER",
+        "CHEVREUIL",
+        "BLAIREAU"
+      ],
+      "groups": [
+        {
+          "label": "___ DE MER",
+          "cards": [
+            "MAL",
+            "BRAS",
+            "LOUP",
+            "FRUITS"
+          ],
+          "intendedReason": "Mal de mer, bras de mer, loup de mer, fruits de mer."
+        },
+        {
+          "label": "___ D'EAU",
+          "cards": [
+            "JET",
+            "COURS",
+            "POINT",
+            "GOUTTE"
+          ],
+          "intendedReason": "Jet d'eau, cours d'eau, point d'eau, goutte d'eau."
+        },
+        {
+          "label": "Signes de ponctuation",
+          "cards": [
+            "VIRGULE",
+            "TIRET",
+            "PARENTHÈSE",
+            "GUILLEMET"
+          ],
+          "intendedReason": "Quatre signes de ponctuation usuels."
+        },
+        {
+          "label": "Animaux de nos forêts",
+          "cards": [
+            "RENARD",
+            "SANGLIER",
+            "CHEVREUIL",
+            "BLAIREAU"
+          ],
+          "intendedReason": "Quatre mammifères sauvages familiers des forêts d'Europe occidentale."
+        }
+      ],
+      "knownDecoys": [
+        "POINT + VIRGULE + TIRET + PARENTHÈSE : ponctuation",
+        "LOUP + RENARD + SANGLIER + CHEVREUIL : animaux",
+        "MAL + BRAS + GOUTTE + POINT : amorce autour des douleurs"
+      ],
+      "ambiguityNotes": "Deux groupes lexicaux parallèles coexistent volontairement; aucune carte ne fonctionne avec les deux compléments.",
+      "editorialNotes": "Rôle: deux règles parallèles."
+    },
+    {
+      "position": 30,
+      "sourceCandidate": 28,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "PLACE",
+        "NOTE",
+        "GARDE",
+        "RACINE",
+        "FACE",
+        "MOUCHE",
+        "SEMBLANT",
+        "PART",
+        "SOMMET",
+        "CÔTÉ",
+        "DIAGONALE",
+        "ANGLE",
+        "TIGE",
+        "FEUILLE",
+        "FLEUR",
+        "BOURGEON"
+      ],
+      "groups": [
+        {
+          "label": "PRENDRE ___",
+          "cards": [
+            "PLACE",
+            "NOTE",
+            "GARDE",
+            "RACINE"
+          ],
+          "intendedReason": "Prendre place, prendre note, prendre garde, prendre racine."
+        },
+        {
+          "label": "FAIRE ___",
+          "cards": [
+            "FACE",
+            "MOUCHE",
+            "SEMBLANT",
+            "PART"
+          ],
+          "intendedReason": "Faire face, faire mouche, faire semblant, faire part."
+        },
+        {
+          "label": "Éléments d'un polygone",
+          "cards": [
+            "SOMMET",
+            "CÔTÉ",
+            "DIAGONALE",
+            "ANGLE"
+          ],
+          "intendedReason": "Quatre éléments ou caractéristiques directement définis sur un polygone."
+        },
+        {
+          "label": "Parties d'une plante",
+          "cards": [
+            "TIGE",
+            "FEUILLE",
+            "FLEUR",
+            "BOURGEON"
+          ],
+          "intendedReason": "Quatre parties visibles d'une plante."
+        }
+      ],
+      "knownDecoys": [
+        "PART peut aussi former PRENDRE PART",
+        "RACINE + TIGE + FEUILLE + FLEUR : plante",
+        "FACE + SOMMET + CÔTÉ + ANGLE : géométrie"
+      ],
+      "ambiguityNotes": "PART fonctionne réellement avec PRENDRE mais la permutation ne permet pas une seconde partition complète.",
+      "editorialNotes": "Rôle: ambiguïté réelle mais contrôlée."
+    },
+    {
+      "position": 31,
+      "sourceCandidate": 25,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "VOLANT",
+        "BOUGIE",
+        "COFFRE",
+        "AILE",
+        "BEC",
+        "PLUME",
+        "SERRE",
+        "QUEUE",
+        "LAMPE",
+        "AMPOULE",
+        "NÉON",
+        "PROJECTEUR",
+        "TENNIS",
+        "PADEL",
+        "SQUASH",
+        "BADMINTON"
+      ],
+      "groups": [
+        {
+          "label": "Éléments d'une voiture",
+          "cards": [
+            "VOLANT",
+            "BOUGIE",
+            "COFFRE",
+            "AILE"
+          ],
+          "intendedReason": "Quatre éléments automobiles portant exactement ces noms."
+        },
+        {
+          "label": "Parties d'un oiseau",
+          "cards": [
+            "BEC",
+            "PLUME",
+            "SERRE",
+            "QUEUE"
+          ],
+          "intendedReason": "Quatre éléments anatomiques externes d'un oiseau."
+        },
+        {
+          "label": "Dispositifs d'éclairage électriques",
+          "cards": [
+            "LAMPE",
+            "AMPOULE",
+            "NÉON",
+            "PROJECTEUR"
+          ],
+          "intendedReason": "Quatre dispositifs produisant de la lumière grâce à l'électricité."
+        },
+        {
+          "label": "Sports de raquette",
+          "cards": [
+            "TENNIS",
+            "PADEL",
+            "SQUASH",
+            "BADMINTON"
+          ],
+          "intendedReason": "Quatre sports pratiqués avec une raquette."
+        }
+      ],
+      "knownDecoys": [
+        "AILE + BEC + PLUME + QUEUE : oiseau",
+        "BOUGIE + LAMPE + AMPOULE + NÉON : lumière",
+        "VOLANT + BADMINTON : équipement/sport",
+        "COFFRE évoque aussi le rangement"
+      ],
+      "ambiguityNotes": "BOUGIE est lumineuse mais non électrique; VOLANT n'est pas un sport; les doubles lectures restent des pièges contrôlés.",
+      "editorialNotes": "Rôle: respiration avant la fin du palier."
+    },
+    {
+      "position": 32,
+      "sourceCandidate": 30,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "JOUR",
+        "SENS",
+        "ATTAQUE",
+        "POIDS",
+        "MATIN",
+        "MIDI",
+        "SOIR",
+        "NUIT",
+        "VUE",
+        "OUÏE",
+        "ODORAT",
+        "GOÛT",
+        "PASSE",
+        "TIR",
+        "DRIBBLE",
+        "CENTRE"
+      ],
+      "groups": [
+        {
+          "label": "Forment un mot avec CONTRE-",
+          "cards": [
+            "JOUR",
+            "SENS",
+            "ATTAQUE",
+            "POIDS"
+          ],
+          "intendedReason": "Contre-jour, contresens, contre-attaque, contrepoids."
+        },
+        {
+          "label": "Moments de la journée",
+          "cards": [
+            "MATIN",
+            "MIDI",
+            "SOIR",
+            "NUIT"
+          ],
+          "intendedReason": "Quatre repères temporels d'une journée."
+        },
+        {
+          "label": "Quatre des cinq sens",
+          "cards": [
+            "VUE",
+            "OUÏE",
+            "ODORAT",
+            "GOÛT"
+          ],
+          "intendedReason": "Quatre sens humains."
+        },
+        {
+          "label": "Gestes techniques au football",
+          "cards": [
+            "PASSE",
+            "TIR",
+            "DRIBBLE",
+            "CENTRE"
+          ],
+          "intendedReason": "Quatre gestes techniques courants au football."
+        }
+      ],
+      "knownDecoys": [
+        "JOUR + MATIN + MIDI + SOIR : temps",
+        "SENS + VUE + OUÏE + ODORAT : perception",
+        "ATTAQUE + PASSE + TIR + DRIBBLE : football"
+      ],
+      "ambiguityNotes": "JOUR, SENS et ATTAQUE sont des hyperonymes ou contextes plus généraux que les membres des groupes voisins.",
+      "editorialNotes": "Rôle: D2+ par hyperonymes trompeurs."
+    },
+    {
+      "position": 33,
+      "sourceCandidate": 16,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "MORAL",
+        "PENTE",
+        "BRETELLE",
+        "RÉVEIL",
+        "ALARME",
+        "MINUTEUR",
+        "SONNETTE",
+        "CARILLON",
+        "PÉAGE",
+        "AIRE",
+        "ÉCHANGEUR",
+        "VIADUC",
+        "TÉLÉSIÈGE",
+        "TÉLÉSKI",
+        "FUNICULAIRE",
+        "TÉLÉPHÉRIQUE"
+      ],
+      "groups": [
+        {
+          "label": "Ce qu'on remonte",
+          "cards": [
+            "MORAL",
+            "PENTE",
+            "BRETELLE",
+            "RÉVEIL"
+          ],
+          "intendedReason": "Remonter le moral, remonter la pente, remonter ses bretelles, remonter un réveil."
+        },
+        {
+          "label": "Ce qui sonne",
+          "cards": [
+            "ALARME",
+            "MINUTEUR",
+            "SONNETTE",
+            "CARILLON"
+          ],
+          "intendedReason": "Quatre dispositifs dont une fonction centrale est d'émettre un signal sonore."
+        },
+        {
+          "label": "Aménagements d'autoroute",
+          "cards": [
+            "PÉAGE",
+            "AIRE",
+            "ÉCHANGEUR",
+            "VIADUC"
+          ],
+          "intendedReason": "Quatre ouvrages ou aménagements caractéristiques des grands axes routiers."
+        },
+        {
+          "label": "Remontées mécaniques",
+          "cards": [
+            "TÉLÉSIÈGE",
+            "TÉLÉSKI",
+            "FUNICULAIRE",
+            "TÉLÉPHÉRIQUE"
+          ],
+          "intendedReason": "Quatre installations permettant de transporter des personnes vers un point plus élevé."
+        }
+      ],
+      "knownDecoys": [
+        "RÉVEIL + ALARME + SONNETTE + CARILLON : ce qui sonne",
+        "BRETELLE + PÉAGE + AIRE + ÉCHANGEUR : autoroute",
+        "PENTE + TÉLÉSIÈGE + TÉLÉSKI + FUNICULAIRE : montagne/remontée"
+      ],
+      "ambiguityNotes": "FUNICULAIRE remplace TÉLÉCABINE pour éviter quatre cartes commençant toutes par TÉLÉ-. MORAL reste l'ancre principale.",
+      "editorialNotes": "Rôle: jeu sémantique fort."
+    },
+    {
+      "position": 34,
+      "sourceCandidate": 48,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "RADAR",
+        "KAYAK",
+        "ELLE",
+        "ICI",
+        "CANOË",
+        "PÉNICHE",
+        "VOILIER",
+        "RADEAU",
+        "IL",
+        "NOUS",
+        "VOUS",
+        "EUX",
+        "LÀ",
+        "AILLEURS",
+        "PARTOUT",
+        "DEHORS"
+      ],
+      "groups": [
+        {
+          "label": "Palindromes",
+          "cards": [
+            "RADAR",
+            "KAYAK",
+            "ELLE",
+            "ICI"
+          ],
+          "intendedReason": "Quatre mots qui se lisent de la même manière de gauche à droite et de droite à gauche."
+        },
+        {
+          "label": "Embarcations",
+          "cards": [
+            "CANOË",
+            "PÉNICHE",
+            "VOILIER",
+            "RADEAU"
+          ],
+          "intendedReason": "Quatre types d'embarcations."
+        },
+        {
+          "label": "Pronoms personnels",
+          "cards": [
+            "IL",
+            "NOUS",
+            "VOUS",
+            "EUX"
+          ],
+          "intendedReason": "Quatre pronoms personnels."
+        },
+        {
+          "label": "Indications / adverbes de lieu",
+          "cards": [
+            "LÀ",
+            "AILLEURS",
+            "PARTOUT",
+            "DEHORS"
+          ],
+          "intendedReason": "Quatre mots servant à situer un lieu ou une position."
+        }
+      ],
+      "knownDecoys": [
+        "KAYAK + CANOË + PÉNICHE + RADEAU : embarcations",
+        "ELLE + IL + NOUS + VOUS : pronoms",
+        "ICI + LÀ + AILLEURS + PARTOUT : lieu"
+      ],
+      "ambiguityNotes": "RADAR force à abandonner le sens des mots et à regarder leur forme.",
+      "editorialNotes": "Rôle: rupture totale des habitudes."
+    },
+    {
+      "position": 35,
+      "sourceCandidate": 50,
+      "locale": "fr",
+      "difficulty": 2,
+      "status": "draft",
+      "cards": [
+        "RECORD",
+        "CARTES",
+        "ŒUFS",
+        "MESURE",
+        "PLAINTE",
+        "SECOURS",
+        "CHANCE",
+        "ATTEINTE",
+        "PION",
+        "DÉ",
+        "PLATEAU",
+        "JETON",
+        "JUGE",
+        "AVOCAT",
+        "NOTAIRE",
+        "HUISSIER"
+      ],
+      "groups": [
+        {
+          "label": "Expressions avec BATTRE",
+          "cards": [
+            "RECORD",
+            "CARTES",
+            "ŒUFS",
+            "MESURE"
+          ],
+          "intendedReason": "Battre un record, battre les cartes, battre des œufs, battre la mesure."
+        },
+        {
+          "label": "Expressions avec PORTER",
+          "cards": [
+            "PLAINTE",
+            "SECOURS",
+            "CHANCE",
+            "ATTEINTE"
+          ],
+          "intendedReason": "Porter plainte, porter secours, porter chance, porter atteinte."
+        },
+        {
+          "label": "Matériel de jeu de société",
+          "cards": [
+            "PION",
+            "DÉ",
+            "PLATEAU",
+            "JETON"
+          ],
+          "intendedReason": "Quatre éléments physiques courants de jeux de société."
+        },
+        {
+          "label": "Professions juridiques",
+          "cards": [
+            "JUGE",
+            "AVOCAT",
+            "NOTAIRE",
+            "HUISSIER"
+          ],
+          "intendedReason": "Quatre professions du domaine juridique."
+        }
+      ],
+      "knownDecoys": [
+        "CARTES + PION + DÉ + PLATEAU : jeu",
+        "PLAINTE + JUGE + AVOCAT + HUISSIER : justice",
+        "CHANCE + DÉ + CARTES : hasard"
+      ],
+      "ambiguityNotes": "Le niveau comporte volontairement deux groupes verbaux différents. La découverte de BATTRE ne résout donc pas toute la mécanique spéciale du plateau.",
+      "editorialNotes": "Rôle: finale D2 avec double révélation."
+    }
+  ]
+}

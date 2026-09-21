@@ -13,9 +13,9 @@ function mode(variant: string | undefined, dev: boolean, check: () => void) {
   jest.doMock('expo-constants', () => ({ __esModule: true, default: { expoConfig: { extra: { appVariant: variant } } } }));
   try { jest.isolateModules(check); } finally { flag.restore(); jest.dontMock('expo-constants'); }
 }
-test('standalone tester exposes exactly FR 1–10 and enables economy without __DEV__', () => mode('tester', false, () => {
+test('standalone tester exposes exactly FR 1–35 and enables economy without __DEV__', () => mode('tester', false, () => {
   const content = require('../game/content') as typeof import('../game/content');
-  expect(content.levelsFor('fr').map(p => p.number)).toEqual([1,2,3,4,5,6,7,8,9,10]);
+  expect(content.levelsFor('fr').map(p => p.number)).toEqual(Array.from({ length: 35 }, (_, i) => i + 1));
   expect(content.levelsFor('en')).toEqual([]);
   expect(content.puzzles.every(p => p.review.status === 'draft')).toBe(true);
   const { countdownDuration } = require('./playtest') as typeof import('./playtest');

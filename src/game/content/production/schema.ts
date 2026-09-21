@@ -9,6 +9,9 @@ export type ProductionPuzzle = Omit<Puzzle, 'localization' | 'review' | 'editori
     relationship: 'original' | 'direct-equivalent' | 'adapted-equivalent' | 'locale-replacement';
     source?: { puzzleId: string; revision: number };
   };
+  // Author-only import metadata; never projected into the gameplay UI.
+  editorialNotes?: string;
+  provenance?: { sourceFile: string; sourceCandidate: number };
   rationale: string;
   intendedReason: string;
   knownDecoys: string[];

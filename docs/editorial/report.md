@@ -2,7 +2,7 @@
 
 > Structural checks do not prove semantic uniqueness. Human editorial review is required.
 
-TOTAL PUZZLES: 17
+TOTAL PUZZLES: 37
 Approved playable: 0
 Approved-release readiness: NOT READY
 
@@ -10,7 +10,7 @@ Approved-release readiness: NOT READY
 
 | Locale | Present | Approved | Missing positions |
 | --- | ---: | ---: | --- |
-| FR | 15 | 0 | 12–20, 25–100 |
+| FR | 35 | 0 | 36–100 |
 | EN | 1 | 0 | 2–100 |
 | ES | 1 | 0 | 2–100 |
 
@@ -24,7 +24,7 @@ Approved-release readiness: NOT READY
 
 ## Counts by status
 
-- draft: 17
+- draft: 37
 - structurally_valid: 0
 - editorial_review: 0
 - approved: 0
@@ -33,7 +33,7 @@ Approved-release readiness: NOT READY
 ## Counts by difficulty
 
 - Difficulty 1: 12
-- Difficulty 2: 5
+- Difficulty 2: 25
 - Difficulty 3: 0
 - Difficulty 4: 0
 - Difficulty 5: 0
@@ -55,11 +55,31 @@ None.
 - concept-fr-coup-de-main-meteo-livre: fr; missing: en, es. puzzle-fr-008 (original)
 - concept-fr-noir-commerces-ciel-contenants: fr; missing: en, es. puzzle-fr-010 (original)
 - concept-fr-objets-a-dents: fr; missing: en, es. puzzle-fr-014 (original)
-- concept-fr-rouge-poissons-tri-sols: fr; missing: en, es. puzzle-fr-015 (original)
-- concept-fr-animaux-caches: fr; missing: en, es. puzzle-fr-009 (original)
-- concept-fr-porte-devises-imprimes: fr; missing: en, es. puzzle-fr-004 (original)
-- concept-fr-tennis-vetement-escalier-vaisselle: fr; missing: en, es. puzzle-fr-006 (original)
-- concept-fr-de-mer-articulations-ferme-noyau: fr; missing: en, es. puzzle-fr-007 (original)
+- concept-fr-curated-011: fr; missing: en, es. puzzle-fr-015 (original)
+- concept-fr-curated-021: fr; missing: en, es. puzzle-fr-009 (original)
+- concept-fr-curated-022: fr; missing: en, es. puzzle-fr-004 (original)
+- concept-fr-curated-023: fr; missing: en, es. puzzle-fr-006 (original)
+- concept-fr-curated-024: fr; missing: en, es. puzzle-fr-007 (original)
+- concept-fr-curated-012: fr; missing: en, es. puzzle-fr-curated-012 (original)
+- concept-fr-curated-013: fr; missing: en, es. puzzle-fr-curated-013 (original)
+- concept-fr-curated-014: fr; missing: en, es. puzzle-fr-curated-014 (original)
+- concept-fr-curated-015: fr; missing: en, es. puzzle-fr-curated-015 (original)
+- concept-fr-curated-016: fr; missing: en, es. puzzle-fr-curated-016 (original)
+- concept-fr-curated-017: fr; missing: en, es. puzzle-fr-curated-017 (original)
+- concept-fr-curated-018: fr; missing: en, es. puzzle-fr-curated-018 (original)
+- concept-fr-curated-019: fr; missing: en, es. puzzle-fr-curated-019 (original)
+- concept-fr-curated-020: fr; missing: en, es. puzzle-fr-curated-020 (original)
+- concept-fr-curated-025: fr; missing: en, es. puzzle-fr-curated-025 (original)
+- concept-fr-curated-026: fr; missing: en, es. puzzle-fr-curated-026 (original)
+- concept-fr-curated-027: fr; missing: en, es. puzzle-fr-curated-027 (original)
+- concept-fr-curated-028: fr; missing: en, es. puzzle-fr-curated-028 (original)
+- concept-fr-curated-029: fr; missing: en, es. puzzle-fr-curated-029 (original)
+- concept-fr-curated-030: fr; missing: en, es. puzzle-fr-curated-030 (original)
+- concept-fr-curated-031: fr; missing: en, es. puzzle-fr-curated-031 (original)
+- concept-fr-curated-032: fr; missing: en, es. puzzle-fr-curated-032 (original)
+- concept-fr-curated-033: fr; missing: en, es. puzzle-fr-curated-033 (original)
+- concept-fr-curated-034: fr; missing: en, es. puzzle-fr-curated-034 (original)
+- concept-fr-curated-035: fr; missing: en, es. puzzle-fr-curated-035 (original)
 
 ## Release blockers
 
@@ -669,246 +689,1276 @@ Hints:
 
 ### puzzle-fr-015
 
-Locale: fr · Position: 11 · Difficulty: 2 · Revision: 2
+Locale: fr · Position: 11 · Difficulty: 2 · Revision: 3
 
 Status: **draft** · Approval: not current
 
 Review: none · not reviewed · Approved revision: none
 
-Concept: concept-fr-rouge-poissons-tri-sols · original · Source: none revision —
+Concept: concept-fr-curated-011 · original · Source: none revision —
 
 Visible cards:
 
 | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- |
-| Parquet | Poisson | Papier | Saumon |
-| Carton | Moquette | Thon | Verre |
-| Fil | Sardine | Carrelage | Métal |
-| Tapis | Truite | Linoléum | Plastique |
+| CITRON | ORANGE | CASSIS | FRAMBOISE |
+| LAVANDE | COQUELICOT | MIMOSA | PERVENCHE |
+| ÉMERAUDE | RUBIS | SAPHIR | TURQUOISE |
+| SOURIS | CANARI | SAUMON | TAUPE |
 
 Intended groups:
 
-- **Se complètent par « rouge »**: Poisson · Carton · Fil · Tapis
-  - Intended reason: Quatre expressions issues de quatre mondes différents — l'aquarium, le football, le récit, la cérémonie — ce qui interdit de deviner le groupe par le thème.
-  - Explanation: Poisson rouge, carton rouge, fil rouge, tapis rouge.
-- **Poissons**: Saumon · Thon · Sardine · Truite
-  - Intended reason: Groupe complet sans la carte Poisson : le mot générique ne peut pas rejoindre quatre espèces nommées.
-  - Explanation: Saumon, Thon, Sardine et Truite sont des poissons.
-- **Matières que l'on trie**: Papier · Verre · Métal · Plastique
-  - Intended reason: Groupe complet sans Carton, pourtant la matière la plus associée au tri : leurre le plus fort de la grille.
-  - Explanation: Papier, Verre, Métal et Plastique sont les matières du tri sélectif.
-- **Revêtements de sol**: Parquet · Moquette · Carrelage · Linoléum
-  - Intended reason: Groupe complet sans Tapis, qui est l'objet posé sur le sol et non le revêtement : la distinction est nette, ce qui rend le leurre honnête.
-  - Explanation: Parquet, Moquette, Carrelage et Linoléum recouvrent un sol.
+- **Fruits**: CITRON · ORANGE · CASSIS · FRAMBOISE
+  - Intended reason: Quatre fruits comestibles familiers.
+  - Explanation: Quatre fruits comestibles familiers.
+- **Fleurs**: LAVANDE · COQUELICOT · MIMOSA · PERVENCHE
+  - Intended reason: Quatre plantes à fleurs familières.
+  - Explanation: Quatre plantes à fleurs familières.
+- **Pierres**: ÉMERAUDE · RUBIS · SAPHIR · TURQUOISE
+  - Intended reason: Quatre pierres ou minéraux couramment associés à la bijouterie.
+  - Explanation: Quatre pierres ou minéraux couramment associés à la bijouterie.
+- **Animaux**: SOURIS · CANARI · SAUMON · TAUPE
+  - Intended reason: Quatre animaux appartenant à des familles très différentes.
+  - Explanation: Quatre animaux appartenant à des familles très différentes.
 
-Rationale: Candidat de réserve pour la fin de la première dizaine ou le début de la seconde : même architecture que le niveau 9 (un adjectif de couleur qui complète quatre expressions) mais avec des leurres plus francs et une carte libre, Fil. À ne pas placer juste à côté du puzzle « noir », dont il reprend la mécanique.
+Editorial notes: Rôle: entrée D2 ludique; victoire relativement rapide.
 
-Intended reason: Un groupe lexical fondé sur un adjectif unique prélève la carte la plus typique de deux groupes thématiques (Carton pour le tri, Tapis pour les sols) et le mot générique d'un troisième (Poisson). Fil, non disputé, est la porte d'entrée.
+Source: nodi-fr-11-35-curated-source.json · Candidate: 11
 
-Known decoys: Carton : matière du tri par excellence — le groupe du tri est pourtant complet.; Tapis : posé au sol, donc lecture « revêtements » — mais un tapis se pose sur un revêtement, il n'en est pas un.; Poisson : attiré par les quatre espèces, comme le mot « oiseau » dans un autre niveau.; Sardine : la sardine de tente ; Thon : registre familier péjoratif, à surveiller.; Verre : objet autant que matière ; Parquet : le parquet d'un tribunal.; Papier : papier peint, donc légère attraction vers les revêtements.
+Rationale: Rôle: entrée D2 ludique; victoire relativement rapide.
 
-Ambiguity notes: Deux réserves. (1) Ce puzzle reprend la mécanique du niveau 9 ; s'il est retenu, le placer au moins trois positions plus loin, sinon la surprise est éventée. (2) Lino a été remplacé par la forme pleine Linoléum : légèrement plus formelle, mais univoque et lisible dans toute la francophonie, là où l'abréviation familière pouvait surprendre à l'écrit. Béton reste l'alternative si la carte s'avère trop longue à l'affichage. Point vérifié : aucune carte des groupes 2, 3 et 4 ne se complète par « rouge » de façon figée (« papier rouge », « moquette rouge » ne sont pas des expressions). Thon est à relire pour son usage familier insultant : le contexte du groupe est clairement culinaire, mais c'est un mot que je signale plutôt que de le laisser passer.
+Intended reason: Quatre fruits comestibles familiers.<br>Quatre plantes à fleurs familières.<br>Quatre pierres ou minéraux couramment associés à la bijouterie.<br>Quatre animaux appartenant à des familles très différentes.
+
+Known decoys: FRAMBOISE + COQUELICOT + RUBIS : rouge; CITRON + MIMOSA + CANARI : jaune; SAPHIR + PERVENCHE + TURQUOISE : bleu
+
+Ambiguity notes: Les seize cartes peuvent aussi être lues comme des noms de couleurs. Les faux regroupements chromatiques restent incomplets.
 
 Hints:
 
-- pair / g1: Fil + Tapis
-- category / g2: On les achète chez le poissonnier, frais ou en boîte.
-- pair / g4: Parquet + Carrelage
-- category / g3: Ce que l'on sépare avant de sortir les poubelles.
+- pair / g3: CANARI + TAUPE
+- category / g3: Pensez au monde animal.
 
 ### puzzle-fr-009
 
-Locale: fr · Position: 21 · Difficulty: 2 · Revision: 1
+Locale: fr · Position: 21 · Difficulty: 2 · Revision: 2
 
 Status: **draft** · Approval: not current
 
 Review: none · not reviewed · Approved revision: none
 
-Concept: concept-fr-animaux-caches · original · Source: none revision —
+Concept: concept-fr-curated-021 · original · Source: none revision —
 
 Visible cards:
 
 | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- |
-| Jamais | Achat | Trésor | Colère |
-| Toujours | Souvent | Sabre | Peur |
-| Pirate | Parfois | Île | Surprise |
-| Joie | Rarement | Crochet | Tristesse |
+| VOITURE | VÉLO | PIANO | MACHINE À COUDRE |
+| VIOLON | FLÛTE | TROMPETTE | GUITARE |
+| BUS | CAMION | MOTO | TRACTEUR |
+| AIGUILLE | BOBINE | ÉPINGLE | DÉ |
 
 Intended groups:
 
-- **Un animal se cache dans le mot**: Achat · Toujours · Pirate · Joie
-  - Intended reason: Les quatre animaux apparaissent en lettres consécutives, sans accent ni césure : le critère est vérifiable à l'œil, ce qui rend le groupe défendable malgré son caractère lexical.
-  - Explanation: aCHAT cache chat, tOURS dans toujours cache ours, piRATe cache rat, JOIe cache oie.
-- **Émotions**: Colère · Peur · Surprise · Tristesse
-  - Intended reason: Groupe complet sans Joie, alors que la joie est l'émotion la plus évidente de toutes : premier leurre.
-  - Explanation: Colère, Peur, Surprise et Tristesse sont des émotions.
-- **Adverbes de fréquence**: Jamais · Souvent · Parfois · Rarement
-  - Intended reason: Groupe complet sans Toujours, qui en est pourtant l'extrémité naturelle : deuxième leurre, construit sur le même principe.
-  - Explanation: Jamais, Souvent, Parfois et Rarement répondent à la question « à quelle fréquence ? ».
-- **Univers des pirates**: Trésor · Sabre · Île · Crochet
-  - Intended reason: Groupe complet sans la carte Pirate elle-même : troisième leurre, et le plus frontal des trois.
-  - Explanation: Trésor, Sabre, Île et Crochet composent l'imagerie des pirates.
+- **Ont une ou plusieurs pédales**: VOITURE · VÉLO · PIANO · MACHINE À COUDRE
+  - Intended reason: Ces quatre objets s'utilisent couramment avec une ou plusieurs pédales actionnées au pied.
+  - Explanation: Ces quatre objets s'utilisent couramment avec une ou plusieurs pédales actionnées au pied.
+- **Instruments de musique**: VIOLON · FLÛTE · TROMPETTE · GUITARE
+  - Intended reason: Quatre instruments de musique.
+  - Explanation: Quatre instruments de musique.
+- **Véhicules motorisés**: BUS · CAMION · MOTO · TRACTEUR
+  - Intended reason: Quatre véhicules motorisés.
+  - Explanation: Quatre véhicules motorisés.
+- **Petit matériel de couture**: AIGUILLE · BOBINE · ÉPINGLE · DÉ
+  - Intended reason: Quatre petits objets d'une boîte à couture.
+  - Explanation: Quatre petits objets d'une boîte à couture.
 
-Rationale: Puzzle reclassé en difficulté 2 : le critère de regroupement est orthographique et non sémantique, ce qui suppose que le joueur a déjà rencontré des mécaniques lexicales dans les vingt premiers niveaux. La grille elle-même n'utilise que du vocabulaire élémentaire, et chaque carte du groupe caché est le membre le plus évident d'un autre groupe, ce qui rend la structure très lisible une fois le procédé compris.
+Editorial notes: Rôle: retour au concret et respiration.
 
-Intended reason: Trois groupes thématiques amputés de leur représentant le plus typique (Joie, Toujours, Pirate) plus une carte libre (Achat) ; ces quatre mots ne partagent aucun sens, seulement quatre animaux dissimulés en lettres consécutives.
+Source: nodi-fr-11-35-curated-source.json · Candidate: 44
 
-Known decoys: Joie : l'émotion la plus évidente — les émotions sont pourtant complètes.; Toujours : adverbe de fréquence par excellence — les adverbes sont pourtant complets.; Pirate : mot-thème du groupe 4 — l'univers des pirates est pourtant complet sans lui.; Achat : seule carte non disputée, donc porte d'entrée du procédé.; Jamais : peut être lu comme le contraire de Toujours et attirer une lecture « couple d'opposés ».
+Rationale: Rôle: retour au concret et respiration.
 
-Ambiguity notes: Correction éditoriale avant import : le puzzle a été entièrement reconstruit et déplacé hors des dix premières positions. La version précédente reposait sur des découpages douteux (velours, mouchoir), ce qui rendait le critère invérifiable ; les quatre mots retenus ici contiennent chat, ours, rat et oie en lettres strictement consécutives, sans accent intercalé. Contrôle effectué sur les douze autres cartes : aucune ne contient d'animal en lettres consécutives — à refaire intégralement à la moindre substitution de carte, sous peine de créer un cinquième candidat. Risque résiduel : un joueur peut croire à une règle plus large (« un mot caché », et non « un animal caché ») ; l'indice de catégorie dit « animal » pour fermer cette porte. Réserve de fond : ce type de puzzle ne fonctionne qu'en français écrit et ne pourra pas être transposé tel quel en anglais ou en espagnol — il faudra un locale-replacement et non un équivalent.
+Intended reason: Ces quatre objets s'utilisent couramment avec une ou plusieurs pédales actionnées au pied.<br>Quatre instruments de musique.<br>Quatre véhicules motorisés.<br>Quatre petits objets d'une boîte à couture.
+
+Known decoys: PIANO + VIOLON + FLÛTE + GUITARE : musique; VOITURE + BUS + CAMION + MOTO : véhicules motorisés; MACHINE À COUDRE + AIGUILLE + BOBINE + ÉPINGLE : couture; VÉLO est un véhicule mais pas motorisé
+
+Ambiguity notes: La propriété commune est un geste du pied plutôt qu'un thème. DÉ signifie ici dé à coudre.
 
 Hints:
 
-- pair / g1: Toujours + Joie
-- category / g1: Oubliez le sens de ces mots et regardez leurs lettres : un animal s'y cache.
-- pair / g4: Trésor + Sabre
-- category / g3: Quatre mots qui répondent à la question « à quelle fréquence ? ».
+- pair / g0: PIANO + MACHINE À COUDRE
+- category / g0: Ils ont une ou plusieurs pédales.
 
 ### puzzle-fr-004
 
-Locale: fr · Position: 22 · Difficulty: 2 · Revision: 1
+Locale: fr · Position: 22 · Difficulty: 2 · Revision: 2
 
 Status: **draft** · Approval: not current
 
 Review: none · not reviewed · Approved revision: none
 
-Concept: concept-fr-porte-devises-imprimes · original · Source: none revision —
+Concept: concept-fr-curated-022 · original · Source: none revision —
 
 Visible cards:
 
 | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- |
-| Manteau | Euro | Almanach | Gants |
-| Monnaie | Atlas | Livre | Bonnet |
-| Clés | Roman | Yen | Écharpe |
-| Bonheur | Magazine | Dollar | Pull |
+| MANCHE | CORDE | CAISSE | CHEVALET |
+| PINCEAU | PALETTE | TOILE | FUSAIN |
+| COL | POIGNET | BOUTON | POCHE |
+| FICELLE | LACET | RUBAN | ÉLASTIQUE |
 
 Intended groups:
 
-- **Se placent après « porte- »**: Manteau · Monnaie · Clés · Bonheur
-  - Intended reason: Groupe de construction lexicale : trois de ses quatre cartes appartiennent aussi, en apparence, à l'une des trois autres catégories.
-  - Explanation: Porte-manteau, porte-monnaie, porte-clés, porte-bonheur.
-- **Vêtements d'hiver**: Gants · Bonnet · Écharpe · Pull
-  - Intended reason: Série complète sans Manteau, alors que Manteau en est le représentant le plus évident.
-  - Explanation: Gants, Bonnet, Écharpe et Pull protègent du froid.
-- **Monnaies du monde**: Euro · Livre · Yen · Dollar
-  - Intended reason: Livre y est une devise et non un objet imprimé, ce qui met sous tension le groupe des publications.
-  - Explanation: Euro, Livre, Yen et Dollar sont des devises.
-- **Publications imprimées**: Almanach · Atlas · Roman · Magazine
-  - Intended reason: Groupe défini par le support imprimé plutôt que par le mot « livre », afin que Livre puisse rester dans les devises.
-  - Explanation: Almanach, Atlas, Roman et Magazine se lisent et s'impriment.
+- **Parties d'une guitare**: MANCHE · CORDE · CAISSE · CHEVALET
+  - Intended reason: Le manche, les cordes, la caisse de résonance et le chevalet sont des éléments constitutifs d'une guitare acoustique.
+  - Explanation: Le manche, les cordes, la caisse de résonance et le chevalet sont des éléments constitutifs d'une guitare acoustique.
+- **Matériel du peintre**: PINCEAU · PALETTE · TOILE · FUSAIN
+  - Intended reason: Quatre objets directement utilisés pour produire une image.
+  - Explanation: Quatre objets directement utilisés pour produire une image.
+- **Parties d'une chemise**: COL · POIGNET · BOUTON · POCHE
+  - Intended reason: Quatre éléments cousus ou intégrés à une chemise.
+  - Explanation: Quatre éléments cousus ou intégrés à une chemise.
+- **Liens souples pour attacher**: FICELLE · LACET · RUBAN · ÉLASTIQUE
+  - Intended reason: Quatre liens souples servant à nouer, serrer ou fermer.
+  - Explanation: Quatre liens souples servant à nouer, serrer ou fermer.
 
-Rationale: Concept conservé mais sorti des dix premières positions et classé en difficulté 2 : trois leurres forts simultanés (Manteau, Monnaie, Livre) font une charge trop lourde pour l'apprentissage, et parfaitement calibrée une fois le joueur rodé.
+Editorial notes: Rôle: grosse identité NODI.
 
-Intended reason: Un groupe lexical (« porte- ») pille délibérément les trois groupes thématiques ; Bonheur est la seule carte non disputée et sert d'entrée dans le procédé.
+Source: nodi-fr-11-35-curated-source.json · Candidate: 8
 
-Known decoys: Manteau : vêtement d'hiver évident — mais les vêtements sont déjà quatre.; Monnaie : champ lexical des devises — mais les devises sont déjà quatre.; Livre : objet imprimé évident — c'est ici la devise britannique.; Magazine : « porte-magazines » et « porte-revues » sont des meubles courants, ce qui en fait le cinquième candidat résiduel du groupe lexical.; Bonnet : proximité sonore avec Bonheur, confusion possible en lecture rapide.; Atlas : chaîne de montagnes et vertèbre cervicale ; Roman : style architectural et prénom.
+Rationale: Rôle: grosse identité NODI.
 
-Ambiguity notes: Correction éditoriale avant import : Journal a été remplacé par Almanach pour supprimer porte-journaux comme cinquième candidat. Vérification faite sur la nouvelle carte : porte-almanach n'est pas une expression attestée — almanach s'emploie seul et ne forme aucun composé en porte- — donc la substitution atteint son but. Elle ne règle en revanche pas tout, et je le signale plutôt que de le taire : porte-magazines et porte-revues sont des meubles courants, si bien que Magazine reste un cinquième candidat résiduel au groupe lexical. La consigne de cette passe portait sur Journal seulement, je n'ai donc pas touché à Magazine, mais c'est le premier point à trancher en relecture ; Dictionnaire serait la substitution la plus propre. Autre point : Almanach est un mot légèrement vieilli, acceptable en difficulté 2 auprès d'un joueur rodé, mais qui aurait été trop lourd dans les dix premiers niveaux.
+Intended reason: Le manche, les cordes, la caisse de résonance et le chevalet sont des éléments constitutifs d'une guitare acoustique.<br>Quatre objets directement utilisés pour produire une image.<br>Quatre éléments cousus ou intégrés à une chemise.<br>Quatre liens souples servant à nouer, serrer ou fermer.
+
+Known decoys: CHEVALET + PINCEAU + PALETTE + TOILE : peinture; MANCHE + COL + POIGNET + BOUTON : chemise; CORDE + FICELLE + LACET + RUBAN : liens
+
+Ambiguity notes: Trois catégories voisines sont volontairement surpeuplées; CAISSE sert d'ancre de la guitare.
 
 Hints:
 
-- pair / g1: Clés + Bonheur
-- category / g3: On les échange dans un bureau de change.
-- pair / g4: Almanach + Roman
-- category / g2: Ce que l'on enfile en plus quand la température descend.
+- pair / g0: CAISSE + CHEVALET
+- category / g0: Pensez aux différentes parties d’une guitare.
 
 ### puzzle-fr-006
 
-Locale: fr · Position: 23 · Difficulty: 2 · Revision: 1
+Locale: fr · Position: 23 · Difficulty: 2 · Revision: 2
 
 Status: **draft** · Approval: not current
 
 Review: none · not reviewed · Approved revision: none
 
-Concept: concept-fr-tennis-vetement-escalier-vaisselle · original · Source: none revision —
+Concept: concept-fr-curated-023 · original · Source: none revision —
 
 Visible cards:
 
 | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- |
-| Bouton | Marche | Revers | Carafe |
-| Palier | Col | Smash | Assiette |
-| Doublure | Contremarche | Volée | Soucoupe |
-| Poche | Rampe | Service | Saladier |
+| POISSONS | SABLE | ÉCOLE | ESSAI |
+| DUNE | FALAISE | CRIQUE | CAP |
+| MÊLÉE | PLAQUAGE | TRANSFORMATION | PÉNALITÉ |
+| CAHIER | CARTABLE | TROUSSE | ARDOISE |
 
 Intended groups:
 
-- **Coups au tennis**: Revers · Smash · Volée · Service
-  - Intended reason: Quatre coups réellement frappés au tennis. Depuis le retrait de Manche, aucune autre carte de la grille n'est un terme de tennis : le groupe ne dépend plus de la finesse de son libellé pour tenir.
-  - Explanation: Revers, Smash, Volée et Service sont des coups frappés au tennis.
-- **Parties d'un vêtement**: Bouton · Col · Doublure · Poche
-  - Intended reason: Série complète sans Revers, alors que le revers d'une veste est la première association d'un joueur francophone.
-  - Explanation: Bouton, Col, Doublure et Poche composent une veste.
-- **Éléments d'un escalier**: Marche · Palier · Contremarche · Rampe
-  - Intended reason: Série complète sans Volée, bien qu'une volée de marches soit exactement cela.
-  - Explanation: Marche, Palier, Contremarche et Rampe forment un escalier.
-- **Vaisselle**: Carafe · Assiette · Soucoupe · Saladier
-  - Intended reason: Série complète sans Service, alors qu'un service de table est un ensemble de vaisselle.
-  - Explanation: Carafe, Assiette, Soucoupe et Saladier se posent sur une table.
+- **BANC DE &#95;&#95;&#95;**: POISSONS · SABLE · ÉCOLE · ESSAI
+  - Intended reason: Banc de poissons, banc de sable, banc d'école, banc d'essai.
+  - Explanation: Banc de poissons, banc de sable, banc d'école, banc d'essai.
+- **Formes du relief côtier**: DUNE · FALAISE · CRIQUE · CAP
+  - Intended reason: Quatre formes géographiques du littoral.
+  - Explanation: Quatre formes géographiques du littoral.
+- **Termes du rugby**: MÊLÉE · PLAQUAGE · TRANSFORMATION · PÉNALITÉ
+  - Intended reason: Quatre termes techniques courants du rugby.
+  - Explanation: Quatre termes techniques courants du rugby.
+- **Fournitures scolaires**: CAHIER · CARTABLE · TROUSSE · ARDOISE
+  - Intended reason: Quatre fournitures ou équipements scolaires familiers.
+  - Explanation: Quatre fournitures ou équipements scolaires familiers.
 
-Rationale: Concept conservé en difficulté 2. Manche, qui était un terme de tennis parfaitement légitime, a été retiré : il reste Contremarche, mot relativement technique, et trois homonymes croisés qui conviennent à un joueur déjà entraîné. La position n'a pas été modifiée dans cette passe, mais le puzzle est devenu sensiblement plus accessible et mériterait d'être réexaminé pour la fin de la difficulté 1.
+Editorial notes: Rôle: piège lexical propre.
 
-Intended reason: Un groupe « coups au tennis » dont trois cartes sur quatre sont les homonymes exacts des trois autres champs lexicaux. Le joueur voit d'abord trois catégories domestiques presque complètes, puis comprend que les intrus forment ensemble le quatrième groupe.
+Source: nodi-fr-11-35-curated-source.json · Candidate: 24
 
-Known decoys: Bouton : bouton d'un appareil, bouton de fleur, bouton sur la peau — aucune de ces lectures n'a de groupe d'accueil dans la grille.; Revers : revers de veste — le groupe vêtement est pourtant complet.; Volée : volée de marches — le groupe escalier est pourtant complet.; Service : service de table — le groupe vaisselle est pourtant complet.; Col : col de montagne ; Poche : poche au billard ; Rampe : rampe de lancement.; Doublure : doublure au cinéma ; Soucoupe : soucoupe volante.
+Rationale: Rôle: piège lexical propre.
 
-Ambiguity notes: Correction éditoriale avant import : Manche a été remplacé par Bouton. « Gagner une manche » en faisait un terme de tennis légitime, et la partition ne tenait que si le joueur lisait le premier groupe comme « coups frappés » : le libellé ne porte plus cette charge. Vérifications faites sur la nouvelle carte : Bouton n'a aucun rapport avec le tennis, l'escalier ou la vaisselle, et ses autres sens — bouton d'appareil, de fleur, sur la peau — n'ont pas de groupe d'accueil ici. La proximité graphique gênante entre Manche et Marche disparaît du même coup. Réserves maintenues : Contremarche reste le mot le plus technique de la grille, déductible à côté de Marche mais c'est l'une des raisons du classement en difficulté 2 ; Smash est un anglicisme d'usage courant en français, « amorti » serait l'alternative si l'on veut éviter l'emprunt. Le libellé complet « Coups au tennis » doit rester affiché à la résolution.
+Intended reason: Banc de poissons, banc de sable, banc d'école, banc d'essai.<br>Quatre formes géographiques du littoral.<br>Quatre termes techniques courants du rugby.<br>Quatre fournitures ou équipements scolaires familiers.
+
+Known decoys: SABLE + DUNE + FALAISE + CRIQUE : littoral; ESSAI + MÊLÉE + PLAQUAGE + TRANSFORMATION : rugby; ÉCOLE + CAHIER + CARTABLE + TROUSSE : scolaire
+
+Ambiguity notes: TOUCHE a été remplacée par PLAQUAGE pour éviter la seconde solution 'banc de touche'.
 
 Hints:
 
-- pair / g1: Revers + Smash
-- category / g3: On les monte et on les descend plusieurs fois par jour.
-- pair / g4: Soucoupe + Carafe
-- category / g2: Regardez de quoi est faite une veste, à l'extérieur comme à l'intérieur.
+- pair / g0: SABLE + ESSAI
+- category / g0: Ces mots complètent « BANC DE… ».
 
 ### puzzle-fr-007
 
-Locale: fr · Position: 24 · Difficulty: 2 · Revision: 1
+Locale: fr · Position: 24 · Difficulty: 2 · Revision: 2
 
 Status: **draft** · Approval: not current
 
 Review: none · not reviewed · Approved revision: none
 
-Concept: concept-fr-de-mer-articulations-ferme-noyau · original · Source: none revision —
+Concept: concept-fr-curated-024 · original · Source: none revision —
 
 Visible cards:
 
 | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- |
-| Pêche | Loup | Genou | Vache |
-| Fruits | Prune | Cheville | Cochon |
-| Mal | Coude | Mouton | Cerise |
-| Bras | Épaule | Poule | Abricot |
+| LANGUE | RIDEAU | TRAIT | LEÇON |
+| DENT | PALAIS | GENCIVE | LÈVRE |
+| FAUTEUIL | BALCON | ORCHESTRE | POULAILLER |
+| MATHS | HISTOIRE | GÉOGRAPHIE | MUSIQUE |
 
 Intended groups:
 
-- **Se complètent par « de mer »**: Loup · Fruits · Mal · Bras
-  - Intended reason: Quatre expressions figées et courantes, chacune d'un registre différent — animal, cuisine, malaise, géographie — ce qui empêche de deviner le groupe par un thème.
-  - Explanation: Loup de mer, fruits de mer, mal de mer, bras de mer.
-- **Articulations du corps**: Genou · Cheville · Coude · Épaule
-  - Intended reason: Le critère « articulation » exclut Bras, qui est un membre : c'est ce qui rend le placement de Bras défendable.
-  - Explanation: Genou, Cheville, Coude et Épaule sont des articulations.
-- **Animaux de la ferme**: Vache · Cochon · Mouton · Poule
-  - Intended reason: Série complète sans Loup, le seul animal non domestique de la grille.
-  - Explanation: Vache, Cochon, Mouton et Poule vivent à la ferme.
-- **Fruits à noyau**: Pêche · Prune · Cerise · Abricot
-  - Intended reason: Le critère « à noyau » est vérifiable et exclut la carte Fruits, qui n'est pas un fruit mais la moitié d'une expression.
-  - Explanation: Pêche, Prune, Cerise et Abricot contiennent un noyau.
+- **Ce qu'on tire**: LANGUE · RIDEAU · TRAIT · LEÇON
+  - Intended reason: Tirer la langue, tirer le rideau, tirer un trait, tirer une leçon.
+  - Explanation: Tirer la langue, tirer le rideau, tirer un trait, tirer une leçon.
+- **Parties de la bouche**: DENT · PALAIS · GENCIVE · LÈVRE
+  - Intended reason: Quatre éléments anatomiques de la bouche ou de son pourtour.
+  - Explanation: Quatre éléments anatomiques de la bouche ou de son pourtour.
+- **Places du public dans un théâtre**: FAUTEUIL · BALCON · ORCHESTRE · POULAILLER
+  - Intended reason: Quatre zones ou catégories de places où s'installe le public d'un théâtre.
+  - Explanation: Quatre zones ou catégories de places où s'installe le public d'un théâtre.
+- **Matières scolaires**: MATHS · HISTOIRE · GÉOGRAPHIE · MUSIQUE
+  - Intended reason: Quatre disciplines scolaires courantes.
+  - Explanation: Quatre disciplines scolaires courantes.
 
-Rationale: Concept conservé en difficulté 2. Cheval a été retiré, ce qui supprime « cheval de mer » comme cinquième candidat au groupe lexical ; il reste trois leurres croisés et une mécanique d'expressions complétées, charge adaptée à un joueur déjà rodé. La position n'a pas été modifiée dans cette passe.
+Editorial notes: Rôle: expressions + catégories concurrentes.
 
-Intended reason: Quatre mots courants forment un groupe uniquement par ce qu'on peut leur ajouter ; chacun est par ailleurs un membre plausible de l'un des trois autres groupes.
+Source: nodi-fr-11-35-curated-source.json · Candidate: 17
 
-Known decoys: Cochon : « cochon d'Inde » est la seule association vivante du mot ; aucun composé en « de mer » ne vient à l'esprit aujourd'hui.; Loup : animal, attiré par la ferme (qui est pourtant complète).; Fruits : attiré par les fruits à noyau (qui sont pourtant quatre).; Bras : partie du corps, attiré par les articulations (mais le bras n'est pas une articulation).; Pêche : la pêche en mer, leurre en sens inverse.; Mouton : les moutons désignent aussi l'écume des vagues ; Poule : « poule mouillée » ; Prune : au sens d'amende.
+Rationale: Rôle: expressions + catégories concurrentes.
 
-Ambiguity notes: Correction éditoriale avant import : Cheval a été remplacé par Cochon, ce qui supprime le cinquième candidat que constituait « cheval de mer », nom attesté de l'hippocampe. Point que je signale plutôt que de le taire : « cochon de mer » a désigné le marsouin en français ancien. L'expression est sortie de l'usage et n'est plus comprise comme telle par un locuteur d'aujourd'hui ; je la juge sans effet sur le jeu, mais un relecteur doit en décider en connaissance de cause. Les quatre expressions du groupe lexical — loup, fruits, mal et bras de mer — restent d'usage courant dans toute la francophonie. Je ne prétends pas que la solution soit sémantiquement unique ; je prétends qu'aucune répartition alternative ne se referme sur quatre groupes de quatre.
+Intended reason: Tirer la langue, tirer le rideau, tirer un trait, tirer une leçon.<br>Quatre éléments anatomiques de la bouche ou de son pourtour.<br>Quatre zones ou catégories de places où s'installe le public d'un théâtre.<br>Quatre disciplines scolaires courantes.
+
+Known decoys: LANGUE + DENT + PALAIS + GENCIVE : bouche; RIDEAU + FAUTEUIL + BALCON + ORCHESTRE : théâtre; LEÇON + MATHS + HISTOIRE + GÉOGRAPHIE : scolaire; MUSIQUE + ORCHESTRE : amorce musicale
+
+Ambiguity notes: LEÇON n'est pas une matière scolaire; RIDEAU est du côté de la scène, pas une place du public. LANGUE est volontairement très disputée.
 
 Hints:
 
-- pair / g1: Mal + Fruits
-- category / g2: Quatre endroits du corps qui plient.
-- pair / g4: Cerise + Abricot
-- category / g3: On les trouve derrière la barrière, au pré ou dans la basse-cour.
+- pair / g0: TRAIT + LEÇON
+- category / g0: Ces mots entrent dans des expressions avec « TIRER ».
+
+### puzzle-fr-curated-012
+
+Locale: fr · Position: 12 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-012 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| MENUISIER | CHARPENTIER | ÉBÉNISTE | BÛCHERON |
+| BOULANGER | BOUCHER | PÂTISSIER | POISSONNIER |
+| BAGUETTE | CROISSANT | BRIOCHE | FICELLE |
+| CHÊNE | HÊTRE | SAPIN | NOYER |
+
+Intended groups:
+
+- **Métiers liés au bois**: MENUISIER · CHARPENTIER · ÉBÉNISTE · BÛCHERON
+  - Intended reason: Quatre métiers directement liés au bois, de l'abattage à la transformation.
+  - Explanation: Quatre métiers directement liés au bois, de l'abattage à la transformation.
+- **Métiers de bouche**: BOULANGER · BOUCHER · PÂTISSIER · POISSONNIER
+  - Intended reason: Quatre métiers spécialisés dans la préparation ou la vente de denrées alimentaires.
+  - Explanation: Quatre métiers spécialisés dans la préparation ou la vente de denrées alimentaires.
+- **Pains et viennoiseries**: BAGUETTE · CROISSANT · BRIOCHE · FICELLE
+  - Intended reason: Quatre produits vendus couramment en boulangerie.
+  - Explanation: Quatre produits vendus couramment en boulangerie.
+- **Arbres**: CHÊNE · HÊTRE · SAPIN · NOYER
+  - Intended reason: Quatre essences d'arbres familières en Europe.
+  - Explanation: Quatre essences d'arbres familières en Europe.
+
+Editorial notes: Rôle: accessible; apprend que des catégories très générales doivent parfois être divisées.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 18
+
+Rationale: Rôle: accessible; apprend que des catégories très générales doivent parfois être divisées.
+
+Intended reason: Quatre métiers directement liés au bois, de l'abattage à la transformation.<br>Quatre métiers spécialisés dans la préparation ou la vente de denrées alimentaires.<br>Quatre produits vendus couramment en boulangerie.<br>Quatre essences d'arbres familières en Europe.
+
+Known decoys: BOULANGER + BAGUETTE + CROISSANT + BRIOCHE : boulangerie; MENUISIER + ÉBÉNISTE + CHÊNE + NOYER : travail du bois; Les huit cartes de métiers invitent à une mauvaise catégorie générale
+
+Ambiguity notes: La grande catégorie 'métiers' contient huit cartes et ne permet donc pas un groupe unique de quatre.
+
+Hints:
+
+- pair / g0: ÉBÉNISTE + BÛCHERON
+- category / g0: Ces métiers ont un lien direct avec le bois.
+
+### puzzle-fr-curated-013
+
+Locale: fr · Position: 13 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-013 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| PORTE | VALISE | CASSEROLE | TIROIR |
+| ARMOIRE | COMMODE | BUFFET | BIBLIOTHÈQUE |
+| PASSEPORT | VISA | BILLET | CARTE D'EMBARQUEMENT |
+| POÊLE | MARMITE | FAITOUT | COCOTTE |
+
+Intended groups:
+
+- **Ont une poignée**: PORTE · VALISE · CASSEROLE · TIROIR
+  - Intended reason: Une poignée de porte, de valise, de casserole et de tiroir : 'poignée' nomme une partie fonctionnelle de chaque objet.
+  - Explanation: Une poignée de porte, de valise, de casserole et de tiroir : 'poignée' nomme une partie fonctionnelle de chaque objet.
+- **Meubles de rangement**: ARMOIRE · COMMODE · BUFFET · BIBLIOTHÈQUE
+  - Intended reason: Quatre meubles dont une fonction principale est le rangement.
+  - Explanation: Quatre meubles dont une fonction principale est le rangement.
+- **Documents utilisés pour voyager**: PASSEPORT · VISA · BILLET · CARTE D'EMBARQUEMENT
+  - Intended reason: Quatre documents qu'un voyageur peut devoir présenter ou utiliser pendant un déplacement.
+  - Explanation: Quatre documents qu'un voyageur peut devoir présenter ou utiliser pendant un déplacement.
+- **Récipients de cuisson**: POÊLE · MARMITE · FAITOUT · COCOTTE
+  - Intended reason: Quatre récipients utilisés directement pour cuire des aliments.
+  - Explanation: Quatre récipients utilisés directement pour cuire des aliments.
+
+Editorial notes: Rôle: propriété physique concrète.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 42
+
+Rationale: Rôle: propriété physique concrète.
+
+Intended reason: Une poignée de porte, de valise, de casserole et de tiroir : 'poignée' nomme une partie fonctionnelle de chaque objet.<br>Quatre meubles dont une fonction principale est le rangement.<br>Quatre documents qu'un voyageur peut devoir présenter ou utiliser pendant un déplacement.<br>Quatre récipients utilisés directement pour cuire des aliments.
+
+Known decoys: TIROIR + ARMOIRE + COMMODE + BUFFET : rangement; VALISE + PASSEPORT + VISA + BILLET : voyage; CASSEROLE + POÊLE + MARMITE + FAITOUT : cuisson
+
+Ambiguity notes: TIROIR est une partie de meuble et VALISE un contenant de voyage; CASSEROLE crée une surpopulation volontaire parmi les récipients.
+
+Hints:
+
+- pair / g0: CASSEROLE + TIROIR
+- category / g0: Ces objets ont une poignée.
+
+### puzzle-fr-curated-014
+
+Locale: fr · Position: 14 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-014 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| BOUSSOLE | HORLOGE | SERINGUE | SAPIN |
+| PANSEMENT | STÉTHOSCOPE | COMPRESSE | SCALPEL |
+| BOULE | GUIRLANDE | ANGE | RUBAN |
+| CARTE | PLAN | GPS | BALISE |
+
+Intended groups:
+
+- **Ont une aiguille / des aiguilles**: BOUSSOLE · HORLOGE · SERINGUE · SAPIN
+  - Intended reason: Aiguille de boussole, aiguilles d'horloge, aiguille de seringue et aiguilles de sapin.
+  - Explanation: Aiguille de boussole, aiguilles d'horloge, aiguille de seringue et aiguilles de sapin.
+- **Matériel médical**: PANSEMENT · STÉTHOSCOPE · COMPRESSE · SCALPEL
+  - Intended reason: Quatre objets utilisés dans le soin ou l'examen médical.
+  - Explanation: Quatre objets utilisés dans le soin ou l'examen médical.
+- **Décorations de sapin**: BOULE · GUIRLANDE · ANGE · RUBAN
+  - Intended reason: Quatre ornements que l'on peut placer sur un sapin de Noël.
+  - Explanation: Quatre ornements que l'on peut placer sur un sapin de Noël.
+- **Aides à l'orientation**: CARTE · PLAN · GPS · BALISE
+  - Intended reason: Quatre moyens utilisés pour déterminer ou suivre une direction.
+  - Explanation: Quatre moyens utilisés pour déterminer ou suivre une direction.
+
+Editorial notes: Rôle: premier aha physique fort.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 22
+
+Rationale: Rôle: premier aha physique fort.
+
+Intended reason: Aiguille de boussole, aiguilles d'horloge, aiguille de seringue et aiguilles de sapin.<br>Quatre objets utilisés dans le soin ou l'examen médical.<br>Quatre ornements que l'on peut placer sur un sapin de Noël.<br>Quatre moyens utilisés pour déterminer ou suivre une direction.
+
+Known decoys: SERINGUE + PANSEMENT + STÉTHOSCOPE + COMPRESSE : médical; SAPIN + BOULE + GUIRLANDE + ANGE : Noël; BOUSSOLE + CARTE + PLAN + GPS : orientation
+
+Ambiguity notes: THERMOMÈTRE et ÉTOILE ont été retirés lors de l'audit car ils appartenaient légitimement à deux groupes.
+
+Hints:
+
+- pair / g0: BOUSSOLE + SAPIN
+- category / g0: Ils ont une ou plusieurs aiguilles.
+
+### puzzle-fr-curated-015
+
+Locale: fr · Position: 15 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-015 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| CADEAU | TOILETTE | CALQUE | CUISSON |
+| BALLON | CONFETTI | GUIRLANDE | SERPENTIN |
+| SAVON | SHAMPOING | DENTIFRICE | DÉODORANT |
+| RÈGLE | COMPAS | ÉQUERRE | RAPPORTEUR |
+
+Intended groups:
+
+- **PAPIER &#95;&#95;&#95;**: CADEAU · TOILETTE · CALQUE · CUISSON
+  - Intended reason: Papier cadeau, papier toilette, papier calque, papier cuisson : quatre expressions courantes.
+  - Explanation: Papier cadeau, papier toilette, papier calque, papier cuisson : quatre expressions courantes.
+- **Décorations de fête**: BALLON · CONFETTI · GUIRLANDE · SERPENTIN
+  - Intended reason: Quatre éléments décoratifs utilisés lors d'une fête.
+  - Explanation: Quatre éléments décoratifs utilisés lors d'une fête.
+- **Produits d'hygiène**: SAVON · SHAMPOING · DENTIFRICE · DÉODORANT
+  - Intended reason: Quatre produits destinés directement à l'hygiène corporelle.
+  - Explanation: Quatre produits destinés directement à l'hygiène corporelle.
+- **Instruments de tracé géométrique**: RÈGLE · COMPAS · ÉQUERRE · RAPPORTEUR
+  - Intended reason: Quatre outils servant à tracer ou mesurer des figures géométriques.
+  - Explanation: Quatre outils servant à tracer ou mesurer des figures géométriques.
+
+Editorial notes: Rôle: respiration lexicale.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 21
+
+Rationale: Rôle: respiration lexicale.
+
+Intended reason: Papier cadeau, papier toilette, papier calque, papier cuisson : quatre expressions courantes.<br>Quatre éléments décoratifs utilisés lors d'une fête.<br>Quatre produits destinés directement à l'hygiène corporelle.<br>Quatre outils servant à tracer ou mesurer des figures géométriques.
+
+Known decoys: CADEAU + BALLON + CONFETTI + GUIRLANDE : fête; TOILETTE + SAVON + SHAMPOING + DENTIFRICE : salle de bain; CALQUE + RÈGLE + COMPAS + ÉQUERRE : dessin technique
+
+Ambiguity notes: Les faux groupes sont des proximités de contexte ou de fonction, pas des catégories aussi précises que les groupes officiels.
+
+Hints:
+
+- pair / g0: TOILETTE + CUISSON
+- category / g0: Ces mots peuvent suivre « PAPIER ».
+
+### puzzle-fr-curated-016
+
+Locale: fr · Position: 16 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-016 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| SORTIE | ROUE | PLAN | TROUSSE |
+| GUIDON | SELLE | PÉDALE | CHAÎNE |
+| SCÈNE | SÉQUENCE | PRISE | CLAP |
+| COMPAS | ÉQUERRE | AGENDA | SURLIGNEUR |
+
+Intended groups:
+
+- **&#95;&#95;&#95; DE SECOURS**: SORTIE · ROUE · PLAN · TROUSSE
+  - Intended reason: Sortie de secours, roue de secours, plan de secours et trousse de secours.
+  - Explanation: Sortie de secours, roue de secours, plan de secours et trousse de secours.
+- **Parties d'un vélo**: GUIDON · SELLE · PÉDALE · CHAÎNE
+  - Intended reason: Quatre pièces montées sur une bicyclette.
+  - Explanation: Quatre pièces montées sur une bicyclette.
+- **Vocabulaire du tournage**: SCÈNE · SÉQUENCE · PRISE · CLAP
+  - Intended reason: Quatre termes directement associés au tournage et au découpage d'un film.
+  - Explanation: Quatre termes directement associés au tournage et au découpage d'un film.
+- **Fournitures scolaires**: COMPAS · ÉQUERRE · AGENDA · SURLIGNEUR
+  - Intended reason: Quatre objets couramment présents sur une liste de fournitures scolaires.
+  - Explanation: Quatre objets couramment présents sur une liste de fournitures scolaires.
+
+Editorial notes: Rôle: première tension forte par plusieurs univers concurrents.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 3
+
+Rationale: Rôle: première tension forte par plusieurs univers concurrents.
+
+Intended reason: Sortie de secours, roue de secours, plan de secours et trousse de secours.<br>Quatre pièces montées sur une bicyclette.<br>Quatre termes directement associés au tournage et au découpage d'un film.<br>Quatre objets couramment présents sur une liste de fournitures scolaires.
+
+Known decoys: ROUE + GUIDON + SELLE + PÉDALE : vélo; PLAN + SCÈNE + SÉQUENCE + PRISE : cinéma/tournage; TROUSSE + COMPAS + ÉQUERRE + AGENDA : scolaire; PLAN + COMPAS + ÉQUERRE : amorce de dessin technique
+
+Ambiguity notes: Version réparée: MONTAGE a été remplacé par PRISE et RÉPLIQUE par CLAP afin de garder un groupe réellement centré sur le tournage.
+
+Hints:
+
+- pair / g0: ROUE + PLAN
+- category / g0: Ces mots peuvent être suivis de « DE SECOURS ».
+
+### puzzle-fr-curated-017
+
+Locale: fr · Position: 17 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-017 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| NEZ | MOULIN | CHÂTEAU | VOITURE |
+| TOUR | FOU | CAVALIER | PION |
+| FRONT | MENTON | JOUE | TEMPE |
+| TASSE | CUILLÈRE | FILTRE | MACHINE |
+
+Intended groups:
+
+- **Choses qui ont une aile**: NEZ · MOULIN · CHÂTEAU · VOITURE
+  - Intended reason: Ailes du nez, ailes d'un moulin, aile d'un château, aile d'une voiture.
+  - Explanation: Ailes du nez, ailes d'un moulin, aile d'un château, aile d'une voiture.
+- **Pièces du jeu d'échecs**: TOUR · FOU · CAVALIER · PION
+  - Intended reason: Quatre pièces officielles d'un jeu d'échecs.
+  - Explanation: Quatre pièces officielles d'un jeu d'échecs.
+- **Parties du visage**: FRONT · MENTON · JOUE · TEMPE
+  - Intended reason: Quatre zones anatomiques du visage.
+  - Explanation: Quatre zones anatomiques du visage.
+- **&#95;&#95;&#95; À CAFÉ**: TASSE · CUILLÈRE · FILTRE · MACHINE
+  - Intended reason: Tasse à café, cuillère à café, filtre à café, machine à café.
+  - Explanation: Tasse à café, cuillère à café, filtre à café, machine à café.
+
+Editorial notes: Rôle: propriété inattendue.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 12
+
+Rationale: Rôle: propriété inattendue.
+
+Intended reason: Ailes du nez, ailes d'un moulin, aile d'un château, aile d'une voiture.<br>Quatre pièces officielles d'un jeu d'échecs.<br>Quatre zones anatomiques du visage.<br>Tasse à café, cuillère à café, filtre à café, machine à café.
+
+Known decoys: TOUR + FOU + CAVALIER + CHÂTEAU : château médiéval; NEZ + FRONT + MENTON + JOUE : visage; MOULIN + TASSE + CUILLÈRE + FILTRE : café
+
+Ambiguity notes: Le piège médiéval est thématique mais CHÂTEAU n'est pas une pièce d'échecs; les autres pièges sont surpeuplés ou incomplets.
+
+Hints:
+
+- pair / g0: NEZ + CHÂTEAU
+- category / g0: On peut parler de leur aile.
+
+### puzzle-fr-curated-018
+
+Locale: fr · Position: 18 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-018 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| PIED | BRAS | DOSSIER | ASSISE |
+| POIGNET | CHEVILLE | COU | DOIGT |
+| CHEMISE | CLASSEUR | POCHETTE | TRIEUR |
+| CADRAN | AIGUILLE | BRACELET | REMONTOIR |
+
+Intended groups:
+
+- **Parties d'un fauteuil**: PIED · BRAS · DOSSIER · ASSISE
+  - Intended reason: Quatre composants nommés d'un fauteuil.
+  - Explanation: Quatre composants nommés d'un fauteuil.
+- **Endroits du corps où l'on porte un bijou**: POIGNET · CHEVILLE · COU · DOIGT
+  - Intended reason: Bracelet, chaîne de cheville, collier et bague correspondent à ces quatre endroits du corps.
+  - Explanation: Bracelet, chaîne de cheville, collier et bague correspondent à ces quatre endroits du corps.
+- **Contenants pour ranger des papiers**: CHEMISE · CLASSEUR · POCHETTE · TRIEUR
+  - Intended reason: Quatre objets de bureau servant à contenir ou organiser des feuilles.
+  - Explanation: Quatre objets de bureau servant à contenir ou organiser des feuilles.
+- **Parties d'une montre**: CADRAN · AIGUILLE · BRACELET · REMONTOIR
+  - Intended reason: Quatre composants d'une montre-bracelet.
+  - Explanation: Quatre composants d'une montre-bracelet.
+
+Editorial notes: Rôle: polysémie forte.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 6
+
+Rationale: Rôle: polysémie forte.
+
+Intended reason: Quatre composants nommés d'un fauteuil.<br>Bracelet, chaîne de cheville, collier et bague correspondent à ces quatre endroits du corps.<br>Quatre objets de bureau servant à contenir ou organiser des feuilles.<br>Quatre composants d'une montre-bracelet.
+
+Known decoys: PIED + BRAS + POIGNET + CHEVILLE : corps; DOSSIER + CLASSEUR + POCHETTE + TRIEUR : bureau; BRACELET + POIGNET + COU + DOIGT : bijoux/corps
+
+Ambiguity notes: La famille corporelle est volontairement surpeuplée; aucun découpage alternatif ne permet une seconde partition complète.
+
+Hints:
+
+- pair / g0: BRAS + ASSISE
+- category / g0: Pensez aux différentes parties d’un fauteuil.
+
+### puzzle-fr-curated-019
+
+Locale: fr · Position: 19 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-019 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| TEMPÉRATURE | ANGLE | ALCOOL | LATITUDE |
+| THÉ | TISANE | CHOCOLAT | CAFÉ |
+| PLAFOND | CLOISON | PLINTHE | POUTRE |
+| ÉQUATEUR | MÉRIDIEN | PÔLE | TROPIQUE |
+
+Intended groups:
+
+- **Se mesurent en degrés**: TEMPÉRATURE · ANGLE · ALCOOL · LATITUDE
+  - Intended reason: Température, angle, degré alcoolique et latitude utilisent tous le degré comme unité ou notation.
+  - Explanation: Température, angle, degré alcoolique et latitude utilisent tous le degré comme unité ou notation.
+- **Boissons chaudes**: THÉ · TISANE · CHOCOLAT · CAFÉ
+  - Intended reason: Quatre boissons couramment servies chaudes.
+  - Explanation: Quatre boissons couramment servies chaudes.
+- **Éléments de construction d'une pièce**: PLAFOND · CLOISON · PLINTHE · POUTRE
+  - Intended reason: Quatre éléments bâtis ou posés dans l'aménagement d'une pièce.
+  - Explanation: Quatre éléments bâtis ou posés dans l'aménagement d'une pièce.
+- **Repères tracés sur un globe**: ÉQUATEUR · MÉRIDIEN · PÔLE · TROPIQUE
+  - Intended reason: Quatre repères géographiques représentés sur un globe terrestre.
+  - Explanation: Quatre repères géographiques représentés sur un globe terrestre.
+
+Editorial notes: Rôle: relation transversale.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 14
+
+Rationale: Rôle: relation transversale.
+
+Intended reason: Température, angle, degré alcoolique et latitude utilisent tous le degré comme unité ou notation.<br>Quatre boissons couramment servies chaudes.<br>Quatre éléments bâtis ou posés dans l'aménagement d'une pièce.<br>Quatre repères géographiques représentés sur un globe terrestre.
+
+Known decoys: LATITUDE + ÉQUATEUR + MÉRIDIEN + PÔLE : géographie; ANGLE + PLAFOND + CLOISON + PLINTHE : pièce; ÉQUATEUR + TROPIQUE + PÔLE : climat; ALCOOL + THÉ + CHOCOLAT + CAFÉ : boissons
+
+Ambiguity notes: Le groupe 'degrés' doit rester une propriété transversale et non une catégorie thématique.
+
+Hints:
+
+- pair / g0: ALCOOL + LATITUDE
+- category / g0: Ils se mesurent en degrés.
+
+### puzzle-fr-curated-020
+
+Locale: fr · Position: 20 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-020 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| GARE | CHANTIER | CUISINE | ORCHESTRE |
+| LOCOMOTIVE | WAGON | ROUE | FREIN |
+| GRUE | PELLETEUSE | BÉTONNIÈRE | BULLDOZER |
+| VIOLON | FLÛTE | HAUTBOIS | TROMPETTE |
+
+Intended groups:
+
+- **CHEF DE &#95;&#95;&#95;**: GARE · CHANTIER · CUISINE · ORCHESTRE
+  - Intended reason: Chef de gare, chef de chantier, chef de cuisine, chef d'orchestre.
+  - Explanation: Chef de gare, chef de chantier, chef de cuisine, chef d'orchestre.
+- **Éléments d'un train**: LOCOMOTIVE · WAGON · ROUE · FREIN
+  - Intended reason: Quatre éléments physiques d'un train.
+  - Explanation: Quatre éléments physiques d'un train.
+- **Engins de chantier**: GRUE · PELLETEUSE · BÉTONNIÈRE · BULLDOZER
+  - Intended reason: Quatre engins utilisés sur un chantier.
+  - Explanation: Quatre engins utilisés sur un chantier.
+- **Instruments d'orchestre**: VIOLON · FLÛTE · HAUTBOIS · TROMPETTE
+  - Intended reason: Quatre instruments courants d'un orchestre.
+  - Explanation: Quatre instruments courants d'un orchestre.
+
+Editorial notes: Rôle: niveau très satisfaisant et lisible.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 26
+
+Rationale: Rôle: niveau très satisfaisant et lisible.
+
+Intended reason: Chef de gare, chef de chantier, chef de cuisine, chef d'orchestre.<br>Quatre éléments physiques d'un train.<br>Quatre engins utilisés sur un chantier.<br>Quatre instruments courants d'un orchestre.
+
+Known decoys: GARE + LOCOMOTIVE + WAGON + ROUE : train; CHANTIER + GRUE + PELLETEUSE + BÉTONNIÈRE : chantier; ORCHESTRE + VIOLON + FLÛTE + HAUTBOIS : musique
+
+Ambiguity notes: Les mots GARE, CHANTIER et ORCHESTRE sont des contextes/ensembles, pas des membres équivalents des groupes voisins.
+
+Hints:
+
+- pair / g0: CHANTIER + ORCHESTRE
+- category / g0: Ces mots complètent une expression commençant par « CHEF DE ».
+
+### puzzle-fr-curated-025
+
+Locale: fr · Position: 25 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-025 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| SENS | FOND | JEU | VIE |
+| VUE | OUÏE | ODORAT | GOÛT |
+| DÉ | PION | JETON | PLATEAU |
+| ENFANCE | ADOLESCENCE | ÂGE ADULTE | VIEILLESSE |
+
+Intended groups:
+
+- **DOUBLE &#95;&#95;&#95;**: SENS · FOND · JEU · VIE
+  - Intended reason: Double sens, double fond, double jeu, double vie.
+  - Explanation: Double sens, double fond, double jeu, double vie.
+- **Quatre des cinq sens**: VUE · OUÏE · ODORAT · GOÛT
+  - Intended reason: Quatre sens humains.
+  - Explanation: Quatre sens humains.
+- **Matériel de jeu de société**: DÉ · PION · JETON · PLATEAU
+  - Intended reason: Quatre éléments physiques courants d'un jeu de société.
+  - Explanation: Quatre éléments physiques courants d'un jeu de société.
+- **Grandes étapes de la vie**: ENFANCE · ADOLESCENCE · ÂGE ADULTE · VIEILLESSE
+  - Intended reason: Quatre grandes périodes de la vie humaine.
+  - Explanation: Quatre grandes périodes de la vie humaine.
+
+Editorial notes: Rôle: les cartes semblent être les labels des autres groupes.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 35
+
+Rationale: Rôle: les cartes semblent être les labels des autres groupes.
+
+Intended reason: Double sens, double fond, double jeu, double vie.<br>Quatre sens humains.<br>Quatre éléments physiques courants d'un jeu de société.<br>Quatre grandes périodes de la vie humaine.
+
+Known decoys: SENS ressemble au titre du groupe des sens; JEU ressemble au titre du groupe de jeu; VIE ressemble au titre du groupe des âges
+
+Ambiguity notes: Les trois pivots sont des hyperonymes ou titres plausibles plutôt que des membres équivalents aux cartes des groupes voisins.
+
+Hints:
+
+- pair / g0: FOND + VIE
+- category / g0: Ces mots peuvent suivre « DOUBLE ».
+
+### puzzle-fr-curated-026
+
+Locale: fr · Position: 26 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-026 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| AVION | COMÈTE | PIANO | CERF-VOLANT |
+| FLÛTE | TROMPETTE | CLARINETTE | HARMONICA |
+| PLUIE | NEIGE | GRÊLON | MÉTÉORITE |
+| POÊLE | MARMITE | COCOTTE | FAITOUT |
+
+Intended groups:
+
+- **Choses qui ont une queue**: AVION · COMÈTE · PIANO · CERF-VOLANT
+  - Intended reason: La queue de l'avion, de la comète, du cerf-volant et le piano à queue.
+  - Explanation: La queue de l'avion, de la comète, du cerf-volant et le piano à queue.
+- **Instruments à vent**: FLÛTE · TROMPETTE · CLARINETTE · HARMONICA
+  - Intended reason: Quatre instruments dont le son est produit par le souffle.
+  - Explanation: Quatre instruments dont le son est produit par le souffle.
+- **Ce qui tombe du ciel**: PLUIE · NEIGE · GRÊLON · MÉTÉORITE
+  - Intended reason: Quatre choses pouvant réellement atteindre le sol en tombant depuis le ciel.
+  - Explanation: Quatre choses pouvant réellement atteindre le sol en tombant depuis le ciel.
+- **Ustensiles de cuisson**: POÊLE · MARMITE · COCOTTE · FAITOUT
+  - Intended reason: Quatre récipients utilisés pour cuire des aliments.
+  - Explanation: Quatre récipients utilisés pour cuire des aliments.
+
+Editorial notes: Rôle: propriété physique inattendue.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 19
+
+Rationale: Rôle: propriété physique inattendue.
+
+Intended reason: La queue de l'avion, de la comète, du cerf-volant et le piano à queue.<br>Quatre instruments dont le son est produit par le souffle.<br>Quatre choses pouvant réellement atteindre le sol en tombant depuis le ciel.<br>Quatre récipients utilisés pour cuire des aliments.
+
+Known decoys: AVION + COMÈTE + MÉTÉORITE + CERF-VOLANT : ciel; PIANO + FLÛTE + TROMPETTE + CLARINETTE : instruments; NEIGE évoque aussi les blancs en neige
+
+Ambiguity notes: Le faux quatuor céleste est volontairement très fort mais ne laisse pas une seconde partition complète.
+
+Hints:
+
+- pair / g0: COMÈTE + PIANO
+- category / g0: On peut parler de leur queue.
+
+### puzzle-fr-curated-027
+
+Locale: fr · Position: 27 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-027 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| PLANTE | DENT | MOT | ÉQUATION |
+| ROSE | TULIPE | IRIS | LYS |
+| GENCIVE | LANGUE | PALAIS | LÈVRE |
+| NOM | VERBE | ADJECTIF | ADVERBE |
+
+Intended groups:
+
+- **Ont une racine**: PLANTE · DENT · MOT · ÉQUATION
+  - Intended reason: Racine d'une plante, d'une dent, d'un mot et d'une équation.
+  - Explanation: Racine d'une plante, d'une dent, d'un mot et d'une équation.
+- **Fleurs**: ROSE · TULIPE · IRIS · LYS
+  - Intended reason: Quatre fleurs familières.
+  - Explanation: Quatre fleurs familières.
+- **Parties de la bouche**: GENCIVE · LANGUE · PALAIS · LÈVRE
+  - Intended reason: Quatre éléments anatomiques de la bouche ou de son pourtour.
+  - Explanation: Quatre éléments anatomiques de la bouche ou de son pourtour.
+- **Classes grammaticales**: NOM · VERBE · ADJECTIF · ADVERBE
+  - Intended reason: Quatre classes grammaticales fondamentales.
+  - Explanation: Quatre classes grammaticales fondamentales.
+
+Editorial notes: Rôle: gros aha conceptuel.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 38
+
+Rationale: Rôle: gros aha conceptuel.
+
+Intended reason: Racine d'une plante, d'une dent, d'un mot et d'une équation.<br>Quatre fleurs familières.<br>Quatre éléments anatomiques de la bouche ou de son pourtour.<br>Quatre classes grammaticales fondamentales.
+
+Known decoys: PLANTE + ROSE + TULIPE + IRIS : botanique; DENT + GENCIVE + LANGUE + PALAIS : bouche; MOT + NOM + VERBE + ADJECTIF : grammaire
+
+Ambiguity notes: ÉQUATION est l'ancre. La notion de racine au sens mathématique doit rester familière; à surveiller en playtest.
+
+Hints:
+
+- pair / g0: DENT + ÉQUATION
+- category / g0: On peut parler de leur racine.
+
+### puzzle-fr-curated-028
+
+Locale: fr · Position: 28 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-028 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| VERSEMENT | RETRAIT | VIREMENT | PRÉLÈVEMENT |
+| SOURCE | BERGE | LIT | COURANT |
+| MATELAS | OREILLER | COUETTE | TRAVERSIN |
+| AMPOULE | FIL | FUSIBLE | INTERRUPTEUR |
+
+Intended groups:
+
+- **Opérations bancaires**: VERSEMENT · RETRAIT · VIREMENT · PRÉLÈVEMENT
+  - Intended reason: Quatre opérations correspondant à des mouvements d'argent sur un compte.
+  - Explanation: Quatre opérations correspondant à des mouvements d'argent sur un compte.
+- **Éléments constitutifs d'une rivière**: SOURCE · BERGE · LIT · COURANT
+  - Intended reason: Quatre éléments utilisés pour décrire physiquement un cours d'eau.
+  - Explanation: Quatre éléments utilisés pour décrire physiquement un cours d'eau.
+- **Éléments de literie**: MATELAS · OREILLER · COUETTE · TRAVERSIN
+  - Intended reason: Quatre articles qui garnissent un lit.
+  - Explanation: Quatre articles qui garnissent un lit.
+- **Composants d'une installation électrique**: AMPOULE · FIL · FUSIBLE · INTERRUPTEUR
+  - Intended reason: Quatre pièces raccordées ou installées dans un circuit électrique domestique.
+  - Explanation: Quatre pièces raccordées ou installées dans un circuit électrique domestique.
+
+Editorial notes: Rôle: polysémie croisée.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 13
+
+Rationale: Rôle: polysémie croisée.
+
+Intended reason: Quatre opérations correspondant à des mouvements d'argent sur un compte.<br>Quatre éléments utilisés pour décrire physiquement un cours d'eau.<br>Quatre articles qui garnissent un lit.<br>Quatre pièces raccordées ou installées dans un circuit électrique domestique.
+
+Known decoys: LIT + MATELAS + OREILLER + COUETTE : chambre/lit; COURANT + AMPOULE + FIL + FUSIBLE : électricité; VERSEMENT + RETRAIT + PRÉLÈVEMENT + COURANT : faux champ lexical de mouvement
+
+Ambiguity notes: LIT n'est pas de la literie mais le meuble; COURANT n'est pas un composant électrique. BERGE verrouille le groupe rivière.
+
+Hints:
+
+- pair / g0: VERSEMENT + PRÉLÈVEMENT
+- category / g0: Pensez aux mouvements d’argent sur un compte.
+
+### puzzle-fr-curated-029
+
+Locale: fr · Position: 29 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-029 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| MAL | BRAS | LOUP | FRUITS |
+| JET | COURS | POINT | GOUTTE |
+| VIRGULE | TIRET | PARENTHÈSE | GUILLEMET |
+| RENARD | SANGLIER | CHEVREUIL | BLAIREAU |
+
+Intended groups:
+
+- **&#95;&#95;&#95; DE MER**: MAL · BRAS · LOUP · FRUITS
+  - Intended reason: Mal de mer, bras de mer, loup de mer, fruits de mer.
+  - Explanation: Mal de mer, bras de mer, loup de mer, fruits de mer.
+- **&#95;&#95;&#95; D'EAU**: JET · COURS · POINT · GOUTTE
+  - Intended reason: Jet d'eau, cours d'eau, point d'eau, goutte d'eau.
+  - Explanation: Jet d'eau, cours d'eau, point d'eau, goutte d'eau.
+- **Signes de ponctuation**: VIRGULE · TIRET · PARENTHÈSE · GUILLEMET
+  - Intended reason: Quatre signes de ponctuation usuels.
+  - Explanation: Quatre signes de ponctuation usuels.
+- **Animaux de nos forêts**: RENARD · SANGLIER · CHEVREUIL · BLAIREAU
+  - Intended reason: Quatre mammifères sauvages familiers des forêts d'Europe occidentale.
+  - Explanation: Quatre mammifères sauvages familiers des forêts d'Europe occidentale.
+
+Editorial notes: Rôle: deux règles parallèles.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 20
+
+Rationale: Rôle: deux règles parallèles.
+
+Intended reason: Mal de mer, bras de mer, loup de mer, fruits de mer.<br>Jet d'eau, cours d'eau, point d'eau, goutte d'eau.<br>Quatre signes de ponctuation usuels.<br>Quatre mammifères sauvages familiers des forêts d'Europe occidentale.
+
+Known decoys: POINT + VIRGULE + TIRET + PARENTHÈSE : ponctuation; LOUP + RENARD + SANGLIER + CHEVREUIL : animaux; MAL + BRAS + GOUTTE + POINT : amorce autour des douleurs
+
+Ambiguity notes: Deux groupes lexicaux parallèles coexistent volontairement; aucune carte ne fonctionne avec les deux compléments.
+
+Hints:
+
+- pair / g0: MAL + BRAS
+- category / g0: Ces mots peuvent être suivis de « DE MER ».
+
+### puzzle-fr-curated-030
+
+Locale: fr · Position: 30 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-030 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| PLACE | NOTE | GARDE | RACINE |
+| FACE | MOUCHE | SEMBLANT | PART |
+| SOMMET | CÔTÉ | DIAGONALE | ANGLE |
+| TIGE | FEUILLE | FLEUR | BOURGEON |
+
+Intended groups:
+
+- **PRENDRE &#95;&#95;&#95;**: PLACE · NOTE · GARDE · RACINE
+  - Intended reason: Prendre place, prendre note, prendre garde, prendre racine.
+  - Explanation: Prendre place, prendre note, prendre garde, prendre racine.
+- **FAIRE &#95;&#95;&#95;**: FACE · MOUCHE · SEMBLANT · PART
+  - Intended reason: Faire face, faire mouche, faire semblant, faire part.
+  - Explanation: Faire face, faire mouche, faire semblant, faire part.
+- **Éléments d'un polygone**: SOMMET · CÔTÉ · DIAGONALE · ANGLE
+  - Intended reason: Quatre éléments ou caractéristiques directement définis sur un polygone.
+  - Explanation: Quatre éléments ou caractéristiques directement définis sur un polygone.
+- **Parties d'une plante**: TIGE · FEUILLE · FLEUR · BOURGEON
+  - Intended reason: Quatre parties visibles d'une plante.
+  - Explanation: Quatre parties visibles d'une plante.
+
+Editorial notes: Rôle: ambiguïté réelle mais contrôlée.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 28
+
+Rationale: Rôle: ambiguïté réelle mais contrôlée.
+
+Intended reason: Prendre place, prendre note, prendre garde, prendre racine.<br>Faire face, faire mouche, faire semblant, faire part.<br>Quatre éléments ou caractéristiques directement définis sur un polygone.<br>Quatre parties visibles d'une plante.
+
+Known decoys: PART peut aussi former PRENDRE PART; RACINE + TIGE + FEUILLE + FLEUR : plante; FACE + SOMMET + CÔTÉ + ANGLE : géométrie
+
+Ambiguity notes: PART fonctionne réellement avec PRENDRE mais la permutation ne permet pas une seconde partition complète.
+
+Hints:
+
+- pair / g0: GARDE + RACINE
+- category / g0: Ces mots complètent des expressions avec « PRENDRE ».
+
+### puzzle-fr-curated-031
+
+Locale: fr · Position: 31 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-031 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| VOLANT | BOUGIE | COFFRE | AILE |
+| BEC | PLUME | SERRE | QUEUE |
+| LAMPE | AMPOULE | NÉON | PROJECTEUR |
+| TENNIS | PADEL | SQUASH | BADMINTON |
+
+Intended groups:
+
+- **Éléments d'une voiture**: VOLANT · BOUGIE · COFFRE · AILE
+  - Intended reason: Quatre éléments automobiles portant exactement ces noms.
+  - Explanation: Quatre éléments automobiles portant exactement ces noms.
+- **Parties d'un oiseau**: BEC · PLUME · SERRE · QUEUE
+  - Intended reason: Quatre éléments anatomiques externes d'un oiseau.
+  - Explanation: Quatre éléments anatomiques externes d'un oiseau.
+- **Dispositifs d'éclairage électriques**: LAMPE · AMPOULE · NÉON · PROJECTEUR
+  - Intended reason: Quatre dispositifs produisant de la lumière grâce à l'électricité.
+  - Explanation: Quatre dispositifs produisant de la lumière grâce à l'électricité.
+- **Sports de raquette**: TENNIS · PADEL · SQUASH · BADMINTON
+  - Intended reason: Quatre sports pratiqués avec une raquette.
+  - Explanation: Quatre sports pratiqués avec une raquette.
+
+Editorial notes: Rôle: respiration avant la fin du palier.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 25
+
+Rationale: Rôle: respiration avant la fin du palier.
+
+Intended reason: Quatre éléments automobiles portant exactement ces noms.<br>Quatre éléments anatomiques externes d'un oiseau.<br>Quatre dispositifs produisant de la lumière grâce à l'électricité.<br>Quatre sports pratiqués avec une raquette.
+
+Known decoys: AILE + BEC + PLUME + QUEUE : oiseau; BOUGIE + LAMPE + AMPOULE + NÉON : lumière; VOLANT + BADMINTON : équipement/sport; COFFRE évoque aussi le rangement
+
+Ambiguity notes: BOUGIE est lumineuse mais non électrique; VOLANT n'est pas un sport; les doubles lectures restent des pièges contrôlés.
+
+Hints:
+
+- pair / g0: BOUGIE + AILE
+- category / g0: Pensez aux éléments d’une voiture.
+
+### puzzle-fr-curated-032
+
+Locale: fr · Position: 32 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-032 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| JOUR | SENS | ATTAQUE | POIDS |
+| MATIN | MIDI | SOIR | NUIT |
+| VUE | OUÏE | ODORAT | GOÛT |
+| PASSE | TIR | DRIBBLE | CENTRE |
+
+Intended groups:
+
+- **Forment un mot avec CONTRE-**: JOUR · SENS · ATTAQUE · POIDS
+  - Intended reason: Contre-jour, contresens, contre-attaque, contrepoids.
+  - Explanation: Contre-jour, contresens, contre-attaque, contrepoids.
+- **Moments de la journée**: MATIN · MIDI · SOIR · NUIT
+  - Intended reason: Quatre repères temporels d'une journée.
+  - Explanation: Quatre repères temporels d'une journée.
+- **Quatre des cinq sens**: VUE · OUÏE · ODORAT · GOÛT
+  - Intended reason: Quatre sens humains.
+  - Explanation: Quatre sens humains.
+- **Gestes techniques au football**: PASSE · TIR · DRIBBLE · CENTRE
+  - Intended reason: Quatre gestes techniques courants au football.
+  - Explanation: Quatre gestes techniques courants au football.
+
+Editorial notes: Rôle: D2+ par hyperonymes trompeurs.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 30
+
+Rationale: Rôle: D2+ par hyperonymes trompeurs.
+
+Intended reason: Contre-jour, contresens, contre-attaque, contrepoids.<br>Quatre repères temporels d'une journée.<br>Quatre sens humains.<br>Quatre gestes techniques courants au football.
+
+Known decoys: JOUR + MATIN + MIDI + SOIR : temps; SENS + VUE + OUÏE + ODORAT : perception; ATTAQUE + PASSE + TIR + DRIBBLE : football
+
+Ambiguity notes: JOUR, SENS et ATTAQUE sont des hyperonymes ou contextes plus généraux que les membres des groupes voisins.
+
+Hints:
+
+- pair / g0: JOUR + POIDS
+- category / g0: Ces mots forment un autre mot avec « CONTRE ».
+
+### puzzle-fr-curated-033
+
+Locale: fr · Position: 33 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-033 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| MORAL | PENTE | BRETELLE | RÉVEIL |
+| ALARME | MINUTEUR | SONNETTE | CARILLON |
+| PÉAGE | AIRE | ÉCHANGEUR | VIADUC |
+| TÉLÉSIÈGE | TÉLÉSKI | FUNICULAIRE | TÉLÉPHÉRIQUE |
+
+Intended groups:
+
+- **Ce qu'on remonte**: MORAL · PENTE · BRETELLE · RÉVEIL
+  - Intended reason: Remonter le moral, remonter la pente, remonter ses bretelles, remonter un réveil.
+  - Explanation: Remonter le moral, remonter la pente, remonter ses bretelles, remonter un réveil.
+- **Ce qui sonne**: ALARME · MINUTEUR · SONNETTE · CARILLON
+  - Intended reason: Quatre dispositifs dont une fonction centrale est d'émettre un signal sonore.
+  - Explanation: Quatre dispositifs dont une fonction centrale est d'émettre un signal sonore.
+- **Aménagements d'autoroute**: PÉAGE · AIRE · ÉCHANGEUR · VIADUC
+  - Intended reason: Quatre ouvrages ou aménagements caractéristiques des grands axes routiers.
+  - Explanation: Quatre ouvrages ou aménagements caractéristiques des grands axes routiers.
+- **Remontées mécaniques**: TÉLÉSIÈGE · TÉLÉSKI · FUNICULAIRE · TÉLÉPHÉRIQUE
+  - Intended reason: Quatre installations permettant de transporter des personnes vers un point plus élevé.
+  - Explanation: Quatre installations permettant de transporter des personnes vers un point plus élevé.
+
+Editorial notes: Rôle: jeu sémantique fort.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 16
+
+Rationale: Rôle: jeu sémantique fort.
+
+Intended reason: Remonter le moral, remonter la pente, remonter ses bretelles, remonter un réveil.<br>Quatre dispositifs dont une fonction centrale est d'émettre un signal sonore.<br>Quatre ouvrages ou aménagements caractéristiques des grands axes routiers.<br>Quatre installations permettant de transporter des personnes vers un point plus élevé.
+
+Known decoys: RÉVEIL + ALARME + SONNETTE + CARILLON : ce qui sonne; BRETELLE + PÉAGE + AIRE + ÉCHANGEUR : autoroute; PENTE + TÉLÉSIÈGE + TÉLÉSKI + FUNICULAIRE : montagne/remontée
+
+Ambiguity notes: FUNICULAIRE remplace TÉLÉCABINE pour éviter quatre cartes commençant toutes par TÉLÉ-. MORAL reste l'ancre principale.
+
+Hints:
+
+- pair / g0: MORAL + BRETELLE
+- category / g0: Ces mots entrent dans des expressions avec « REMONTER ».
+
+### puzzle-fr-curated-034
+
+Locale: fr · Position: 34 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-034 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| RADAR | KAYAK | ELLE | ICI |
+| CANOË | PÉNICHE | VOILIER | RADEAU |
+| IL | NOUS | VOUS | EUX |
+| LÀ | AILLEURS | PARTOUT | DEHORS |
+
+Intended groups:
+
+- **Palindromes**: RADAR · KAYAK · ELLE · ICI
+  - Intended reason: Quatre mots qui se lisent de la même manière de gauche à droite et de droite à gauche.
+  - Explanation: Quatre mots qui se lisent de la même manière de gauche à droite et de droite à gauche.
+- **Embarcations**: CANOË · PÉNICHE · VOILIER · RADEAU
+  - Intended reason: Quatre types d'embarcations.
+  - Explanation: Quatre types d'embarcations.
+- **Pronoms personnels**: IL · NOUS · VOUS · EUX
+  - Intended reason: Quatre pronoms personnels.
+  - Explanation: Quatre pronoms personnels.
+- **Indications / adverbes de lieu**: LÀ · AILLEURS · PARTOUT · DEHORS
+  - Intended reason: Quatre mots servant à situer un lieu ou une position.
+  - Explanation: Quatre mots servant à situer un lieu ou une position.
+
+Editorial notes: Rôle: rupture totale des habitudes.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 48
+
+Rationale: Rôle: rupture totale des habitudes.
+
+Intended reason: Quatre mots qui se lisent de la même manière de gauche à droite et de droite à gauche.<br>Quatre types d'embarcations.<br>Quatre pronoms personnels.<br>Quatre mots servant à situer un lieu ou une position.
+
+Known decoys: KAYAK + CANOË + PÉNICHE + RADEAU : embarcations; ELLE + IL + NOUS + VOUS : pronoms; ICI + LÀ + AILLEURS + PARTOUT : lieu
+
+Ambiguity notes: RADAR force à abandonner le sens des mots et à regarder leur forme.
+
+Hints:
+
+- pair / g0: ELLE + ICI
+- category / g0: Ces mots se lisent de la même manière dans les deux sens.
+
+### puzzle-fr-curated-035
+
+Locale: fr · Position: 35 · Difficulty: 2 · Revision: 1
+
+Status: **draft** · Approval: not current
+
+Review: none · not reviewed · Approved revision: none
+
+Concept: concept-fr-curated-035 · original · Source: none revision —
+
+Visible cards:
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| RECORD | CARTES | ŒUFS | MESURE |
+| PLAINTE | SECOURS | CHANCE | ATTEINTE |
+| PION | DÉ | PLATEAU | JETON |
+| JUGE | AVOCAT | NOTAIRE | HUISSIER |
+
+Intended groups:
+
+- **Expressions avec BATTRE**: RECORD · CARTES · ŒUFS · MESURE
+  - Intended reason: Battre un record, battre les cartes, battre des œufs, battre la mesure.
+  - Explanation: Battre un record, battre les cartes, battre des œufs, battre la mesure.
+- **Expressions avec PORTER**: PLAINTE · SECOURS · CHANCE · ATTEINTE
+  - Intended reason: Porter plainte, porter secours, porter chance, porter atteinte.
+  - Explanation: Porter plainte, porter secours, porter chance, porter atteinte.
+- **Matériel de jeu de société**: PION · DÉ · PLATEAU · JETON
+  - Intended reason: Quatre éléments physiques courants de jeux de société.
+  - Explanation: Quatre éléments physiques courants de jeux de société.
+- **Professions juridiques**: JUGE · AVOCAT · NOTAIRE · HUISSIER
+  - Intended reason: Quatre professions du domaine juridique.
+  - Explanation: Quatre professions du domaine juridique.
+
+Editorial notes: Rôle: finale D2 avec double révélation.
+
+Source: nodi-fr-11-35-curated-source.json · Candidate: 50
+
+Rationale: Rôle: finale D2 avec double révélation.
+
+Intended reason: Battre un record, battre les cartes, battre des œufs, battre la mesure.<br>Porter plainte, porter secours, porter chance, porter atteinte.<br>Quatre éléments physiques courants de jeux de société.<br>Quatre professions du domaine juridique.
+
+Known decoys: CARTES + PION + DÉ + PLATEAU : jeu; PLAINTE + JUGE + AVOCAT + HUISSIER : justice; CHANCE + DÉ + CARTES : hasard
+
+Ambiguity notes: Le niveau comporte volontairement deux groupes verbaux différents. La découverte de BATTRE ne résout donc pas toute la mécanique spéciale du plateau.
+
+Hints:
+
+- pair / g0: RECORD + MESURE
+- category / g0: Ces mots entrent dans des expressions avec « BATTRE ».
 
